@@ -11,14 +11,11 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <title>Ample admin Template - The Ultimate Multipurpose admin template</title>
-    <!-- chartist CSS -->
-    <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="dist/js/pages/chartist/chartist-init.css" rel="stylesheet">
-    <link href="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <!--morris CSS -->
-    <link href="assets/libs/morris.js/morris.css" rel="stylesheet">
-    <!-- needed css -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
+    <!-- This page CSS -->
+    <link href="../../assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
+    <link href="../../assets/libs/jquery-steps/steps.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -103,13 +100,13 @@
                                         <div class="message-center message-body">
                                             <!-- Message -->
                                             <a href="javascript:void(0)" class="message-item">
-                                                <span class="user-img"> <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle"> <span class="profile-status online pull-right"></span> </span>
+                                                <span class="user-img"> <img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle"> <span class="profile-status online pull-right"></span> </span>
                                                 <span class="mail-contnet">
                                                     <h5 class="message-title">Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </span>
                                             </a>
                                             <!-- Message -->
                                             <a href="javascript:void(0)" class="message-item">
-                                                <span class="user-img"> <img src="assets/images/users/2.jpg" alt="user" class="rounded-circle"> <span class="profile-status busy pull-right"></span> </span>
+                                                <span class="user-img"> <img src="../../assets/images/users/2.jpg" alt="user" class="rounded-circle"> <span class="profile-status busy pull-right"></span> </span>
                                                 <span class="mail-contnet">
                                                     <h5 class="message-title">Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </span>
                                             </a>
@@ -121,7 +118,7 @@
                                             </a>
                                             <!-- Message -->
                                             <a href="javascript:void(0)" class="message-item">
-                                                <span class="user-img"> <img src="assets/images/users/4.jpg" alt="user" class="rounded-circle"> <span class="profile-status offline pull-right"></span> </span>
+                                                <span class="user-img"> <img src="../../assets/images/users/4.jpg" alt="user" class="rounded-circle"> <span class="profile-status offline pull-right"></span> </span>
                                                 <span class="mail-contnet">
                                                     <h5 class="message-title">Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </span>
                                             </a>
@@ -312,29 +309,16 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            @if(isset(Auth::user()->email))
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="36">
-
-                                <span class="ml-2 font-medium">{{ Auth::user()->name }}</span><span class="fas fa-angle-down ml-2"></span>
+                                <img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="36">
+                                <span class="ml-2 font-medium">Steve</span><span class="fas fa-angle-down ml-2"></span>
                             </a>
-                            @endif
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 <div class="d-flex no-block align-items-center p-3 mb-2 border-bottom">
                                     <div class=""><img src="../../assets/images/users/1.jpg" alt="user" class="rounded" width="80"></div>
-
-                                    <!--
-
-                                        @if(isset(Auth::user()->email))
-                                        <a href="#" class="waves-effect"><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> {{ Auth::user()->name }}</span>
-                                        </a>
-
-                                     @endif -->
                                     <div class="ml-2">
-                                        @if(isset(Auth::user()->email))
-                                        <h4 class="mb-0">{{ Auth::user()->name }}</h4>
-                                        <p class=" mb-0 text-muted">{{ Auth::user()->email }}</p>
-                                        @endif
+                                        <h4 class="mb-0">Steave Jobs</h4>
+                                        <p class=" mb-0 text-muted">varun@gmail.com</p>
                                         <a href="javascript:void(0)" class="btn btn-sm btn-danger text-white mt-2 btn-rounded">View Profile</a>
                                     </div>
                                 </div>
@@ -344,7 +328,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings mr-1 ml-1"></i> Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logout') }}"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -365,14 +349,14 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="sidebar-item">
-                            @if(isset(Auth::user()->email))
-                            <a class="sidebar-link has-arrow waves-effect waves-dark profile-dd" href="javascript:void(0)" aria-expanded="false">
-                                <img src="assets/images/users/1.jpg" class="rounded-circle ml-2" width="30">
-                                <span class="hide-menu">{{ Auth::user()->name }} </span>
-                            </a>
-                            @endif
+                        <ul id="sidebarnav">
+                            <li class="sidebar-item">
+                                @if(isset(Auth::user()->email))
+                                <a class="sidebar-link has-arrow waves-effect waves-dark profile-dd" href="javascript:void(0)" aria-expanded="false">
+                                    <img src="assets/images/users/1.jpg" class="rounded-circle ml-2" width="30">
+                                    <span class="hide-menu">{{ Auth::user()->name }} </span>
+                                </a>
+                                @endif
                             <!--
 
                             @if(isset(Auth::user()->email))
@@ -405,23 +389,23 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('logout') }}" class="sidebar-link">
+                                    <a href="javascript:void(0)" class="sidebar-link">
                                         <i class="fas fa-power-off"></i>
                                         <span class="hide-menu"> Logout </span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="sidebar-item selected">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="javascript:void(0)" aria-expanded="false">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
                                 <span class="hide-menu">Dashboard</span> 
                                 
                             </a>
-                           
+
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
                                 <i class="mdi mdi-square-inc-cash"></i>
                                 <span class="hide-menu">Sales</span>
                             </a>
@@ -473,9 +457,9 @@
                             
                         </li>
                         
-                       
+
                         
-                       
+
                         
                         
                         
@@ -513,14 +497,14 @@
             <div class="page-breadcrumb border-bottom">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-xs-12 align-self-center">
-                        <h5 class="font-medium text-uppercase mb-0">Dashboard</h5>
+                        <h5 class="font-medium text-uppercase mb-0">Guest Management</h5>
                     </div>
                     <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
                         
                         <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                             <ol class="breadcrumb mb-0 justify-content-end p-0">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                <li class="breadcrumb-item active" aria-current="page">Guest Management</li>
                             </ol>
                         </nav>
                     </div>
@@ -534,273 +518,160 @@
             <!-- ============================================================== -->
             <div class="page-content container-fluid">
                 <!-- ============================================================== -->
-                <!-- Yearly Sales Charts Row  -->
+                <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <h2 class="font-medium">$354.50</h2>
-                                        <h5 class="text-muted mb-0">Total Income</h5>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <div class="" id="ravenue"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h2 class="font-medium">3456</h2>
-                                        <h5 class="text-muted mb-0">Yearly Sales</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <div id="ct-main-bal" style="height: 57px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h2 class="font-medium">356</h2>
-                                        <h5 class="text-muted mb-0">Monthly Sales</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <div id="ct-extra" style="height: 57px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Sales, Expance & Finance Charts Row  -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-8">
-                        <div class="card">
-                            <div class="p-3">
-                                <div class="d-flex align-items-center">
-                                    <h5 class="card-title text-uppercase mb-0">Sales</h5>
-                                    <div class="ml-auto">
-                                        <ul class="list-inline dl mb-0">
-                                            <li class="list-inline-item text-info"><i class="fa fa-circle"></i> Advertisement</li>
-                                            <li class="list-inline-item text-danger"><i class="fa fa-circle"></i> Program Sponsorship</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div id="ct-visits" style="height: 265px;"></div>
-                            </div>
-                            <div class="row no-gutters border-top">
-                                <div class="col-md-6 border-right border-bottom">
-                                    <div class="d-flex align-items-center px-4 py-3">
-                                        <h2 class="mb-0 text-info display-7">
-                                            <i class="ti-headphone-alt"></i>
-                                        </h2>
-                                        <div class="ml-4">
-                                            <h2 class="font-normal">$250</h2>
-                                            <h4>Program Sponsorship</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 border-bottom">
-                                    <div class="d-flex align-items-center px-4 py-3">
-                                        <h2 class="mb-0 text-info display-7">
-                                            <i class="ti-home"></i>
-                                        </h2>
-                                        <div class="ml-4">
-                                            <h2 class="font-normal">$60.50</h2>
-                                            <h4>Advertisement</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 border-right">
-                                    <div class="d-flex align-items-center px-4 py-3">
-                                        <h2 class="mb-0 text-info display-7">
-                                            <i class="far fa-paper-plane"></i>
-                                        </h2>
-                                        <div class="ml-4">
-                                            <h2 class="font-normal">$28</h2>
-                                            <h4>Souvenir Products</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Sales</h5>
-                                <div class="mt-3">
-                                    <div id="morris-donut-chart" style="height:350px; padding-top: 50px;"></div>
-                                </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <div>
-                                        <h3 class="font-medium text-uppercase">Total Sales</h3>
-                                        <h5 class="text-muted">160 sales monthly</h5>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <button class="btn btn-info btn-circle btn-lg text-white">
-                                            <i class="ti-shopping-cart"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Chart && Calendar App Row  -->
-                <!-- ============================================================== -->
-                
-                <!-- ============================================================== -->
-                <!-- Yearly Sales Charts  Row  -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Yearly Sales Charts  Row  -->
-                <!-- ============================================================== -->
-                <div class="row">
+                    <!-- ============================================================== -->
+                    <!-- Example -->
+                    <!-- ============================================================== -->
                     
-                    <div class="col-md-12 col-lg-6">
+                    <!-- ============================================================== -->
+                    <!-- Example -->
+                    <!-- ============================================================== -->
+                    <div class="col-12">
                         <div class="card">
-                            <div class="card-body border-bottom">
+                            <div class="card-body wizard-content">
+                                <h4 class="card-title">Create Guest Appointment</h4>
                                 
-                                    <canvas id="foo" class="gaugejs">guage</canvas>
-                                
-                            </div>
-                            <div class="d-flex align-items-center p-3">
-                                <div>
-                                    <span class="mb-0 display-7"><span class="font-medium">26.30</span></span>
-                                    <h4 class="mb-0 font-light">AMps Used</h4>
-                                </div>
-                                <div class="ml-auto">
-                                    <button class="btn btn-info btn-circle btn-lg text-white">
-                                        <i class="icon-speedometer"></i>
-                                    </button>
-                                </div>
+                                <form action="#" class="validation-wizard wizard-circle mt-5">
+                                    <!-- Step 1 -->
+                                    <h6>Step 1</h6>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="wfirstName2"> First Name : <span class="danger">*</span> </label>
+                                                    <input type="text" class="form-control required" id="wfirstName2" name="firstName"> </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="wlastName2"> Last Name : <span class="danger">*</span> </label>
+                                                    <input type="text" class="form-control required" id="wlastName2" name="lastName"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="wemailAddress2"> Email Address : <span class="danger">*</span> </label>
+                                                    <input type="email" class="form-control required" id="wemailAddress2" name="emailAddress"> </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="wphoneNumber2">Phone Number :</label>
+                                                    <input type="tel" class="form-control" id="wphoneNumber2"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="wlocation2"> Select City : <span class="danger">*</span> </label>
+                                                    <select class="custom-select form-control required" id="wlocation2" name="location">
+                                                        <option value="">Select City</option>
+                                                        <option value="India">India</option>
+                                                        <option value="USA">USA</option>
+                                                        <option value="Dubai">Dubai</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="wdate2">Date of Birth :</label>
+                                                    <input type="date" class="form-control" id="wdate2"> </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- Step 2 -->
+                                    <h6>Step 2</h6>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="jobTitle2">Company Name :</label>
+                                                    <input type="text" class="form-control required" id="jobTitle2">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="webUrl3">Company URL :</label>
+                                                    <input type="url" class="form-control required" id="webUrl3" name="webUrl3"> </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="shortDescription3">Short Description :</label>
+                                                    <textarea name="shortDescription" id="shortDescription3" rows="6" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- Step 3 -->
+                                    <h6>Step 3</h6>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="wint1">Interview For :</label>
+                                                    <input type="text" class="form-control required" id="wint1"> </div>
+                                                <div class="form-group">
+                                                    <label for="wintType1">Interview Type :</label>
+                                                    <select class="custom-select form-control required" id="wintType1" data-placeholder="Type to search cities" name="wintType1">
+                                                        <option value="Banquet">Normal</option>
+                                                        <option value="Fund Raiser">Difficult</option>
+                                                        <option value="Dinner Party">Hard</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="wLocation1">Location :</label>
+                                                    <select class="custom-select form-control required" id="wLocation1" name="wlocation">
+                                                        <option value="">Select City</option>
+                                                        <option value="India">India</option>
+                                                        <option value="USA">USA</option>
+                                                        <option value="Dubai">Dubai</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="wjobTitle2">Interview Date :</label>
+                                                    <input type="date" class="form-control required" id="wjobTitle2">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Requirements :</label>
+                                                    <div class="c-inputs-stacked">
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" id="customRadio16" name="customRadio" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio16">Employee</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" id="customRadio17" name="customRadio" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio17">Contract</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    
+                                </form>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-12 col-lg-6">
-                        <div class="card">
-                            <div class="d-flex align-items-center p-3">
-                                <h5 class="card-title mb-0 text-uppercase">Recent Sales</h5>
-                                <div class="ml-auto">
-                                    <select class="form-control">
-                                        <option>March</option>
-                                        <option>April</option>
-                                        <option>May</option>
-                                        <option>June</option>
-                                        <option>July</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="p-3 bg-light">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <h2 class="font-normal">March 2017</h2>
-                                        <p class="mb-2 text-uppercase font-14 font-light">Sales Report</p>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <h1 class="text-info mb-0 font-light">$3,690</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <div class="table-responsive">
-                                    <table class="table text-muted mb-0 no-wrap recent-table font-light">
-                                        <thead>
-                                            <tr class="text-uppercase">
-                                                <th class="border-0">#</th>
-                                                <th class="border-0">Name</th>
-                                                <th class="border-0">Status</th>
-                                                <th class="border-0">Date</th>
-                                                <th class="border-0">Price</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td class="txt-oflo">Elite admin</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-success label-rouded">SALE</span> </td>
-                                                <td class="txt-oflo">April 18, 2017</td>
-                                                <td><span class="text-success">$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td class="txt-oflo">Real Homes WP Theme</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">EXTENDED</span></td>
-                                                <td class="txt-oflo">April 19, 2017</td>
-                                                <td><span class="text-info">$1250</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td class="txt-oflo">Ample Admin</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">EXTENDED</span></td>
-                                                <td class="txt-oflo">April 19, 2017</td>
-                                                <td><span class="text-info">$1250</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td class="txt-oflo">Medical Pro WP Theme</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-danger label-rouded">TAX</span></td>
-                                                <td class="txt-oflo">April 20, 2017</td>
-                                                <td><span class="text-danger">-$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td class="txt-oflo">Hosting press html</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-warning label-rouded">SALE</span></td>
-                                                <td class="txt-oflo">April 21, 2017</td>
-                                                <td><span class="text-success">$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td class="txt-oflo">Digital Agency PSD</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-success label-rouded">SALE</span> </td>
-                                                <td class="txt-oflo">April 23, 2017</td>
-                                                <td><span class="text-danger">-$14</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td class="txt-oflo">Helping Hands WP Theme</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-warning label-rouded">member</span></td>
-                                                <td class="txt-oflo">April 22, 2017</td>
-                                                <td><span class="text-success">$64</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
+                    <!-- ============================================================== -->
+                    <!-- Example -->
+                    <!-- ============================================================== -->
                 </div>
                 <!-- ============================================================== -->
-                <!-- Recent Comment & Sales Chart Row  -->
+                <!-- End PAge Content -->
                 <!-- ============================================================== -->
-                
                 <!-- ============================================================== -->
-                <!-- Profile Card & Email App Row  -->
+                <!-- Right sidebar -->
                 <!-- ============================================================== -->
-                
+                <!-- .right-sidebar -->
                 <!-- ============================================================== -->
-                <!-- Earnings & Feed Row  -->
+                <!-- End Right sidebar -->
                 <!-- ============================================================== -->
-                
-            </div>
+            </div> 
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
@@ -808,8 +679,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Ample admin. Designed and Developed by
-                <a href="https://wrappixel.com">WrapPixel</a>.
+                All Rights Reserved by Ample admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -826,27 +696,17 @@
     <!-- customizer Panel -->
     <!-- ============================================================== -->
     <aside class="customizer">
-        <a href="javascript:void(0)" class="service-panel-toggle">
-            <i class="fa fa-spin fa-cog"></i>
-        </a>
+        <a href="javascript:void(0)" class="service-panel-toggle"><i class="fa fa-spin fa-cog"></i></a>
         <div class="customizer-body">
             <ul class="nav customizer-tab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
-                        aria-selected="true">
-                        <i class="mdi mdi-wrench font-20"></i>
-                    </a>
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="mdi mdi-wrench font-20"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#chat" role="tab" aria-controls="chat" aria-selected="false">
-                        <i class="mdi mdi-message-reply font-20"></i>
-                    </a>
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#chat" role="tab" aria-controls="chat" aria-selected="false"><i class="mdi mdi-message-reply font-20"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
-                        aria-selected="false">
-                        <i class="mdi mdi-star-circle font-20"></i>
-                    </a>
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="mdi mdi-star-circle font-20"></i></a>
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
@@ -877,24 +737,12 @@
                         <!-- Logo BG -->
                         <h5 class="font-medium mb-2 mt-2">Logo Backgrounds</h5>
                         <ul class="theme-color">
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin1"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin2"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin3"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin4"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin5"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin6"></a>
-                            </li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin1"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin2"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin3"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin4"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin5"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin6"></a></li>
                         </ul>
                         <!-- Logo BG -->
                     </div>
@@ -902,24 +750,12 @@
                         <!-- Navbar BG -->
                         <h5 class="font-medium mb-2 mt-2">Navbar Backgrounds</h5>
                         <ul class="theme-color">
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin1"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin2"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin3"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin4"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin5"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin6"></a>
-                            </li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin1"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin2"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin3"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin4"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin5"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin6"></a></li>
                         </ul>
                         <!-- Navbar BG -->
                     </div>
@@ -927,24 +763,12 @@
                         <!-- Logo BG -->
                         <h5 class="font-medium mb-2 mt-2">Sidebar Backgrounds</h5>
                         <ul class="theme-color">
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin1"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin2"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin3"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin4"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin5"></a>
-                            </li>
-                            <li class="theme-item">
-                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin6"></a>
-                            </li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin1"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin2"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin3"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin4"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin5"></a></li>
+                            <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin6"></a></li>
                         </ul>
                         <!-- Logo BG -->
                     </div>
@@ -956,103 +780,55 @@
                         <li>
                             <div class="message-center chat-scroll">
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_1' data-user-id='1'>
-                                    <span class="user-img">
-                                        <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle">
-                                        <span class="profile-status online pull-right"></span>
-                                    </span>
-                                    <div class="mail-contnet">
-                                        <h5 class="message-title">Pavan kumar</h5>
-                                        <span class="mail-desc">Just see the my admin!</span>
-                                        <span class="time">9:30 AM</span>
-                                    </div>
+                                    <span class="user-img"> <img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle"> <span class="profile-status online pull-right"></span> </span>
+                                    <span class="mail-contnet">
+                                        <h5 class="message-title">Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </span>
                                 </a>
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_2' data-user-id='2'>
-                                    <span class="user-img">
-                                        <img src="assets/images/users/2.jpg" alt="user" class="rounded-circle">
-                                        <span class="profile-status busy pull-right"></span>
-                                    </span>
-                                    <div class="mail-contnet">
-                                        <h5 class="message-title">Sonu Nigam</h5>
-                                        <span class="mail-desc">I've sung a song! See you at</span>
-                                        <span class="time">9:10 AM</span>
-                                    </div>
+                                    <span class="user-img"> <img src="../../assets/images/users/2.jpg" alt="user" class="rounded-circle"> <span class="profile-status busy pull-right"></span> </span>
+                                    <span class="mail-contnet">
+                                        <h5 class="message-title">Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </span>
                                 </a>
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_3' data-user-id='3'>
-                                    <span class="user-img">
-                                        <img src="assets/images/users/3.jpg" alt="user" class="rounded-circle">
-                                        <span class="profile-status away pull-right"></span>
-                                    </span>
-                                    <div class="mail-contnet">
-                                        <h5 class="message-title">Arijit Sinh</h5>
-                                        <span class="mail-desc">I am a singer!</span>
-                                        <span class="time">9:08 AM</span>
-                                    </div>
+                                    <span class="user-img"> <img src="../../assets/images/users/3.jpg" alt="user" class="rounded-circle"> <span class="profile-status away pull-right"></span> </span>
+                                    <span class="mail-contnet">
+                                        <h5 class="message-title">Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </span>
                                 </a>
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_4' data-user-id='4'>
-                                    <span class="user-img">
-                                        <img src="assets/images/users/4.jpg" alt="user" class="rounded-circle">
-                                        <span class="profile-status offline pull-right"></span>
-                                    </span>
-                                    <div class="mail-contnet">
-                                        <h5 class="message-title">Nirav Joshi</h5>
-                                        <span class="mail-desc">Just see the my admin!</span>
-                                        <span class="time">9:02 AM</span>
-                                    </div>
+                                    <span class="user-img"> <img src="../../assets/images/users/4.jpg" alt="user" class="rounded-circle"> <span class="profile-status offline pull-right"></span> </span>
+                                    <span class="mail-contnet">
+                                        <h5 class="message-title">Nirav Joshi</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </span>
                                 </a>
                                 <!-- Message -->
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_5' data-user-id='5'>
-                                    <span class="user-img">
-                                        <img src="assets/images/users/5.jpg" alt="user" class="rounded-circle">
-                                        <span class="profile-status offline pull-right"></span>
-                                    </span>
-                                    <div class="mail-contnet">
-                                        <h5 class="message-title">Sunil Joshi</h5>
-                                        <span class="mail-desc">Just see the my admin!</span>
-                                        <span class="time">9:02 AM</span>
-                                    </div>
+                                    <span class="user-img"> <img src="../../assets/images/users/5.jpg" alt="user" class="rounded-circle"> <span class="profile-status offline pull-right"></span> </span>
+                                    <span class="mail-contnet">
+                                        <h5 class="message-title">Sunil Joshi</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </span>
                                 </a>
                                 <!-- Message -->
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_6' data-user-id='6'>
-                                    <span class="user-img">
-                                        <img src="assets/images/users/6.jpg" alt="user" class="rounded-circle">
-                                        <span class="profile-status offline pull-right"></span>
-                                    </span>
-                                    <div class="mail-contnet">
-                                        <h5 class="message-title">Akshay Kumar</h5>
-                                        <span class="mail-desc">Just see the my admin!</span>
-                                        <span class="time">9:02 AM</span>
-                                    </div>
+                                    <span class="user-img"> <img src="../../assets/images/users/6.jpg" alt="user" class="rounded-circle"> <span class="profile-status offline pull-right"></span> </span>
+                                    <span class="mail-contnet">
+                                        <h5 class="message-title">Akshay Kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </span>
                                 </a>
                                 <!-- Message -->
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_7' data-user-id='7'>
-                                    <span class="user-img">
-                                        <img src="assets/images/users/7.jpg" alt="user" class="rounded-circle">
-                                        <span class="profile-status offline pull-right"></span>
-                                    </span>
-                                    <div class="mail-contnet">
-                                        <h5 class="message-title">Pavan kumar</h5>
-                                        <span class="mail-desc">Just see the my admin!</span>
-                                        <span class="time">9:02 AM</span>
-                                    </div>
+                                    <span class="user-img"> <img src="../../assets/images/users/7.jpg" alt="user" class="rounded-circle"> <span class="profile-status offline pull-right"></span> </span>
+                                    <span class="mail-contnet">
+                                        <h5 class="message-title">Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </span>
                                 </a>
                                 <!-- Message -->
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_8' data-user-id='8'>
-                                    <span class="user-img">
-                                        <img src="assets/images/users/8.jpg" alt="user" class="rounded-circle">
-                                        <span class="profile-status offline pull-right"></span>
-                                    </span>
-                                    <div class="mail-contnet">
-                                        <h5 class="message-title">Varun Dhavan</h5>
-                                        <span class="mail-desc">Just see the my admin!</span>
-                                        <span class="time">9:02 AM</span>
-                                    </div>
+                                    <span class="user-img"> <img src="../../assets/images/users/8.jpg" alt="user" class="rounded-circle"> <span class="profile-status offline pull-right"></span> </span>
+                                    <span class="mail-contnet">
+                                        <h5 class="message-title">Varun Dhavan</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </span>
                                 </a>
                                 <!-- Message -->
                             </div>
@@ -1065,84 +841,58 @@
                     <h6 class="mt-3 mb-3">Activity Timeline</h6>
                     <div class="steamline">
                         <div class="sl-item">
-                            <div class="sl-left bg-success">
-                                <i class="ti-user"></i>
-                            </div>
+                            <div class="sl-left bg-success"> <i class="ti-user"></i></div>
                             <div class="sl-right">
-                                <div class="font-medium">Meeting today
-                                    <span class="sl-date"> 5pm</span>
-                                </div>
+                                <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
                                 <div class="desc">you can write anything </div>
                             </div>
                         </div>
                         <div class="sl-item">
-                            <div class="sl-left bg-info">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <div class="sl-left bg-info"><i class="fas fa-image"></i></div>
                             <div class="sl-right">
                                 <div class="font-medium">Send documents to Clark</div>
                                 <div class="desc">Lorem Ipsum is simply </div>
                             </div>
                         </div>
                         <div class="sl-item">
-                            <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="assets/images/users/2.jpg"> </div>
+                            <div class="sl-left"> <img class="rounded-circle" alt="user" src="../../assets/images/users/2.jpg"> </div>
                             <div class="sl-right">
-                                <div class="font-medium">Go to the Doctor
-                                    <span class="sl-date">5 minutes ago</span>
-                                </div>
+                                <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
                                 <div class="desc">Contrary to popular belief</div>
                             </div>
                         </div>
                         <div class="sl-item">
-                            <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="assets/images/users/1.jpg"> </div>
+                            <div class="sl-left"> <img class="rounded-circle" alt="user" src="../../assets/images/users/1.jpg"> </div>
                             <div class="sl-right">
-                                <div>
-                                    <a href="javascript:void(0)">Stephen</a>
-                                    <span class="sl-date">5 minutes ago</span>
-                                </div>
+                                <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
                                 <div class="desc">Approve meeting with tiger</div>
                             </div>
                         </div>
                         <div class="sl-item">
-                            <div class="sl-left bg-primary">
-                                <i class="ti-user"></i>
-                            </div>
+                            <div class="sl-left bg-primary"> <i class="ti-user"></i></div>
                             <div class="sl-right">
-                                <div class="font-medium">Meeting today
-                                    <span class="sl-date"> 5pm</span>
-                                </div>
+                                <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
                                 <div class="desc">you can write anything </div>
                             </div>
                         </div>
                         <div class="sl-item">
-                            <div class="sl-left bg-info">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <div class="sl-left bg-info"><i class="fas fa-image"></i></div>
                             <div class="sl-right">
                                 <div class="font-medium">Send documents to Clark</div>
                                 <div class="desc">Lorem Ipsum is simply </div>
                             </div>
                         </div>
                         <div class="sl-item">
-                            <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="assets/images/users/4.jpg"> </div>
+                            <div class="sl-left"> <img class="rounded-circle" alt="user" src="../../assets/images/users/4.jpg"> </div>
                             <div class="sl-right">
-                                <div class="font-medium">Go to the Doctor
-                                    <span class="sl-date">5 minutes ago</span>
-                                </div>
+                                <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
                                 <div class="desc">Contrary to popular belief</div>
                             </div>
                         </div>
                         <div class="sl-item">
-                            <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="assets/images/users/6.jpg"> </div>
+                            <div class="sl-left"> <img class="rounded-circle" alt="user" src="../../assets/images/users/6.jpg"> </div>
                             <div class="sl-right">
-                                <div>
-                                    <a href="javascript:void(0)">Stephen</a>
-                                    <span class="sl-date">5 minutes ago</span>
-                                </div>
+                                <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
                                 <div class="desc">Approve meeting with tiger</div>
                             </div>
                         </div>
@@ -1156,30 +906,185 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- apps -->
-    <script src="dist/js/app.min.js"></script>
-    <script src="dist/js/app.init.js"></script>
-    <script src="dist/js/app-style-switcher.js"></script>
+    <script src="../../dist/js/app.min.js"></script>
+    <script src="../../dist/js/app.init.js"></script>
+    <script src="../../dist/js/app-style-switcher.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->
-    <script src="dist/js/waves.js"></script>
+    <script src="../../dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="dist/js/sidebarmenu.js"></script>
+    <script src="../../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="dist/js/custom.min.js"></script>
-    <!-- This Page JS -->
-    <script src="assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="dist/js/pages/chartist/chartist-plugin-tooltip.js"></script>
-    <!-- Morris Js -->
-    <script src="assets/libs/morris.js/morris.min.js"></script>
-    <script src="assets/libs/raphael/raphael.min.js"></script>
-    <!-- Animated skill bar -->
-    <script src="assets/libs/gaugeJS/dist/gauge.min.js"></script>
-    <script src="dist/js/pages/dashboards/dashboard5.js"></script>
+    <script src="../../dist/js/custom.js"></script>
+    <script src="../../assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="../../assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script>
+    //Basic Example
+    $("#example-basic").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        autoFocus: true
+    });
+
+    // Basic Example with form
+    var form = $("#example-form");
+    form.validate({
+        errorPlacement: function errorPlacement(error, element) { element.before(error); },
+        rules: {
+            confirm: {
+                equalTo: "#password"
+            }
+        }
+    });
+    form.children("div").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        onStepChanging: function(event, currentIndex, newIndex) {
+            form.validate().settings.ignore = ":disabled,:hidden";
+            return form.valid();
+        },
+        onFinishing: function(event, currentIndex) {
+            form.validate().settings.ignore = ":disabled";
+            return form.valid();
+        },
+        onFinished: function(event, currentIndex) {
+            alert("Submitted!");
+        }
+    });
+
+    // Advance Example
+
+    var form = $("#example-advanced-form").show();
+
+    form.steps({
+        headerTag: "h3",
+        bodyTag: "fieldset",
+        transitionEffect: "slideLeft",
+        onStepChanging: function(event, currentIndex, newIndex) {
+            // Allways allow previous action even if the current form is not valid!
+            if (currentIndex > newIndex) {
+                return true;
+            }
+            // Forbid next action on "Warning" step if the user is to young
+            if (newIndex === 3 && Number($("#age-2").val()) < 18) {
+                return false;
+            }
+            // Needed in some cases if the user went back (clean up)
+            if (currentIndex < newIndex) {
+                // To remove error styles
+                form.find(".body:eq(" + newIndex + ") label.error").remove();
+                form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
+            }
+            form.validate().settings.ignore = ":disabled,:hidden";
+            return form.valid();
+        },
+        onStepChanged: function(event, currentIndex, priorIndex) {
+            // Used to skip the "Warning" step if the user is old enough.
+            if (currentIndex === 2 && Number($("#age-2").val()) >= 18) {
+                form.steps("next");
+            }
+            // Used to skip the "Warning" step if the user is old enough and wants to the previous step.
+            if (currentIndex === 2 && priorIndex === 3) {
+                form.steps("previous");
+            }
+        },
+        onFinishing: function(event, currentIndex) {
+            form.validate().settings.ignore = ":disabled";
+            return form.valid();
+        },
+        onFinished: function(event, currentIndex) {
+            alert("Submitted!");
+        }
+    }).validate({
+        errorPlacement: function errorPlacement(error, element) { element.before(error); },
+        rules: {
+            confirm: {
+                equalTo: "#password-2"
+            }
+        }
+    });
+
+    // Dynamic Manipulation
+    $("#example-manipulation").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        enableAllSteps: true,
+        enablePagination: false
+    });
+
+    //Vertical Steps
+
+    $("#example-vertical").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        stepsOrientation: "vertical"
+    });
+
+    //Custom design form example
+    $(".tab-wizard").steps({
+        headerTag: "h6",
+        bodyTag: "section",
+        transitionEffect: "fade",
+        titleTemplate: '<span class="step">#index#</span> #title#',
+        labels: {
+            finish: "Submit"
+        },
+        onFinished: function(event, currentIndex) {
+            swal("Form Submitted!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+
+        }
+    });
+
+
+    var form = $(".validation-wizard").show();
+
+    $(".validation-wizard").steps({
+        headerTag: "h6",
+        bodyTag: "section",
+        transitionEffect: "fade",
+        titleTemplate: '<span class="step">#index#</span> #title#',
+        labels: {
+            finish: "Submit"
+        },
+        onStepChanging: function(event, currentIndex, newIndex) {
+            return currentIndex > newIndex || !(3 === newIndex && Number($("#age-2").val()) < 18) && (currentIndex < newIndex && (form.find(".body:eq(" + newIndex + ") label.error").remove(), form.find(".body:eq(" + newIndex + ") .error").removeClass("error")), form.validate().settings.ignore = ":disabled,:hidden", form.valid())
+        },
+        onFinishing: function(event, currentIndex) {
+            return form.validate().settings.ignore = ":disabled", form.valid()
+        },
+        onFinished: function(event, currentIndex) {
+            swal("Form Submitted!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+        }
+    }), $(".validation-wizard").validate({
+        ignore: "input[type=hidden]",
+        errorClass: "text-danger",
+        successClass: "text-success",
+        highlight: function(element, errorClass) {
+            $(element).removeClass(errorClass)
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).removeClass(errorClass)
+        },
+        errorPlacement: function(error, element) {
+            error.insertAfter(element)
+        },
+        rules: {
+            email: {
+                email: !0
+            }
+        }
+    })
+    </script>
+</body>
+
 </html>

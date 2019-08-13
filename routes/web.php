@@ -19,5 +19,18 @@ Route::get('/', function () {return view('auth.login');});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//SPONSOR
+//CALENDAR
+Route::get('/calendar', 'CalendarController@index')->name('calendar');
 
+//SALES
+Route::get('/transactions', 'TransactionController@index')->name('transactions');
+
+//GUEST
+Route::get('/guest', 'GuestController@index')->name('guest');
+
+
+//PROGRAMS
+Route::get('/programs', 'ProgramController@index')->name('programs');
+
+//REPORT
+Route::get('/report', 'ReportController@index')->name('report');

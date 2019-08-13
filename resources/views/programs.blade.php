@@ -2,28 +2,29 @@
 <html dir="ltr" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-    <title>Ample admin Template - The Ultimate Multipurpose admin template</title>
-    <!-- chartist CSS -->
-    <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="dist/js/pages/chartist/chartist-init.css" rel="stylesheet">
-    <link href="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <!--morris CSS -->
-    <link href="assets/libs/morris.js/morris.css" rel="stylesheet">
-    <!-- needed css -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+     <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+        <title>Ample admin Template - The Ultimate Multipurpose admin template</title>
+        <!-- This page plugin CSS -->
+        <link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="dist/css/style.min.css" rel="stylesheet">
+        
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
 <![endif]-->
 </head>
 
@@ -344,7 +345,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings mr-1 ml-1"></i> Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logout') }}"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -405,15 +406,15 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('logout') }}" class="sidebar-link">
+                                    <a href="javascript:void(0)" class="sidebar-link">
                                         <i class="fas fa-power-off"></i>
                                         <span class="hide-menu"> Logout </span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="sidebar-item selected">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="javascript:void(0)" aria-expanded="false">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
                                 <span class="hide-menu">Dashboard</span> 
                                 
@@ -421,7 +422,7 @@
                            
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
                                 <i class="mdi mdi-square-inc-cash"></i>
                                 <span class="hide-menu">Sales</span>
                             </a>
@@ -513,14 +514,15 @@
             <div class="page-breadcrumb border-bottom">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-xs-12 align-self-center">
-                        <h5 class="font-medium text-uppercase mb-0">Dashboard</h5>
+                        <h5 class="font-medium text-uppercase mb-0">Programs Segments</h5>
                     </div>
                     <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
                         
                         <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                             <ol class="breadcrumb mb-0 justify-content-end p-0">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                
+                                <li class="breadcrumb-item active" aria-current="page">Program Segments</li>
                             </ol>
                         </nav>
                     </div>
@@ -533,261 +535,77 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="page-content container-fluid">
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style=" margin-bottom: 10px;"><i class="fa fa-plus"></i> New Program Segment</button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel1">Program Details</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">Program Name:</label>
+                                        <input type="text" class="form-control" id="recipient-name1">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Program Description:</label>
+                                        <textarea class="form-control" id="message-text1"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                                        <!-- ============================================================== -->
+                                                        <!-- Start Page Content -->
+                                                        <!-- ============================================================== -->
+                                                        
+                                                        
+                                                        <!-- order table -->
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="material-card card">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Programs Timetable</h4>
+                                                                        <h6 class="card-subtitle"></h6>
+                                                                        
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- multi-column ordering -->
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <!-- ============================================================== -->
+                                                        <!-- End PAge Content -->
+                                                        <!-- ============================================================== -->
+                                                        <!-- ============================================================== -->
+                                                        <!-- Right sidebar -->
+                                                        <!-- ============================================================== -->
+                                                        <!-- .right-sidebar -->
+                                                        <!-- ============================================================== -->
+                                                        <!-- End Right sidebar -->
+                                                        <!-- ============================================================== -->
+                                                    </div>
                 <!-- ============================================================== -->
                 <!-- Yearly Sales Charts Row  -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <h2 class="font-medium">$354.50</h2>
-                                        <h5 class="text-muted mb-0">Total Income</h5>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <div class="" id="ravenue"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h2 class="font-medium">3456</h2>
-                                        <h5 class="text-muted mb-0">Yearly Sales</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <div id="ct-main-bal" style="height: 57px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h2 class="font-medium">356</h2>
-                                        <h5 class="text-muted mb-0">Monthly Sales</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <div id="ct-extra" style="height: 57px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Sales, Expance & Finance Charts Row  -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-8">
-                        <div class="card">
-                            <div class="p-3">
-                                <div class="d-flex align-items-center">
-                                    <h5 class="card-title text-uppercase mb-0">Sales</h5>
-                                    <div class="ml-auto">
-                                        <ul class="list-inline dl mb-0">
-                                            <li class="list-inline-item text-info"><i class="fa fa-circle"></i> Advertisement</li>
-                                            <li class="list-inline-item text-danger"><i class="fa fa-circle"></i> Program Sponsorship</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div id="ct-visits" style="height: 265px;"></div>
-                            </div>
-                            <div class="row no-gutters border-top">
-                                <div class="col-md-6 border-right border-bottom">
-                                    <div class="d-flex align-items-center px-4 py-3">
-                                        <h2 class="mb-0 text-info display-7">
-                                            <i class="ti-headphone-alt"></i>
-                                        </h2>
-                                        <div class="ml-4">
-                                            <h2 class="font-normal">$250</h2>
-                                            <h4>Program Sponsorship</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 border-bottom">
-                                    <div class="d-flex align-items-center px-4 py-3">
-                                        <h2 class="mb-0 text-info display-7">
-                                            <i class="ti-home"></i>
-                                        </h2>
-                                        <div class="ml-4">
-                                            <h2 class="font-normal">$60.50</h2>
-                                            <h4>Advertisement</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 border-right">
-                                    <div class="d-flex align-items-center px-4 py-3">
-                                        <h2 class="mb-0 text-info display-7">
-                                            <i class="far fa-paper-plane"></i>
-                                        </h2>
-                                        <div class="ml-4">
-                                            <h2 class="font-normal">$28</h2>
-                                            <h4>Souvenir Products</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Sales</h5>
-                                <div class="mt-3">
-                                    <div id="morris-donut-chart" style="height:350px; padding-top: 50px;"></div>
-                                </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <div>
-                                        <h3 class="font-medium text-uppercase">Total Sales</h3>
-                                        <h5 class="text-muted">160 sales monthly</h5>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <button class="btn btn-info btn-circle btn-lg text-white">
-                                            <i class="ti-shopping-cart"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Chart && Calendar App Row  -->
-                <!-- ============================================================== -->
                 
-                <!-- ============================================================== -->
-                <!-- Yearly Sales Charts  Row  -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Yearly Sales Charts  Row  -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    
-                    <div class="col-md-12 col-lg-6">
-                        <div class="card">
-                            <div class="card-body border-bottom">
-                                
-                                    <canvas id="foo" class="gaugejs">guage</canvas>
-                                
-                            </div>
-                            <div class="d-flex align-items-center p-3">
-                                <div>
-                                    <span class="mb-0 display-7"><span class="font-medium">26.30</span></span>
-                                    <h4 class="mb-0 font-light">AMps Used</h4>
-                                </div>
-                                <div class="ml-auto">
-                                    <button class="btn btn-info btn-circle btn-lg text-white">
-                                        <i class="icon-speedometer"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 col-lg-6">
-                        <div class="card">
-                            <div class="d-flex align-items-center p-3">
-                                <h5 class="card-title mb-0 text-uppercase">Recent Sales</h5>
-                                <div class="ml-auto">
-                                    <select class="form-control">
-                                        <option>March</option>
-                                        <option>April</option>
-                                        <option>May</option>
-                                        <option>June</option>
-                                        <option>July</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="p-3 bg-light">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <h2 class="font-normal">March 2017</h2>
-                                        <p class="mb-2 text-uppercase font-14 font-light">Sales Report</p>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <h1 class="text-info mb-0 font-light">$3,690</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <div class="table-responsive">
-                                    <table class="table text-muted mb-0 no-wrap recent-table font-light">
-                                        <thead>
-                                            <tr class="text-uppercase">
-                                                <th class="border-0">#</th>
-                                                <th class="border-0">Name</th>
-                                                <th class="border-0">Status</th>
-                                                <th class="border-0">Date</th>
-                                                <th class="border-0">Price</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td class="txt-oflo">Elite admin</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-success label-rouded">SALE</span> </td>
-                                                <td class="txt-oflo">April 18, 2017</td>
-                                                <td><span class="text-success">$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td class="txt-oflo">Real Homes WP Theme</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">EXTENDED</span></td>
-                                                <td class="txt-oflo">April 19, 2017</td>
-                                                <td><span class="text-info">$1250</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td class="txt-oflo">Ample Admin</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">EXTENDED</span></td>
-                                                <td class="txt-oflo">April 19, 2017</td>
-                                                <td><span class="text-info">$1250</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td class="txt-oflo">Medical Pro WP Theme</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-danger label-rouded">TAX</span></td>
-                                                <td class="txt-oflo">April 20, 2017</td>
-                                                <td><span class="text-danger">-$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td class="txt-oflo">Hosting press html</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-warning label-rouded">SALE</span></td>
-                                                <td class="txt-oflo">April 21, 2017</td>
-                                                <td><span class="text-success">$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td class="txt-oflo">Digital Agency PSD</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-success label-rouded">SALE</span> </td>
-                                                <td class="txt-oflo">April 23, 2017</td>
-                                                <td><span class="text-danger">-$14</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td class="txt-oflo">Helping Hands WP Theme</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-warning label-rouded">member</span></td>
-                                                <td class="txt-oflo">April 22, 2017</td>
-                                                <td><span class="text-success">$64</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- ============================================================== -->
                 <!-- Recent Comment & Sales Chart Row  -->
                 <!-- ============================================================== -->
@@ -1173,13 +991,9 @@
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.min.js"></script>
-    <!-- This Page JS -->
-    <script src="assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="dist/js/pages/chartist/chartist-plugin-tooltip.js"></script>
-    <!-- Morris Js -->
-    <script src="assets/libs/morris.js/morris.min.js"></script>
-    <script src="assets/libs/raphael/raphael.min.js"></script>
-    <!-- Animated skill bar -->
-    <script src="assets/libs/gaugeJS/dist/gauge.min.js"></script>
-    <script src="dist/js/pages/dashboards/dashboard5.js"></script>
+    <!--This page plugins -->
+    <script src="assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/pages/datatable/datatable-basic.init.js"></script>
+
+
 </html>
