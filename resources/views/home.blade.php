@@ -674,7 +674,7 @@
                 <div class="row">
                     
                     <div class="col-md-12 col-lg-6">
-                        <div class="card">
+                        <div class="invisible">
                             <div class="card-body border-bottom">
                                 
                                     <canvas id="foo" class="gaugejs">guage</canvas>
