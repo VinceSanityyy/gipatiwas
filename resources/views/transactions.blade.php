@@ -651,7 +651,7 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="recipient-name" class="control-label">Amount:
+                                            <label for="recipient-name" class="control-label">Amount:</label>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">₱</span>
