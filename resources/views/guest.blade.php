@@ -552,29 +552,24 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="wphoneNumber2">Phone Number :</label>
-                                                                    <input type="tel" class="form-control" id="wphoneNumber2"> </div>
+                                                                    <label for="wphoneNumber2">Contact No : <span class="danger">*</span></label>
+                                                                    <input type="tel" class="form-control required" id="wcontactNumber2"> </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="wlocation2"> Select City : <span class="danger">*</span> </label>
-                                                                        <select class="custom-select form-control required" id="wlocation2" name="location">
-                                                                            <option value="">Select City</option>
-                                                                            <option value="India">India</option>
-                                                                            <option value="USA">USA</option>
-                                                                            <option value="Dubai">Dubai</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="wdate2">Date of Birth :</label>
-                                                                        <input type="date" class="form-control" id="wdate2"> </div>
-                                                                    </div>
-                                                                </div>
 
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="waddress2">Address :</label>
+                                                                        <textarea class="form-control" id="waddress2"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="wcompanyOrganization2"> Company/Organization :</label>
+                                                                        <input type="text" class="form-control" id="wcompanyOrganization2" name="organization"> </div>
+                                                                    </div>
+                                                                </div>
 
                                                             </section>
 
