@@ -34,3 +34,6 @@ Route::get('/programs', 'ProgramController@index')->name('programs');
 
 //REPORT
 Route::get('/report', 'ReportController@index')->name('report');
+
+//ANCHORS
+Route::get('/anchor', 'AnchorController@index')->name('anchor');

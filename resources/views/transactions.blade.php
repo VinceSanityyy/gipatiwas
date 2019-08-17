@@ -2,23 +2,23 @@
 <html dir="ltr" lang="en">
 
 <head>
- <meta charset="utf-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <!-- Tell the browser to be responsive to screen width -->
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="description" content="">
- <meta name="author" content="">
- <!-- Favicon icon -->
- <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
- <title>Ample admin Template - The Ultimate Multipurpose admin template</title>
- <!-- This page plugin CSS -->
- <link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
- <!-- Custom CSS -->
- <link href="dist/css/style.min.css" rel="stylesheet">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Tell the browser to be responsive to screen width -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Favicon icon -->
+   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+   <title>Ample admin Template - The Ultimate Multipurpose admin template</title>
+   <!-- This page plugin CSS -->
+   <link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+   <!-- Custom CSS -->
+   <link href="dist/css/style.min.css" rel="stylesheet">
 
 
- <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
- <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -62,24 +62,24 @@
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
-                         <!-- dark Logo text -->
-                         <img src="../../assets/images/logos/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="../../assets/images/logos/logo-light-text.png" class="light-logo" alt="homepage" />
-                     </span>
-                 </a>
-                 <!-- ============================================================== -->
-                 <!-- End Logo -->
-                 <!-- ============================================================== -->
-                 <!-- ============================================================== -->
-                 <!-- Toggle which is visible on mobile only -->
-                 <!-- ============================================================== -->
-                 <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
-             </div>
-             <!-- ============================================================== -->
-             <!-- End Logo -->
-             <!-- ============================================================== -->
-             <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                           <!-- dark Logo text -->
+                           <img src="../../assets/images/logos/logo-text.png" alt="homepage" class="dark-logo" />
+                           <!-- Light Logo text -->    
+                           <img src="../../assets/images/logos/logo-light-text.png" class="light-logo" alt="homepage" />
+                       </span>
+                   </a>
+                   <!-- ============================================================== -->
+                   <!-- End Logo -->
+                   <!-- ============================================================== -->
+                   <!-- ============================================================== -->
+                   <!-- Toggle which is visible on mobile only -->
+                   <!-- ============================================================== -->
+                   <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+               </div>
+               <!-- ============================================================== -->
+               <!-- End Logo -->
+               <!-- ============================================================== -->
+               <div class="navbar-collapse collapse" id="navbarSupportedContent">
                 <!-- ============================================================== -->
                 <!-- toggle and nav items -->
                 <!-- ============================================================== -->
@@ -414,86 +414,88 @@
                             </ul>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
-                                <i class="mdi mdi-av-timer"></i>
-                                <span class="hide-menu">Dashboard</span> 
-                                
-                            </a>
+                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
+                                            <i class="mdi mdi-av-timer"></i>
+                                            <span class="hide-menu">Dashboard</span> 
+                                            
+                                        </a>
 
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
-                                <i class="mdi mdi-square-inc-cash"></i>
-                                <span class="hide-menu">Sales</span>
-                            </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
+                                            <i class="mdi mdi-square-inc-cash"></i>
+                                            <span class="hide-menu">Sales</span>
+                                        </a>
 
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="{{ route('transactions') }}" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Transactions </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="{{ route('report') }}" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Reports </span>
-                                    </a>
-                                </li>
-                                
-                            </ul>
+                                        <ul aria-expanded="false" class="collapse  first-level">
+                                            <li class="sidebar-item">
+                                                <a href="{{ route('transactions') }}" class="sidebar-link">
+                                                    <i class="mdi mdi-adjust"></i>
+                                                    <span class="hide-menu"> Transactions </span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-item">
+                                                <a href="{{ route('report') }}" class="sidebar-link">
+                                                    <i class="mdi mdi-adjust"></i>
+                                                    <span class="hide-menu"> Reports </span>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
 
-                            
-                            
-                        </li>
+                                        
+                                        
+                                    </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
-                                <i class="mdi mdi-radio"></i>
-                                <span class="hide-menu">Program Segments</span>
-                            </a>
-                            
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="mdi mdi-clipboard"></i>
-                                <span class="hide-menu">Inventory</span>
-                            </a>
-                            
-                        </li>
+                                    
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                            <i class="mdi mdi-clipboard"></i>
+                                            <span class="hide-menu">Inventory</span>
+                                        </a>
+                                        
+                                    </li>
 
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
-                                <i class="mdi mdi-account-box"></i>
-                                <span class="hide-menu">Guest </span>
-                                
-                            </a>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
+                                            <i class="mdi mdi-account-box"></i>
+                                            <span class="hide-menu">Guest </span>
+                                            
+                                        </a>
 
-                            
-                        </li>
-                        
+                                        
+                                    </li>
 
-                        
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
+                                            <i class="mdi mdi-radio"></i>
+                                            <span class="hide-menu">Program Segments</span>
+                                        </a>
+                                        
+                                    </li>
 
-                        
-                        
-                        
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="{{ route('calendar') }}" aria-expanded="false">
-                                <i class="mdi mdi-calendar-check"></i>
-                                <span class="hide-menu">Calendar of Activities</span>
-                            </a>
-                        </li>
-                        
-                        <div class="devider"></div>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
-                                <i class="mdi mdi-adjust text-info"></i>
-                                <span class="hide-menu">Log Out</span>
-                            </a>
-                        </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('anchor') }}" aria-expanded="false">
+                                            <i class="mdi mdi-account-multiple"></i>
+                                            <span class="hide-menu">Anchors </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="{{ route('calendar') }}" aria-expanded="false">
+                                            <i class="mdi mdi-calendar-check"></i>
+                                            <span class="hide-menu">Calendar of Activities</span>
+                                        </a>
+                                    </li>
+                                    
+                                    <div class="devider"></div>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
+                                            <i class="mdi mdi-adjust text-info"></i>
+                                            <span class="hide-menu">Log Out</span>
+                                        </a>
+                                    </li>
                         
                     </ul>
                 </nav>
@@ -652,174 +654,174 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="recipient-name" class="control-label">Amount:</label>
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1">₱</span>
-                                                    </div>
-                                                    <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1">₱</span>
                                                 </div>
+                                                <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
-                                        </div>
-
-
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label for="customer-name" class="control-label">Mode of Payment:</label>
-
-                                                <div class="btn-group" data-toggle="buttons">
-
-                                                    <label class="btn btn-primary">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="customRadio5">Cash</label>
-                                                        </div>
-                                                    </label>
-                                                    <label class="btn btn-primary">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="customRadio6">Check</label>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                            </div>
-
-
                                         </div>
                                     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-                                </form>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Create</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-
-
-                <!-- order table -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="material-card card">
-                            <div class="card-body">
-                                <h4 class="card-title">Sales Transactions</h4>
-                                <h6 class="card-subtitle"></h6>
-                                <div class="table-responsive">
-                                    <table id="default_order" class="table table-striped border display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Customer Name</th>
-                                                <th>TIN</th>
-                                                <th>Business Style</th>
-                                                <th>Address</th>
-                                                <th>OSCA PWD No.</th>
-                                                <th>Transaction Type</th>
-                                                <th>Amount</th>
-                                                <th>Mode of Payment</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                                <td>$320,800</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Customer Name</th>
-                                                <th>TIN</th>
-                                                <th>Business Style</th>
-                                                <th>Address</th>
-                                                <th>OSCA PWD No.</th>
-                                                <th>Transaction Type</th>
-                                                <th>Amount</th>
-                                                <th>Mode of Payment</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
                                 </div>
-                            </div>
+
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="customer-name" class="control-label">Mode of Payment:</label>
+
+                                            <div class="btn-group" data-toggle="buttons">
+
+                                                <label class="btn btn-primary">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
+                                                        <label class="custom-control-label" for="customRadio5">Cash</label>
+                                                    </div>
+                                                </label>
+                                                <label class="btn btn-primary">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
+                                                        <label class="custom-control-label" for="customRadio6">Check</label>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Create</button>
                         </div>
                     </div>
                 </div>
-                <!-- multi-column ordering -->
-
-
-
-
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
-            <!-- Yearly Sales Charts Row  -->
+            <!-- Start Page Content -->
             <!-- ============================================================== -->
 
 
-            <!-- ============================================================== -->
-            <!-- Recent Comment & Sales Chart Row  -->
-            <!-- ============================================================== -->
+            <!-- order table -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="material-card card">
+                        <div class="card-body">
+                            <h4 class="card-title">Sales Transactions</h4>
+                            <h6 class="card-subtitle"></h6>
+                            <div class="table-responsive">
+                                <table id="default_order" class="table table-striped border display" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Customer Name</th>
+                                            <th>TIN</th>
+                                            <th>Business Style</th>
+                                            <th>Address</th>
+                                            <th>OSCA PWD No.</th>
+                                            <th>Transaction Type</th>
+                                            <th>Amount</th>
+                                            <th>Mode of Payment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>2011/04/25</td>
+                                            <td>$320,800</td>
+                                            <td>$320,800</td>
+                                            <td>$320,800</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Customer Name</th>
+                                            <th>TIN</th>
+                                            <th>Business Style</th>
+                                            <th>Address</th>
+                                            <th>OSCA PWD No.</th>
+                                            <th>Transaction Type</th>
+                                            <th>Amount</th>
+                                            <th>Mode of Payment</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- multi-column ordering -->
+
+
+
 
             <!-- ============================================================== -->
-            <!-- Profile Card & Email App Row  -->
+            <!-- End PAge Content -->
             <!-- ============================================================== -->
-
             <!-- ============================================================== -->
-            <!-- Earnings & Feed Row  -->
+            <!-- Right sidebar -->
             <!-- ============================================================== -->
-
+            <!-- .right-sidebar -->
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Container fluid  -->
+        <!-- Yearly Sales Charts Row  -->
         <!-- ============================================================== -->
+
+
         <!-- ============================================================== -->
-        <!-- footer -->
+        <!-- Recent Comment & Sales Chart Row  -->
         <!-- ============================================================== -->
-        <footer class="footer text-center">
-            All Rights Reserved by Ample admin. Designed and Developed by
-            <a href="https://wrappixel.com">WrapPixel</a>.
-        </footer>
+
         <!-- ============================================================== -->
-        <!-- End footer -->
+        <!-- Profile Card & Email App Row  -->
         <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- Earnings & Feed Row  -->
+        <!-- ============================================================== -->
+
     </div>
     <!-- ============================================================== -->
-    <!-- End Page wrapper  -->
+    <!-- End Container fluid  -->
     <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer text-center">
+        All Rights Reserved by Ample admin. Designed and Developed by
+        <a href="https://wrappixel.com">WrapPixel</a>.
+    </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Page wrapper  -->
+<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Wrapper -->

@@ -406,86 +406,88 @@
                             </ul>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
-                                <i class="mdi mdi-av-timer"></i>
-                                <span class="hide-menu">Dashboard</span> 
-                                
-                            </a>
+                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
+                                            <i class="mdi mdi-av-timer"></i>
+                                            <span class="hide-menu">Dashboard</span> 
+                                            
+                                        </a>
 
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="mdi mdi-square-inc-cash"></i>
-                                <span class="hide-menu">Sales</span>
-                            </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
+                                            <i class="mdi mdi-square-inc-cash"></i>
+                                            <span class="hide-menu">Sales</span>
+                                        </a>
 
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="{{ route('transactions') }}" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Transactions </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="{{ route('report') }}" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Reports </span>
-                                    </a>
-                                </li>
-                                
-                            </ul>
+                                        <ul aria-expanded="false" class="collapse  first-level">
+                                            <li class="sidebar-item">
+                                                <a href="{{ route('transactions') }}" class="sidebar-link">
+                                                    <i class="mdi mdi-adjust"></i>
+                                                    <span class="hide-menu"> Transactions </span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-item">
+                                                <a href="{{ route('report') }}" class="sidebar-link">
+                                                    <i class="mdi mdi-adjust"></i>
+                                                    <span class="hide-menu"> Reports </span>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
 
-                            
-                            
-                        </li>
+                                        
+                                        
+                                    </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
-                                <i class="mdi mdi-radio"></i>
-                                <span class="hide-menu">Program Segments</span>
-                            </a>
-                            
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="mdi mdi-clipboard"></i>
-                                <span class="hide-menu">Inventory</span>
-                            </a>
-                            
-                        </li>
+                                    
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                            <i class="mdi mdi-clipboard"></i>
+                                            <span class="hide-menu">Inventory</span>
+                                        </a>
+                                        
+                                    </li>
 
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
-                                <i class="mdi mdi-account-box"></i>
-                                <span class="hide-menu">Guest </span>
-                                
-                            </a>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
+                                            <i class="mdi mdi-account-box"></i>
+                                            <span class="hide-menu">Guest </span>
+                                            
+                                        </a>
 
-                            
-                        </li>
-                        
+                                        
+                                    </li>
 
-                        
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
+                                            <i class="mdi mdi-radio"></i>
+                                            <span class="hide-menu">Program Segments</span>
+                                        </a>
+                                        
+                                    </li>
 
-                        
-                        
-                        
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="{{ route('calendar') }}" aria-expanded="false">
-                                <i class="mdi mdi-calendar-check"></i>
-                                <span class="hide-menu">Calendar of Activities</span>
-                            </a>
-                        </li>
-                        
-                        <div class="devider"></div>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
-                                <i class="mdi mdi-adjust text-info"></i>
-                                <span class="hide-menu">Log Out</span>
-                            </a>
-                        </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('anchor') }}" aria-expanded="false">
+                                            <i class="mdi mdi-account-multiple"></i>
+                                            <span class="hide-menu">Anchors </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="{{ route('calendar') }}" aria-expanded="false">
+                                            <i class="mdi mdi-calendar-check"></i>
+                                            <span class="hide-menu">Calendar of Activities</span>
+                                        </a>
+                                    </li>
+                                    
+                                    <div class="devider"></div>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
+                                            <i class="mdi mdi-adjust text-info"></i>
+                                            <span class="hide-menu">Log Out</span>
+                                        </a>
+                                    </li>
                         
                     </ul>
                 </nav>
@@ -673,6 +675,17 @@
                 </div>
                 <div class="modal-body">
                     <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="control-label">Choose Event Type</label>
+                                <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                    <option value="success">Select...</option>
+                                    <option value="danger">Agri-ment</option>
+                                    <option value="info">Coverages</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="control-label">Category Name</label>
