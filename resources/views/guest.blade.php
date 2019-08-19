@@ -18,6 +18,8 @@
         <link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="dist/css/style.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -443,14 +445,30 @@
 
 
                             <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
-                                    <i class="mdi mdi-account-box"></i>
-                                    <span class="hide-menu">Guest </span>
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
+                                <i class="mdi mdi-account-box"></i>
+                                <span class="hide-menu">Guest</span>
+                            </a>
 
-                                </a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="{{ route('guest') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Create Guest Appointment </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Appointment List </span>
+                                    </a>
+                                </li>
+
+                            </ul>
 
 
-                            </li>
+
+                        </li>
 
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
@@ -615,9 +633,7 @@
                                                                 <label for="appointment_date"> Choose Date : </label>
 
                                                                 <div class="input-group">
-                                                                    <input type="text" class="form-control" id="datepicker-autoclose" placeholder="mm/dd/yyyy" style="
-                                                                    margin-bottom: 20px;
-                                                                    ">
+                                                                    <input type="text" class="form-control" id="datepicker-autoclose" placeholder="mm/dd/yyyy">
 
                                                                     <div class="input-group-append">
                                                                         <span class="input-group-text"><i class="icon-calender"></i></span>
@@ -1206,6 +1222,24 @@
             }
         })
     </script>
+
+    <script src="assets/libs/moment/moment.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        // Date Picker
+        jQuery('.mydatepicker, #datepicker, .input-group.date').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        jQuery('#date-range').datepicker({
+            toggleActive: true
+        });
+        jQuery('#datepicker-inline').datepicker({
+            todayHighlight: true
+        });
+    </script>
+
 </body>
 
 </html>

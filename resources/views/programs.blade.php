@@ -458,14 +458,30 @@
 
 
                                     <li class="sidebar-item">
-                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
-                                            <i class="mdi mdi-account-box"></i>
-                                            <span class="hide-menu">Guest </span>
-                                            
-                                        </a>
+                                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
+                                                <i class="mdi mdi-account-box"></i>
+                                                <span class="hide-menu">Guest </span>
+                                                
+                                            </a>
 
-                                        
-                                    </li>
+                                            <ul aria-expanded="false" class="collapse  first-level">
+                                                <li class="sidebar-item">
+                                                    <a href="{{ route('guest') }} class="sidebar-link">
+                                                        <i class="mdi mdi-adjust"></i>
+                                                        <span class="hide-menu"> Create Guest Appointment </span>
+                                                    </a>
+                                                </li>
+                                                <li class="sidebar-item">
+                                                    <a href="{{ route('report') }}" class="sidebar-link">
+                                                        <i class="mdi mdi-adjust"></i>
+                                                        <span class="hide-menu"> Appointment List </span>
+                                                    </a>
+                                                </li>
+                                                
+                                            </ul>
+
+                                            
+                                        </li>
 
                                     <li class="sidebar-item">
                                         <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">

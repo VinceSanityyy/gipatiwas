@@ -458,13 +458,29 @@
 
 
                                         <li class="sidebar-item">
-                                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
+                                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
                                                 <i class="mdi mdi-account-box"></i>
-                                                <span class="hide-menu">Guest </span>
-                                                
+                                                <span class="hide-menu">Guest</span>
                                             </a>
 
-                                            
+                                            <ul aria-expanded="false" class="collapse  first-level">
+                                                <li class="sidebar-item">
+                                                    <a href="{{ route('guest') }}" class="sidebar-link">
+                                                        <i class="mdi mdi-adjust"></i>
+                                                        <span class="hide-menu"> Create Guest Appointment </span>
+                                                    </a>
+                                                </li>
+                                                <li class="sidebar-item">
+                                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                                        <i class="mdi mdi-adjust"></i>
+                                                        <span class="hide-menu"> Appointment List </span>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+
+
                                         </li>
 
                                         <li class="sidebar-item">
@@ -472,7 +488,7 @@
                                                 <i class="mdi mdi-radio"></i>
                                                 <span class="hide-menu">Program Segments</span>
                                             </a>
-                                            
+
                                         </li>
 
                                         <li class="sidebar-item">
@@ -488,7 +504,7 @@
                                                 <span class="hide-menu">Calendar of Activities</span>
                                             </a>
                                         </li>
-                                        
+
                                         <div class="devider"></div>
                                         <li class="sidebar-item">
                                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
@@ -496,7 +512,7 @@
                                                 <span class="hide-menu">Log Out</span>
                                             </a>
                                         </li>
-                                        
+
                                     </ul>
                                 </nav>
                                 <!-- End Sidebar navigation -->
@@ -523,7 +539,7 @@
                                         <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                                             <ol class="breadcrumb mb-0 justify-content-end p-0">
                                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                                
+
                                                 <li class="breadcrumb-item active" aria-current="page">Program Segments</li>
                                             </ol>
                                         </nav>

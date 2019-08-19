@@ -2,30 +2,31 @@
 <html dir="ltr" lang="en">
 
 <head>
- <meta charset="utf-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <!-- Tell the browser to be responsive to screen width -->
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="description" content="">
- <meta name="author" content="">
- <!-- Favicon icon -->
- <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
- <title>Ample admin Template - The Ultimate Multipurpose admin template</title>
- <!-- This page plugin CSS -->
- <link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
- <!-- Custom CSS -->
- <link href="dist/css/style.min.css" rel="stylesheet">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Tell the browser to be responsive to screen width -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Favicon icon -->
+   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+   <title>Ample admin Template - The Ultimate Multipurpose admin template</title>
+   <!-- This page plugin CSS -->
+   <link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+   <!-- Custom CSS -->
+   <link href="dist/css/style.min.css" rel="stylesheet">
 
 
- <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
- <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick/slick-theme.css"/>
 
 
-<![endif]-->
 </head>
 
 <body>
@@ -62,24 +63,24 @@
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
-                         <!-- dark Logo text -->
-                         <img src="../../assets/images/logos/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="../../assets/images/logos/logo-light-text.png" class="light-logo" alt="homepage" />
-                     </span>
-                 </a>
-                 <!-- ============================================================== -->
-                 <!-- End Logo -->
-                 <!-- ============================================================== -->
-                 <!-- ============================================================== -->
-                 <!-- Toggle which is visible on mobile only -->
-                 <!-- ============================================================== -->
-                 <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
-             </div>
-             <!-- ============================================================== -->
-             <!-- End Logo -->
-             <!-- ============================================================== -->
-             <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                           <!-- dark Logo text -->
+                           <img src="../../assets/images/logos/logo-text.png" alt="homepage" class="dark-logo" />
+                           <!-- Light Logo text -->    
+                           <img src="../../assets/images/logos/logo-light-text.png" class="light-logo" alt="homepage" />
+                       </span>
+                   </a>
+                   <!-- ============================================================== -->
+                   <!-- End Logo -->
+                   <!-- ============================================================== -->
+                   <!-- ============================================================== -->
+                   <!-- Toggle which is visible on mobile only -->
+                   <!-- ============================================================== -->
+                   <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+               </div>
+               <!-- ============================================================== -->
+               <!-- End Logo -->
+               <!-- ============================================================== -->
+               <div class="navbar-collapse collapse" id="navbarSupportedContent">
                 <!-- ============================================================== -->
                 <!-- toggle and nav items -->
                 <!-- ============================================================== -->
@@ -535,15 +536,15 @@
             <div class="page-breadcrumb border-bottom">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-xs-12 align-self-center">
-                        <h5 class="font-medium text-uppercase mb-0">Transactions</h5>
+                        <h5 class="font-medium text-uppercase mb-0">Appointments</h5>
                     </div>
                     <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
 
                         <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                             <ol class="breadcrumb mb-0 justify-content-end p-0">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                
-                                <li class="breadcrumb-item active" aria-current="page">Programs Segments</li>
+                                <li class="breadcrumb-item"><a href="index.html">Guest Management</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Appointment List</li>
                             </ol>
                         </nav>
                     </div>
@@ -557,286 +558,68 @@
             <!-- ============================================================== -->
             <div class="page-content container-fluid">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style=" margin-bottom: 10px;"><i class="fa fa-plus"></i> New Transaction</button>
-
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
-                    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="exampleModalLabel1">Transaction Details:</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            
-                            <div class="modal-body">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label for="customer-name" class="control-label">Customer Name:</label>
-                                                <input type="text" class="form-control" id="customer-name1">
-                                            </div>
-
-                                            
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="control-label">TIN:</label>
-                                                <input type="text" class="form-control" id="recipient-name1">
-                                            </div>
-                                        </div>
-
-                                        
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <div class="form-group">
-                                                <label for="customer-name" class="control-label">Address:</label>
-                                                <input type="text" class="form-control" id="customer-name1">
-                                            </div>
-
-                                            
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label for="customer-name" class="control-label">Business Style:</label>
-                                                <input type="text" class="form-control" id="customer-name1">
-                                            </div>
-
-                                            
-                                        </div>
-
-                                        <div class="col-md-4" style="
-                                        margin-top: 7px;
-                                        ">
-                                        <div class="form-group">
-                                            <label for="recipient-name" class="control-label">OSCA/PWD No.:
-                                                <input type="text" class="form-control" id="recipient-name1">
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label for="customer-name" class="control-label">Transaction Type:</label>
-                                                <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
-
-                                                    <option>Select</option>
-                                                    <option>Program Sponsorship</option>
-                                                    <option>Program Advertisement</option>
-                                                </select>
-                                            </div>
-
-
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="control-label">Time:</label>
-
-                                                <div class="row" style="
-                                                margin-left: 0px;
-                                                ">
-                                                <div class="form-group">
-                                                    <input type="number"  min="00" max="59"class="form-control" value="00" style="
-                                                    width: 61px;
-                                                    ">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <input type="number" min="00" max="59"class="form-control" value="00" style="
-                                                    width: 61px;
-                                                    ">
-                                                </div>
-
-                                            </div>
-                                            <h6 class="card-subtitle" style="
-                                            margin-left: 3px;
-                                            "> minute(s):second(s)</h6>  
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-                                <div class="row">
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="recipient-name" class="control-label">Amount:</label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1">₱</span>
-                                                </div>
-                                                <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label for="customer-name" class="control-label">Mode of Payment:</label>
-
-                                            <div class="btn-group" data-toggle="buttons">
-
-                                                <label class="btn btn-primary">
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
-                                                        <label class="custom-control-label" for="customRadio5">Cash</label>
-                                                    </div>
-                                                </label>
-                                                <label class="btn btn-primary">
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
-                                                        <label class="custom-control-label" for="customRadio6">Check</label>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
 
 
 
+                <div class="row">
 
 
-
-
-
-
-
-
-
-
-                            </form>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Create</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- Start Page Content -->
-            <!-- ============================================================== -->
-
-
-            <!-- order table -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="material-card card">
+                    <div class="col-lg-9">
+                        <div class="material-card card" style="
+                        height: 550.24px;
+                        ">
                         <div class="card-body">
-                            <h4 class="card-title">Sales Transactions</h4>
+                            <h4 class="card-title">Appointments</h4>
                             <h6 class="card-subtitle"></h6>
-                            <div class="table-responsive">
-                                <table id="default_order" class="table table-striped border display" style="width:100%">
-                                    <thead>
-                                        <tr>
-                                            <th>Customer Name</th>
-                                            <th>TIN</th>
-                                            <th>Business Style</th>
-                                            <th>Address</th>
-                                            <th>OSCA PWD No.</th>
-                                            <th>Transaction Type</th>
-                                            <th>Amount</th>
-                                            <th>Mode of Payment</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Customer Name</th>
-                                            <th>TIN</th>
-                                            <th>Business Style</th>
-                                            <th>Address</th>
-                                            <th>OSCA PWD No.</th>
-                                            <th>Transaction Type</th>
-                                            <th>Amount</th>
-                                            <th>Mode of Payment</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- multi-column ordering -->
+
+                            <div class="your-class">
+                              <div>your content</div>
+                              <div>your content</div>
+                              <div>your content</div>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- multi-column ordering -->
 
 
 
 
-            <!-- ============================================================== -->
-            <!-- End PAge Content -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Right sidebar -->
-            <!-- ============================================================== -->
-            <!-- .right-sidebar -->
-            <!-- ============================================================== -->
-            <!-- End Right sidebar -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- Yearly Sales Charts Row  -->
-        <!-- ============================================================== -->
+
+      </div>
+      <!-- ============================================================== -->
+      <!-- Yearly Sales Charts Row  -->
+      <!-- ============================================================== -->
 
 
-        <!-- ============================================================== -->
-        <!-- Recent Comment & Sales Chart Row  -->
-        <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Recent Comment & Sales Chart Row  -->
+      <!-- ============================================================== -->
 
-        <!-- ============================================================== -->
-        <!-- Profile Card & Email App Row  -->
-        <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Profile Card & Email App Row  -->
+      <!-- ============================================================== -->
 
-        <!-- ============================================================== -->
-        <!-- Earnings & Feed Row  -->
-        <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Earnings & Feed Row  -->
+      <!-- ============================================================== -->
 
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <footer class="footer text-center">
-        All Rights Reserved by Ample admin. Designed and Developed by
-        <a href="https://wrappixel.com">WrapPixel</a>.
-    </footer>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Container fluid  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- footer -->
+  <!-- ============================================================== -->
+  <footer class="footer text-center">
+    All Rights Reserved by Ample admin. Designed and Developed by
+    <a href="https://wrappixel.com">WrapPixel</a>.
+</footer>
+<!-- ============================================================== -->
+<!-- End footer -->
+<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Page wrapper  -->
@@ -1200,5 +983,14 @@
         <script src="assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="dist/js/pages/datatable/datatable-basic.init.js"></script>
 
+        <script type="text/javascript" src="slick/slick/slick.min.js"></script>
+
+        <script type="text/javascript">
+    $(document).ready(function(){
+      $('.your-class').slick({
+        setting-name: setting-value
+      });
+    });
+  </script>
 
         </html>

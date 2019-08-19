@@ -68,24 +68,24 @@
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
-                           <!-- dark Logo text -->
-                           <img src="assets/images/logos/logo-text.png" alt="homepage" class="dark-logo" />
-                           <!-- Light Logo text -->    
-                           <img src="assets/images/logos/logo-light-text.png" class="light-logo" alt="homepage" />
-                       </span>
-                   </a>
-                   <!-- ============================================================== -->
-                   <!-- End Logo -->
-                   <!-- ============================================================== -->
-                   <!-- ============================================================== -->
-                   <!-- Toggle which is visible on mobile only -->
-                   <!-- ============================================================== -->
-                   <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
-               </div>
-               <!-- ============================================================== -->
-               <!-- End Logo -->
-               <!-- ============================================================== -->
-               <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                         <!-- dark Logo text -->
+                         <img src="assets/images/logos/logo-text.png" alt="homepage" class="dark-logo" />
+                         <!-- Light Logo text -->    
+                         <img src="assets/images/logos/logo-light-text.png" class="light-logo" alt="homepage" />
+                     </span>
+                 </a>
+                 <!-- ============================================================== -->
+                 <!-- End Logo -->
+                 <!-- ============================================================== -->
+                 <!-- ============================================================== -->
+                 <!-- Toggle which is visible on mobile only -->
+                 <!-- ============================================================== -->
+                 <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+             </div>
+             <!-- ============================================================== -->
+             <!-- End Logo -->
+             <!-- ============================================================== -->
+             <div class="navbar-collapse collapse" id="navbarSupportedContent">
                 <!-- ============================================================== -->
                 <!-- toggle and nav items -->
                 <!-- ============================================================== -->
@@ -412,88 +412,105 @@
                             </ul>
                         </li>
                         <li class="sidebar-item">
-                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
-                                            <i class="mdi mdi-av-timer"></i>
-                                            <span class="hide-menu">Dashboard</span> 
-                                            
-                                        </a>
+                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
+                                <i class="mdi mdi-av-timer"></i>
+                                <span class="hide-menu">Dashboard</span> 
 
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
-                                            <i class="mdi mdi-square-inc-cash"></i>
-                                            <span class="hide-menu">Sales</span>
-                                        </a>
+                            </a>
 
-                                        <ul aria-expanded="false" class="collapse  first-level">
-                                            <li class="sidebar-item">
-                                                <a href="{{ route('transactions') }}" class="sidebar-link">
-                                                    <i class="mdi mdi-adjust"></i>
-                                                    <span class="hide-menu"> Transactions </span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a href="{{ route('report') }}" class="sidebar-link">
-                                                    <i class="mdi mdi-adjust"></i>
-                                                    <span class="hide-menu"> Reports </span>
-                                                </a>
-                                            </li>
-                                            
-                                        </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
+                                <i class="mdi mdi-square-inc-cash"></i>
+                                <span class="hide-menu">Sales</span>
+                            </a>
 
-                                        
-                                        
-                                    </li>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="{{ route('transactions') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Transactions </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('report') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Reports </span>
+                                    </a>
+                                </li>
 
-                                    
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                            <i class="mdi mdi-clipboard"></i>
-                                            <span class="hide-menu">Inventory</span>
-                                        </a>
-                                        
-                                    </li>
+                            </ul>
 
 
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
-                                            <i class="mdi mdi-account-box"></i>
-                                            <span class="hide-menu">Guest </span>
-                                            
-                                        </a>
 
-                                        
-                                    </li>
+                        </li>
 
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
-                                            <i class="mdi mdi-radio"></i>
-                                            <span class="hide-menu">Program Segments</span>
-                                        </a>
-                                        
-                                    </li>
 
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link waves-effect waves-dark" href="{{ route('anchor') }}" aria-expanded="false">
-                                            <i class="mdi mdi-account-multiple"></i>
-                                            <span class="hide-menu">Anchors </span>
-                                        </a>
-                                    </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                <i class="mdi mdi-clipboard"></i>
+                                <span class="hide-menu">Inventory</span>
+                            </a>
 
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="{{ route('calendar') }}" aria-expanded="false">
-                                            <i class="mdi mdi-calendar-check"></i>
-                                            <span class="hide-menu">Calendar of Activities</span>
-                                        </a>
-                                    </li>
-                                    
-                                    <div class="devider"></div>
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
-                                            <i class="mdi mdi-adjust text-info"></i>
-                                            <span class="hide-menu">Log Out</span>
-                                        </a>
-                                    </li>
+                        </li>
+
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
+                                <i class="mdi mdi-account-box"></i>
+                                <span class="hide-menu">Guest</span>
+                            </a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="{{ route('guest') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Create Guest Appointment </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Appointment List </span>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+
+
+                        </li>
+
+                        
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
+                                <i class="mdi mdi-radio"></i>
+                                <span class="hide-menu">Program Segments</span>
+                            </a>
+
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('anchor') }}" aria-expanded="false">
+                                <i class="mdi mdi-account-multiple"></i>
+                                <span class="hide-menu">Anchors </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="{{ route('calendar') }}" aria-expanded="false">
+                                <i class="mdi mdi-calendar-check"></i>
+                                <span class="hide-menu">Calendar of Activities</span>
+                            </a>
+                        </li>
+
+                        <div class="devider"></div>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
+                                <i class="mdi mdi-adjust text-info"></i>
+                                <span class="hide-menu">Log Out</span>
+                            </a>
+                        </li>
                         
                     </ul>
                 </nav>
@@ -644,26 +661,26 @@
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
-                                                                   <th>Customer Name</th>
-                                                                   <th>TIN</th>
-                                                                   <th>Business Style</th>
-                                                                   <th>Address</th>
-                                                                   <th>OSCA PWD No.</th>
-                                                                   <th>Transaction Type</th>
-                                                                   <th>Amount</th>
-                                                                   <th>Mode of Payment</th>
-                                                               </tr>
-                                                           </tfoot>
-                                                       </table>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </form>
-                           </div>
+                                                                 <th>Customer Name</th>
+                                                                 <th>TIN</th>
+                                                                 <th>Business Style</th>
+                                                                 <th>Address</th>
+                                                                 <th>OSCA PWD No.</th>
+                                                                 <th>Transaction Type</th>
+                                                                 <th>Amount</th>
+                                                                 <th>Mode of Payment</th>
+                                                             </tr>
+                                                         </tfoot>
+                                                     </table>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </form>
+                         </div>
 
-                           <div class="modal-footer">
+                         <div class="modal-footer">
                             <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
                             <!--<button type="button" class="btn btn-primary">Print</button>-->
                         </div>
