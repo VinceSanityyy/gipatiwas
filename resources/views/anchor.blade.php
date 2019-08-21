@@ -613,7 +613,7 @@
                                                         <div class="col-md-5">
                                                             <div class="form-group">
                                                                 <label for="customer-name" class="control-label">Birthdate:</label>
-                                                                <input type="email" class="form-control" id="customer-name1">
+                                                                <input type="date" class="form-control" value="2018-05-13">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -622,7 +622,7 @@
                                                         <div class="col-md-5">
                                                             <div class="form-group">
                                                                 <label for="customer-name" class="control-label">Sex:</label>
-                                                                <input type="email" class="form-control" id="customer-name1">
+                                                                <input type="text" class="form-control" id="customer-name1">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -711,6 +711,15 @@
                                                                                         </div>
 
                                                                                         <div class="row">
+                                                                                            <div class="col-md-5">
+                                                                                                <div class="form-group">
+                                                                                                    <label for="customer-name" class="control-label">Email:</label>
+                                                                                                    <input type="email" class="form-control" id="customer-name1">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="row">
                                                                                             <div class="col-md-8">
                                                                                                 <div class="form-group">
                                                                                                     <label for="customer-name" class="control-label">Contact No.:</label>
@@ -723,31 +732,24 @@
                                                                                         </div>
 
                                                                                         <div class="row">
-                                                                                            <div class="col-md-4">
+                                                                                            <div class="col-md-8">
                                                                                                 <div class="form-group">
 
 
-                                                                                                    <label for="address2" class="control-label">Address:</label>
-                                                                                                    <textarea class="form-control" id="address2"></textarea>
+                                                                                                    <label for="address2" class="control-label">Birthdate:</label>
+                                                                                                   <input type="date" class="form-control" value="2018-05-13">
 
 
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-5">
-                                                                                                <div class="form-group">
-                                                                                                    <label for="customer-name" class="control-label">Email:</label>
-                                                                                                    <input type="email" class="form-control" id="customer-name1">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
+                                                                                        
 
                                                                                         <div class="row">
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
-                                                                                                    <label for="customer-name" class="control-label">Company/Organization:</label>
+                                                                                                    <label for="customer-name" class="control-label">Sex:</label>
                                                                                                     <input type="text" class="form-control" id="customer-name1">
                                                                                                 </div>
 

@@ -719,6 +719,7 @@
                                                                 <th>Program Segment</th>
                                                                 <th>Date</th>
                                                                 <th>Time</th>
+                                                                <th>Status</th>
                                                                 <th>Manage</th>
                                                             </tr>
                                                         </thead>
@@ -727,6 +728,7 @@
                                                                 <td>Henry Sy</td>
                                                                 <td>Ambit DXGN</td>
                                                                 <td>Dec 25, 2018</td>
+                                                                <td>Active</td>
                                                                 <td>10:00-11:00PM</td>
                                                                 
                                                                 <td>
@@ -835,6 +837,7 @@
                                                                     <th>Program Segment</th>
                                                                     <th>Date</th>
                                                                     <th>Time</th>
+                                                                    <th>Status</th>
                                                                     <th>Manage</th>
                                                                 </tr>
                                                             </tfoot>
