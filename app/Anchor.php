@@ -9,6 +9,6 @@ class Anchor extends Model
     protected $primaryKey = 'anchor_id';
 
     protected $fillable = [
-    	'anchor_fname', 'anchor_lname', 'anchor_email', 'anchor_cnumber', 'anchor_sex', 'anchor_status'
+    	'anchor_fname', 'anchor_lname', 'anchor_email', 'anchor_cnumber', 'anchor_bdate', 'anchor_sex', 'anchor_status'
     ];
 }

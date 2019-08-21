@@ -19,6 +19,7 @@ class CreateAnchorsTable extends Migration
             $table->string('anchor_lname', '30');
             $table->string('anchor_email', '50')->unique();
             $table->string('anchor_cnumber', '11');
+            $table->date('anchor_bdate', '6');
             $table->string('anchor_sex');
             $table->string('anchor_status')->default(1);
 
