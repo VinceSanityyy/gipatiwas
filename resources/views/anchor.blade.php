@@ -667,17 +667,31 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <td>Tiger</td>
-                                                                <td>Nixon</td>
-                                                                <td>tiger@gmail.com</td>
-                                                                <td>77879879879879</td>
-                                                                <td>2011/04/25</td>
-                                                                <td>Male</td>
-                                                                <td>Active</td>
-                                                                <td>
-
-                                                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#anchorModal2" data-whatever="@mdo">  View</button>
+                                                            @foreach ($anchors as $anchors)
+                                                                <tr>
+                                                                    <td>
+                                                                        {{$anchors->anchor_fname}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{$anchors->anchor_lname}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{$anchors->anchor_email}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{$anchors->anchor_cnumber}}
+                                                                    </td>
+                                                                    <td>
+                                                                        N/A
+                                                                    </td>
+                                                                    <td>
+                                                                        {{$anchors->anchor_sex}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{$anchors->anchor_status}}
+                                                                    </td>
+                                                                    <td>
+                                                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#anchorModal2" data-whatever="@mdo">  View</button>
                                                                     <button type="button" class="btn btn-danger">  Delete</button>
 
                                                                     <div class="modal fade" id="anchorModal2" tabindex="-1" role="dialog" aria-labelledby="anchorModalLabel1">
@@ -711,15 +725,6 @@
                                                                                         </div>
 
                                                                                         <div class="row">
-                                                                                            <div class="col-md-5">
-                                                                                                <div class="form-group">
-                                                                                                    <label for="customer-name" class="control-label">Email:</label>
-                                                                                                    <input type="email" class="form-control" id="customer-name1">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="row">
                                                                                             <div class="col-md-8">
                                                                                                 <div class="form-group">
                                                                                                     <label for="customer-name" class="control-label">Contact No.:</label>
@@ -732,24 +737,31 @@
                                                                                         </div>
 
                                                                                         <div class="row">
-                                                                                            <div class="col-md-8">
+                                                                                            <div class="col-md-4">
                                                                                                 <div class="form-group">
 
 
-                                                                                                    <label for="address2" class="control-label">Birthdate:</label>
-                                                                                                    <input type="date" class="form-control" value="2018-05-13">
+                                                                                                    <label for="address2" class="control-label">Address:</label>
+                                                                                                    <textarea class="form-control" id="address2"></textarea>
 
 
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-5">
+                                                                                                <div class="form-group">
+                                                                                                    <label for="customer-name" class="control-label">Email:</label>
+                                                                                                    <input type="email" class="form-control" id="customer-name1">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
 
                                                                                         <div class="row">
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
-                                                                                                    <label for="customer-name" class="control-label">Sex:</label>
+                                                                                                    <label for="customer-name" class="control-label">Company/Organization:</label>
                                                                                                     <input type="text" class="form-control" id="customer-name1">
                                                                                                 </div>
 
@@ -757,28 +769,21 @@
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-5">
-                                                                                                <div class="form-group">
-                                                                                                    <label for="exampleFormControlSelect1">Status:</label>
-                                                                                                    <select class="form-control" id="exampleFormControlSelect1">
-                                                                                                        <option>Active</option>
-                                                                                                        <option>Inactive</option>
-                                                                                                    </select>
-                                                                                                </div>    
-                                                                                            </div>
-                                                                                        </div>    
+                                                                                    </form>
 
-                                                                                            <div class="modal-footer">
-                                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                                                <button type="button" class="btn btn-info">Edit</button>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>    
 
-                                                                            </td>
-                                                                        </tr>
+                                                                                </div>
+
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                                    <button type="button" class="btn btn-info">Edit</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>    
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
 
                                                                     </tbody>
                                                                     <tfoot>
