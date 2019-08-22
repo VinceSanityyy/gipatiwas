@@ -708,13 +708,36 @@
                                                                     </td>
                                                                     <td>
                                                                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#anchorModal{{$anchors->anchor_id}}" data-whatever="{{$anchors->anchor_id}}">  View</button>
-                                                                    <button type="button" class="btn btn-danger">  Delete</button>
+                                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#anchorModalDel{{$anchors->anchor_id}}" data-whatever="{{$anchors->anchor_id}}">  Delete</button>
+
+                                                                    <div class="modal fade" id="anchorModalDel{{$anchors->anchor_id}}" tabindex="-1" role="dialog">
+                                                                        <div class="modal-dialog modal modal-dialog-centered">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h4 class="modal-title" id="anchorModalDelLabel{{$anchors->anchor_id}}">Delete Anchor:</h4>
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                </div>
+
+                                                                                <div class="modal-body">
+                                                                                    <form method="POST" action="{{ route('anchor.destroy', $anchors->anchor_id) }}">
+                                                                                        @method('DELETE')
+                                                                                        @csrf
+
+                                                                                        <div>Are you sure you want to delete this anchor? This action cannot be undone.</div>
+
+                                                                                        <input type="submit" class="btn btn-danger" value="DELETE">
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
 
                                                                     <div class="modal fade" id="anchorModal{{$anchors->anchor_id}}" tabindex="-1" role="dialog" aria-labelledby="anchorModalLabel{{$anchors->anchor_id}}">
                                                                         <div class="modal-dialog modal modal-dialog-centered" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
-                                                                                    <h4 class="modal-title" id="anchorModalLabel1">Anchor Details:</h4>
+                                                                                    <h4 class="modal-title" id="anchorModalLabel{{$anchors->anchor_id}}">Anchor Details:</h4>
                                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                                                 </div>
 

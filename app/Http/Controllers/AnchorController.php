@@ -162,5 +162,10 @@ class AnchorController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('anchors')
+        ->where('anchor_id', $id)
+        ->delete();
+
+        return redirect('anchor')->with('success', 'Anchor deleted!');
     }
 }
