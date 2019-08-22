@@ -567,12 +567,13 @@
                                             </div>
 
                                             <div class="modal-body">
-                                                <form>
+                                                <form method="post" action="{{ route('anchor.store') }}">
+                                                    @csrf
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <label for="customer-name" class="control-label">First Name:</label>
-                                                                <input type="text" class="form-control" id="customer-name1">
+                                                                <label for="anchor-fname" class="control-label">First Name:</label>
+                                                                <input type="text" class="form-control" name="anchor_fname">
                                                             </div>
 
 
@@ -580,8 +581,8 @@
 
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <label for="recipient-name" class="control-label">Last Name:</label>
-                                                                <input type="text" class="form-control" id="recipient-name1">
+                                                                <label for="anchor-lname" class="control-label">Last Name:</label>
+                                                                <input type="text" class="form-control" name="anchor_lname">
                                                             </div>
                                                         </div>
 
@@ -591,8 +592,8 @@
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <label for="customer-name" class="control-label">Email:</label>
-                                                                <input type="email" class="form-control" id="customer-name1">
+                                                                <label for="anchor-email" class="control-label">Email:</label>
+                                                                <input type="email" class="form-control" name="anchor_email">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -600,8 +601,8 @@
                                                     <div class="row">
                                                         <div class="col-md-8">
                                                             <div class="form-group">
-                                                                <label for="customer-name" class="control-label">Contact No.:</label>
-                                                                <input type="tel" class="form-control" id="customer-name1">
+                                                                <label for="anchor-cnumber" class="control-label">Contact No.:</label>
+                                                                <input type="tel" class="form-control" name="anchor_cnumber">
                                                             </div>
 
 
@@ -612,8 +613,8 @@
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <label for="customer-name" class="control-label">Birthdate:</label>
-                                                                <input type="date" class="form-control" value="2018-05-13">
+                                                                <label for="anchor-bdate" class="control-label">Birthdate:</label>
+                                                                <input type="date" class="form-control" value="2018-05-13" name="anchor_bdate">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -621,27 +622,42 @@
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <label for="customer-name" class="control-label">Sex:</label>
-                                                                <input type="text" class="form-control" id="customer-name1">
+                                                                <label for="anchor-sex" class="control-label">Sex:</label>
+                                                                <input type="text" class="form-control" name="anchor_sex">
                                                             </div>
                                                         </div>
                                                     </div>
 
-                                                </form>
+                                                <div class="row">
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <label for="anchor-status" class="control-label">Status:</label>
+                                                                <input type="checkbox" class="" name="anchor_status"> Active
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
 
                                             </div>
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-success">Add</button>
+                                                <input type="submit" class="btn btn-success" value="Add">
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- ============================================================== -->
                                 <!-- Start Page Content -->
                                 <!-- ============================================================== -->
+                                @if (\Session::has('success'))
+                                    <div class="alert alert-success">
+                                        <ul>
+                                            <li>{!! \Session::get('success') !!}</li>
+                                        </ul>
+                                    </div>
+                                @endif
 
 
                                 <!-- order table -->
@@ -682,7 +698,7 @@
                                                                         {{$anchors->anchor_cnumber}}
                                                                     </td>
                                                                     <td>
-                                                                        N/A
+                                                                        {{$anchors->anchor_bdate}}
                                                                     </td>
                                                                     <td>
                                                                         {{$anchors->anchor_sex}}

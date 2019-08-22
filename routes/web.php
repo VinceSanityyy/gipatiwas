@@ -37,6 +37,7 @@ Route::get('/report', 'ReportController@index')->name('report');
 
 //ANCHORS
 Route::get('/anchor', 'AnchorController@index')->name('anchor');
+Route::post('/anchor', 'AnchorController@store')->name('anchor.store');
 
 //APPOINTMENT
 Route::get('/appointment', 'AppointmentController@index')->name('appointment');
