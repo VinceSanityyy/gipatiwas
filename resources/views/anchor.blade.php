@@ -707,10 +707,10 @@
                                                                         {{$anchors->anchor_status}}
                                                                     </td>
                                                                     <td>
-                                                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#anchorModal2" data-whatever="@mdo">  View</button>
+                                                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#anchorModal{{$anchors->anchor_id}}" data-whatever="{{$anchors->anchor_id}}">  View</button>
                                                                     <button type="button" class="btn btn-danger">  Delete</button>
 
-                                                                    <div class="modal fade" id="anchorModal2" tabindex="-1" role="dialog" aria-labelledby="anchorModalLabel1">
+                                                                    <div class="modal fade" id="anchorModal{{$anchors->anchor_id}}" tabindex="-1" role="dialog" aria-labelledby="anchorModalLabel{{$anchors->anchor_id}}">
                                                                         <div class="modal-dialog modal modal-dialog-centered" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -719,12 +719,14 @@
                                                                                 </div>
 
                                                                                 <div class="modal-body">
-                                                                                    <form>
+                                                                                    <form method="POST" action="{{ route('anchor.update', $anchors->anchor_id) }}">
+                                                                                        @method('PATCH')
+                                                                                        @csrf
                                                                                         <div class="row">
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
-                                                                                                    <label for="customer-name" class="control-label">First Name:</label>
-                                                                                                    <input type="text" class="form-control" id="customer-name1">
+                                                                                                    <label for="anchor-fname" class="control-label">First Name:</label>
+                                                                                                    <input type="text" class="form-control" name="anchor_fname" value="{{$anchors->anchor_fname}}">
                                                                                                 </div>
 
 
@@ -732,19 +734,28 @@
 
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
-                                                                                                    <label for="recipient-name" class="control-label">Last Name:</label>
-                                                                                                    <input type="text" class="form-control" id="recipient-name1">
+                                                                                                    <label for="anchor-lname" class="control-label">Last Name:</label>
+                                                                                                    <input type="text" class="form-control" name="anchor_lname" value="{{$anchors->anchor_lname}}">
                                                                                                 </div>
                                                                                             </div>
 
 
+                                                                                        </div>
+
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-5">
+                                                                                                <div class="form-group">
+                                                                                                    <label for="anchor-email" class="control-label">Email:</label>
+                                                                                                    <input type="email" class="form-control" name="anchor_email" value="{{$anchors->anchor_email}}">
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
 
                                                                                         <div class="row">
                                                                                             <div class="col-md-8">
                                                                                                 <div class="form-group">
-                                                                                                    <label for="customer-name" class="control-label">Contact No.:</label>
-                                                                                                    <input type="tel" class="form-control" id="customer-name1">
+                                                                                                    <label for="anchor-cnumber" class="control-label">Contact No.:</label>
+                                                                                                    <input type="tel" class="form-control" name="anchor_cnumber" value="{{$anchors->anchor_cnumber}}">
                                                                                                 </div>
 
 
@@ -753,14 +764,10 @@
                                                                                         </div>
 
                                                                                         <div class="row">
-                                                                                            <div class="col-md-4">
+                                                                                            <div class="col-md-5">
                                                                                                 <div class="form-group">
-
-
-                                                                                                    <label for="address2" class="control-label">Address:</label>
-                                                                                                    <textarea class="form-control" id="address2"></textarea>
-
-
+                                                                                                    <label for="anchor-bdate" class="control-label">Birthdate:</label>
+                                                                                                    <input type="date" class="form-control" value="{{$anchors->anchor_bdate}}" name="anchor_bdate">
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -768,32 +775,27 @@
                                                                                         <div class="row">
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
-                                                                                                    <label for="customer-name" class="control-label">Email:</label>
-                                                                                                    <input type="email" class="form-control" id="customer-name1">
+                                                                                                    <label for="anchor-sex" class="control-label">Sex:</label>
+                                                                                                    <input type="text" class="form-control" name="anchor_sex" value="{{$anchors->anchor_sex}}">
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="row">
+                                                                                    <div class="row">
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
-                                                                                                    <label for="customer-name" class="control-label">Company/Organization:</label>
-                                                                                                    <input type="text" class="form-control" id="customer-name1">
+                                                                                                    <label for="anchor-status" class="control-label">Status:</label>
+                                                                                                    <input type="checkbox" class="" name="anchor_status"> Active
                                                                                                 </div>
-
-
                                                                                             </div>
                                                                                         </div>
-
-                                                                                    </form>
-
-
                                                                                 </div>
 
                                                                                 <div class="modal-footer">
                                                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                                    <button type="button" class="btn btn-info">Edit</button>
+                                                                                    <input type="submit" class="btn btn-success" value="Edit">
                                                                                 </div>
+                                                                                </form>
                                                                             </div>
                                                                         </div>
                                                                     </div>    

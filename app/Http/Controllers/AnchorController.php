@@ -112,6 +112,45 @@ class AnchorController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validator = $request->validate([
+            'anchor_fname' => 'required',
+            'anchor_lname' => 'required',
+            'anchor_email' => 'required',
+            'anchor_cnumber' => 'required',
+            'anchor_bdate' => 'required',
+            'anchor_sex' => 'required'
+        ]);
+
+        if ($request->has('anchor_status')){
+            DB::table('anchors')
+            ->where('anchor_id', $id)
+            ->update([
+                'anchor_fname' => $request->get('anchor_fname'),
+                'anchor_lname' => $request->get('anchor_lname'),
+                'anchor_email' => $request->get('anchor_email'),
+                'anchor_cnumber' => $request->get('anchor_cnumber'),
+                'anchor_bdate' => $request->get('anchor_bdate'),
+                'anchor_sex' => $request->get('anchor_sex'),
+                'anchor_status' => 'Active',
+                'updated_at' => date("Y-m-d H:i:s")
+            ]);
+        }
+        else {
+            DB::table('anchors')
+            ->where('anchor_id', $id)
+            ->update([
+                'anchor_fname' => $request->get('anchor_fname'),
+                'anchor_lname' => $request->get('anchor_lname'),
+                'anchor_email' => $request->get('anchor_email'),
+                'anchor_cnumber' => $request->get('anchor_cnumber'),
+                'anchor_bdate' => $request->get('anchor_bdate'),
+                'anchor_sex' => $request->get('anchor_sex'),
+                'anchor_status' => 'Inactive',
+                'updated_at' => date("Y-m-d H:i:s")
+            ]);
+        }
+
+        return redirect('anchor')->with('success', 'Anchor edited successfully!');
     }
 
     /**
