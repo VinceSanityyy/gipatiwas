@@ -809,7 +809,7 @@
                                                                                                         <label class="btn btn-primary">
                                                                                                             <div class="custom-control custom-radio">
                                                                                                                 <input type="radio" id="radioSexM" name="radioSexM" class="custom-control-input">
-                                                                                                                <label class="custom-control-label" for="radioSexM" checked>Male</label>
+                                                                                                                <label class="custom-control-label" for="radioSexM" active>Male</label>
                                                                                                             </div>
                                                                                                         </label>
                                                                                                         <label class="btn btn-primary">
@@ -838,7 +838,7 @@
                                                                                                         <label class="btn btn-primary">
                                                                                                             <div class="custom-control custom-radio">
                                                                                                                 <input type="radio" id="radioSexF" name="radioSexF" class="custom-control-input">
-                                                                                                                <label class="custom-control-label" for="radioSexF" checked>Female</label>
+                                                                                                                <label class="custom-control-label" for="radioSexF" active>Female</label>
                                                                                                             </div>
                                                                                                         </label>
                                                                                                     </div>
