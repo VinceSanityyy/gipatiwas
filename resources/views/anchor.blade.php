@@ -799,6 +799,30 @@
                                                                                             </div>
                                                                                         </div>
 
+                                                                                        @if ({{$anchors->anchor_sex}} == 'Male')
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-5">
+                                                                                                <div class="form-group">
+                                                                                                    <label for="anchor-sex" class="control-label">Sex:</label>
+                                                                                                    <div class="btn-group" data-toggle="buttons">
+
+                                                                                                        <label class="btn btn-primary">
+                                                                                                            <div class="custom-control custom-radio">
+                                                                                                                <input type="radio" id="radioSexM" name="radioSexM" class="custom-control-input">
+                                                                                                                <label class="custom-control-label" for="radioSexM" checked>Male</label>
+                                                                                                            </div>
+                                                                                                        </label>
+                                                                                                        <label class="btn btn-primary">
+                                                                                                            <div class="custom-control custom-radio">
+                                                                                                                <input type="radio" id="radioSexF" name="radioSexF" class="custom-control-input">
+                                                                                                                <label class="custom-control-label" for="radioSexF">Female</label>
+                                                                                                            </div>
+                                                                                                        </label>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        @else
                                                                                         <div class="row">
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
@@ -814,7 +838,7 @@
                                                                                                         <label class="btn btn-primary">
                                                                                                             <div class="custom-control custom-radio">
                                                                                                                 <input type="radio" id="radioSexF" name="radioSexF" class="custom-control-input">
-                                                                                                                <label class="custom-control-label" for="radioSexF">Female</label>
+                                                                                                                <label class="custom-control-label" for="radioSexF" checked>Female</label>
                                                                                                             </div>
                                                                                                         </label>
                                                                                                     </div>
@@ -822,15 +846,32 @@
                                                                                             </div>
                                                                                         </div>
 
+                                                                                        @endif
+
+                                                                                        @if ({{$anchors->anchor_status}} == 'Active')
+
                                                                                         <div class="row">
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
                                                                                                     <label for="anchor-status" class="control-label">Status:</label>
-                                                                                                    <input type="checkbox" class="" name="anchor_status" value="true"> Active
+                                                                                                    <input type="checkbox" class="" name="anchor_status" checked> Active
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
+                                                                                        @elseif
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-5">
+                                                                                                <div class="form-group">
+                                                                                                    <label for="anchor-status" class="control-label">Status:</label>
+                                                                                                    <input type="checkbox" class="" name="anchor_status"> Active
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        @endif
+
                                                                                     </div>
+                                                                                    
 
                                                                                     <div class="modal-footer">
                                                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
