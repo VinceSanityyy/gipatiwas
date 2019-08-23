@@ -45,21 +45,35 @@ class AnchorController extends Controller
             'anchor_lname' => 'required',
             'anchor_email' => 'required',
             'anchor_cnumber' => 'required',
-            'anchor_bdate' => 'required',
-            'anchor_sex' => 'required'
+            'anchor_bdate' => 'required'
         ]);
-       
+
+        if($request->has('radioSexM')){       
             DB::table('anchors')->insert([
                 'anchor_fname' => $request->get('anchor_fname'),
                 'anchor_lname' => $request->get('anchor_lname'),
                 'anchor_email' => $request->get('anchor_email'),
                 'anchor_cnumber' => $request->get('anchor_cnumber'),
                 'anchor_bdate' => $request->get('anchor_bdate'),
-                'anchor_sex' => $request->get('anchor_sex'),
+                'anchor_sex' => 'Male',
                 'anchor_status' => 'Active',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]);
+        }
+        else{
+            DB::table('anchors')->insert([
+                'anchor_fname' => $request->get('anchor_fname'),
+                'anchor_lname' => $request->get('anchor_lname'),
+                'anchor_email' => $request->get('anchor_email'),
+                'anchor_cnumber' => $request->get('anchor_cnumber'),
+                'anchor_bdate' => $request->get('anchor_bdate'),
+                'anchor_sex' => 'Female',
+                'anchor_status' => 'Active',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]);
+        }
 
         return redirect('anchor')->with('success', 'Anchor added successfully!');
     }
