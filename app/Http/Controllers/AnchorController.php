@@ -59,6 +59,7 @@ class AnchorController extends Controller
                 'anchor_status' => 'Active',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
+            ]);
 
         return redirect('anchor')->with('success', 'Anchor added successfully!');
     }
