@@ -120,30 +120,64 @@ class AnchorController extends Controller
         ]);
 
         if ($request->has('anchor_status')){
-            DB::table('anchors')
-            ->where('anchor_id', $id)
-            ->update([
-                'anchor_fname' => $request->get('anchor_fname'),
-                'anchor_lname' => $request->get('anchor_lname'),
-                'anchor_email' => $request->get('anchor_email'),
-                'anchor_cnumber' => $request->get('anchor_cnumber'),
-                'anchor_bdate' => $request->get('anchor_bdate'),
-                'anchor_status' => 'Active',
-                'updated_at' => date("Y-m-d H:i:s")
-            ]);
+            if ($request->has('radioSexM')){
+                DB::table('anchors')
+                ->where('anchor_id', $id)
+                ->update([
+                    'anchor_fname' => $request->get('anchor_fname'),
+                    'anchor_lname' => $request->get('anchor_lname'),
+                    'anchor_email' => $request->get('anchor_email'),
+                    'anchor_cnumber' => $request->get('anchor_cnumber'),
+                    'anchor_bdate' => $request->get('anchor_bdate'),
+                    'anchor_sex' => 'Male',
+                    'anchor_status' => 'Active',
+                    'updated_at' => date("Y-m-d H:i:s")
+                ]);
+            }
+            else{
+                DB::table('anchors')
+                ->where('anchor_id', $id)
+                ->update([
+                    'anchor_fname' => $request->get('anchor_fname'),
+                    'anchor_lname' => $request->get('anchor_lname'),
+                    'anchor_email' => $request->get('anchor_email'),
+                    'anchor_cnumber' => $request->get('anchor_cnumber'),
+                    'anchor_bdate' => $request->get('anchor_bdate'),
+                    'anchor_sex' => 'Female',
+                    'anchor_status' => 'Active',
+                    'updated_at' => date("Y-m-d H:i:s")
+                ]);
+            }
         }
         else {
-            DB::table('anchors')
-            ->where('anchor_id', $id)
-            ->update([
-                'anchor_fname' => $request->get('anchor_fname'),
-                'anchor_lname' => $request->get('anchor_lname'),
-                'anchor_email' => $request->get('anchor_email'),
-                'anchor_cnumber' => $request->get('anchor_cnumber'),
-                'anchor_bdate' => $request->get('anchor_bdate'),
-                'anchor_status' => 'Inactive',
-                'updated_at' => date("Y-m-d H:i:s")
-            ]);
+            if ($request->has('radioSexM')){
+                DB::table('anchors')
+                ->where('anchor_id', $id)
+                ->update([
+                    'anchor_fname' => $request->get('anchor_fname'),
+                    'anchor_lname' => $request->get('anchor_lname'),
+                    'anchor_email' => $request->get('anchor_email'),
+                    'anchor_cnumber' => $request->get('anchor_cnumber'),
+                    'anchor_bdate' => $request->get('anchor_bdate'),
+                    'anchor_sex' => 'Male',
+                    'anchor_status' => 'Inactive',
+                    'updated_at' => date("Y-m-d H:i:s")
+                ]);
+            }
+            else{
+                DB::table('anchors')
+                ->where('anchor_id', $id)
+                ->update([
+                    'anchor_fname' => $request->get('anchor_fname'),
+                    'anchor_lname' => $request->get('anchor_lname'),
+                    'anchor_email' => $request->get('anchor_email'),
+                    'anchor_cnumber' => $request->get('anchor_cnumber'),
+                    'anchor_bdate' => $request->get('anchor_bdate'),
+                    'anchor_sex' => 'Female',
+                    'anchor_status' => 'Inactive',
+                    'updated_at' => date("Y-m-d H:i:s")
+                ]);
+            }
         }
 
         return redirect('anchor')->with('success', 'Anchor edited successfully!');

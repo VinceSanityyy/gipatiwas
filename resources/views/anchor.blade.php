@@ -807,14 +807,14 @@
 
                                                                                                         <label class="btn btn-primary">
                                                                                                             <div class="custom-control custom-radio">
-                                                                                                                <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
-                                                                                                                <label class="custom-control-label" for="customRadio5">Male</label>
+                                                                                                                <input type="radio" id="radioSexM" name="radioSexM" class="custom-control-input">
+                                                                                                                <label class="custom-control-label" for="radioSexM">Male</label>
                                                                                                             </div>
                                                                                                         </label>
                                                                                                         <label class="btn btn-primary">
                                                                                                             <div class="custom-control custom-radio">
-                                                                                                                <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
-                                                                                                                <label class="custom-control-label" for="customRadio6">Female</label>
+                                                                                                                <input type="radio" id="radioSexF" name="radioSexF" class="custom-control-input">
+                                                                                                                <label class="custom-control-label" for="radioSexF">Female</label>
                                                                                                             </div>
                                                                                                         </label>
                                                                                                     </div>
@@ -826,7 +826,7 @@
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
                                                                                                     <label for="anchor-status" class="control-label">Status:</label>
-                                                                                                    <input type="checkbox" class="" name="anchor_status"> Active
+                                                                                                    <input type="checkbox" class="" name="anchor_status" value="true"> Active
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
