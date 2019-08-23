@@ -799,7 +799,7 @@
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        @if ({{$anchors->anchor_sex}} == 'Male')
+                                                                                        @if ($anchors->anchor_sex == 'Male')
                                                                                         <div class="row">
                                                                                             <div class="col-md-5">
                                                                                                 <div class="form-group">
@@ -848,7 +848,7 @@
 
                                                                                         @endif
 
-                                                                                        @if ({{$anchors->anchor_status}} == 'Active')
+                                                                                        @if ($anchors->anchor_status == 'Active')
 
                                                                                         <div class="row">
                                                                                             <div class="col-md-5">
