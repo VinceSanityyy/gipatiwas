@@ -628,16 +628,6 @@
                                                         </div>
                                                     </div>
 
-                                                <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="form-group">
-                                                                <label for="anchor-status" class="control-label">Status:</label>
-                                                                <input type="checkbox" class="" name="anchor_status"> Active
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
                                             </div>
 
                                             <div class="modal-footer">
