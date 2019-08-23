@@ -746,7 +746,7 @@
                                                                                 </div>
 
                                                                                 <div class="modal-body">
-                                                                                    <form method="POST" action="{{ route('anchor.update', $anchors->anchor_id) }}">
+                                                                                    <form method="POST" action="{{ route('anchor.updates', $anchors->anchor_id) }}">
                                                                                         @method('PATCH')
                                                                                         @csrf
                                                                                         <div class="row">
