@@ -38,8 +38,8 @@ Route::get('/report', 'ReportController@index')->name('report');
 //ANCHORS
 Route::get('/anchor', 'AnchorController@index')->name('anchor');
 Route::post('/anchor', 'AnchorController@store')->name('anchor.store');
-Route::patch('/anchor/{id}', 'AnchorController@update')->name('anchor.updates');
-Route::patch('/anchor/{id}', 'AnchorController@inactive')->name('anchor.inactive');
+Route::patch('/anchor/update/{id}', 'AnchorController@update')->name('anchor.update');
+Route::patch('/anchor/inactive/{id}', 'AnchorController@inactive')->name('anchor.inactive');
 
 //APPOINTMENT
 Route::get('/appointment', 'AppointmentController@index')->name('appointment');
