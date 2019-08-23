@@ -698,24 +698,24 @@
                                                                     </td>
                                                                     <td>
                                                                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#anchorModal{{$anchors->anchor_id}}" data-whatever="{{$anchors->anchor_id}}">  View</button>
-                                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#anchorModalDel{{$anchors->anchor_id}}" data-whatever="{{$anchors->anchor_id}}">  Delete</button>
+                                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#anchorModalInac{{$anchors->anchor_id}}" data-whatever="{{$anchors->anchor_id}}">  Mark Inactive</button>
 
-                                                                    <div class="modal fade" id="anchorModalDel{{$anchors->anchor_id}}" tabindex="-1" role="dialog">
+                                                                    <div class="modal fade" id="anchorModalInac{{$anchors->anchor_id}}" tabindex="-1" role="dialog">
                                                                         <div class="modal-dialog modal modal-dialog-centered">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
-                                                                                    <h4 class="modal-title" id="anchorModalDelLabel{{$anchors->anchor_id}}">Delete Anchor:</h4>
+                                                                                    <h4 class="modal-title" id="anchorModalInacLabel{{$anchors->anchor_id}}">Inactive Anchor:</h4>
                                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                                                 </div>
 
                                                                                 <div class="modal-body">
-                                                                                    <form method="POST" action="{{ route('anchor.destroy', $anchors->anchor_id) }}">
-                                                                                        @method('DELETE')
+                                                                                    <form method="POST" action="{{ route('anchor.inactive', $anchors->anchor_id) }}">
+                                                                                        @method('PATCH')
                                                                                         @csrf
 
-                                                                                        <div>Are you sure you want to delete this anchor? This action cannot be undone.</div>
+                                                                                        <div>Are you sure you want to mark this anchor inactive?</div>
 
-                                                                                        <input type="submit" class="btn btn-danger" value="DELETE">
+                                                                                        <input type="submit" class="btn btn-danger" value="Inactive">
                                                                                     </form>
                                                                                 </div>
                                                                             </div>

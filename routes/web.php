@@ -39,7 +39,7 @@ Route::get('/report', 'ReportController@index')->name('report');
 Route::get('/anchor', 'AnchorController@index')->name('anchor');
 Route::post('/anchor', 'AnchorController@store')->name('anchor.store');
 Route::patch('/anchor/{id}', 'AnchorController@update')->name('anchor.update');
-Route::delete('/anchor/{id}', 'AnchorController@destroy')->name('anchor.destroy');
+Route::patch('/anchor/{id}', 'AnchorController@inactive')->name('anchor.inactive');
 
 //APPOINTMENT
 Route::get('/appointment', 'AppointmentController@index')->name('appointment');

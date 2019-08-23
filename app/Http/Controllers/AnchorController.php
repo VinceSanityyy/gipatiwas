@@ -152,4 +152,13 @@ class AnchorController extends Controller
 
         return redirect('anchor')->with('success', 'Anchor deleted!');
     }
+
+    public function inactive($id)
+    {
+        DB::table('anchors')
+        ->where('anchor_id', $id)
+        ->update(['anchor_status' => 'Inactive']);
+
+        return redirect('anchor')->with('success', 'Anchor marked inactive!');
+    }
 }
