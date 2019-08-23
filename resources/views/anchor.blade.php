@@ -627,13 +627,13 @@
 
                                                                     <label class="btn btn-primary">
                                                                         <div class="custom-control custom-radio">
-                                                                            <input type="radio" id="radioSexM" name="radioSexM" class="custom-control-input">
+                                                                            <input type="radio" id="radioSexM" name="radioSex" class="custom-control-input">
                                                                             <label class="custom-control-label" for="radioSexM">Male</label>
                                                                         </div>
                                                                     </label>
                                                                     <label class="btn btn-primary">
                                                                         <div class="custom-control custom-radio">
-                                                                            <input type="radio" id="radioSexM" name="radioSexF" class="custom-control-input">
+                                                                            <input type="radio" id="radioSexF" name="radioSex" class="custom-control-input">
                                                                             <label class="custom-control-label" for="radioSexF">Female</label>
                                                                         </div>
                                                                     </label>
@@ -806,15 +806,15 @@
                                                                                                     <label for="anchor-sex" class="control-label">Sex:</label>
                                                                                                     <div class="btn-group" data-toggle="buttons">
 
-                                                                                                        <label class="btn btn-primary">
+                                                                                                        <label class="btn btn-primary active">
                                                                                                             <div class="custom-control custom-radio">
-                                                                                                                <input type="radio" id="radioSexM" name="radioSexM" class="custom-control-input">
-                                                                                                                <label class="custom-control-label" for="radioSexM" active>Male</label>
+                                                                                                                <input type="radio" id="radioSexM" name="radioSex" class="custom-control-input" checked>
+                                                                                                                <label class="custom-control-label" for="radioSexM">Male</label>
                                                                                                             </div>
                                                                                                         </label>
                                                                                                         <label class="btn btn-primary">
                                                                                                             <div class="custom-control custom-radio">
-                                                                                                                <input type="radio" id="radioSexF" name="radioSexF" class="custom-control-input">
+                                                                                                                <input type="radio" id="radioSexF" name="radioSex" class="custom-control-input">
                                                                                                                 <label class="custom-control-label" for="radioSexF">Female</label>
                                                                                                             </div>
                                                                                                         </label>
@@ -831,14 +831,14 @@
 
                                                                                                         <label class="btn btn-primary">
                                                                                                             <div class="custom-control custom-radio">
-                                                                                                                <input type="radio" id="radioSexM" name="radioSexM" class="custom-control-input">
+                                                                                                                <input type="radio" id="radioSexM" name="radioSex" class="custom-control-input">
                                                                                                                 <label class="custom-control-label" for="radioSexM">Male</label>
                                                                                                             </div>
                                                                                                         </label>
-                                                                                                        <label class="btn btn-primary">
+                                                                                                        <label class="btn btn-primary active">
                                                                                                             <div class="custom-control custom-radio">
-                                                                                                                <input type="radio" id="radioSexF" name="radioSexF" class="custom-control-input">
-                                                                                                                <label class="custom-control-label" for="radioSexF" active>Female</label>
+                                                                                                                <input type="radio" id="radioSexF" name="radioSex" class="custom-control-input" checked>
+                                                                                                                <label class="custom-control-label" for="radioSexF">Female</label>
                                                                                                             </div>
                                                                                                         </label>
                                                                                                     </div>

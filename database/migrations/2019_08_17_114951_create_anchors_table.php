@@ -21,7 +21,7 @@ class CreateAnchorsTable extends Migration
             $table->string('anchor_cnumber', '11');
             $table->date('anchor_bdate', '6');
             $table->string('anchor_sex');
-            $table->string('anchor_status')->default(1);
+            $table->string('anchor_status');
 
             $table->timestamps();
         });
