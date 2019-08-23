@@ -43,3 +43,6 @@ Route::patch('/anchor/inactive/{id}', 'AnchorController@inactive')->name('anchor
 
 //APPOINTMENT
 Route::get('/appointment', 'AppointmentController@index')->name('appointment');
+
+//INVENTORY
+Route::get('/inventory', 'InventoryController@index')->name('inventory');

@@ -573,272 +573,229 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="page-content container-fluid">
-                <!-- ============================================================== -->
-                <!-- Yearly Sales Charts Row  -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <h2 class="font-medium">$354.50</h2>
-                                        <h5 class="text-muted mb-0">Total Income</h5>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <div class="" id="ravenue"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h2 class="font-medium">3456</h2>
-                                        <h5 class="text-muted mb-0">Yearly Sales</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <div id="ct-main-bal" style="height: 57px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h2 class="font-medium">356</h2>
-                                        <h5 class="text-muted mb-0">Monthly Sales</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <div id="ct-extra" style="height: 57px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Sales, Expance & Finance Charts Row  -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-8">
-                        <div class="card">
-                            <div class="p-3">
-                                <div class="d-flex align-items-center">
-                                    <h5 class="card-title text-uppercase mb-0">Sales</h5>
-                                    <div class="ml-auto">
-                                        <ul class="list-inline dl mb-0">
-                                            <li class="list-inline-item text-info"><i class="fa fa-circle"></i> Advertisement</li>
-                                            <li class="list-inline-item text-danger"><i class="fa fa-circle"></i> Program Sponsorship</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div id="ct-visits" style="height: 265px;"></div>
-                            </div>
-                            <div class="row no-gutters border-top">
-                                <div class="col-md-6 border-right border-bottom">
-                                    <div class="d-flex align-items-center px-4 py-3">
-                                        <h2 class="mb-0 text-info display-7">
-                                            <i class="ti-headphone-alt"></i>
-                                        </h2>
-                                        <div class="ml-4">
-                                            <h2 class="font-normal">$250</h2>
-                                            <h4>Program Sponsorship</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 border-bottom">
-                                    <div class="d-flex align-items-center px-4 py-3">
-                                        <h2 class="mb-0 text-info display-7">
-                                            <i class="ti-home"></i>
-                                        </h2>
-                                        <div class="ml-4">
-                                            <h2 class="font-normal">$60.50</h2>
-                                            <h4>Advertisement</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 border-right">
-                                    <div class="d-flex align-items-center px-4 py-3">
-                                        <h2 class="mb-0 text-info display-7">
-                                            <i class="far fa-paper-plane"></i>
-                                        </h2>
-                                        <div class="ml-4">
-                                            <h2 class="font-normal">$28</h2>
-                                            <h4>Souvenir Products</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Sales</h5>
-                                <div class="mt-3">
-                                    <div id="morris-donut-chart" style="height:350px; padding-top: 50px;"></div>
-                                </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <div>
-                                        <h3 class="font-medium text-uppercase">Total Sales</h3>
-                                        <h5 class="text-muted">160 sales monthly</h5>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <button class="btn btn-info btn-circle btn-lg text-white">
-                                            <i class="ti-shopping-cart"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Chart && Calendar App Row  -->
-                <!-- ============================================================== -->
-                
-                <!-- ============================================================== -->
-                <!-- Yearly Sales Charts  Row  -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Yearly Sales Charts  Row  -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    
-                    <div class="col-md-12 col-lg-6">
-                        <div class="invisible">
-                            <div class="card-body border-bottom">
-                                
-                                <canvas id="foo" class="gaugejs">guage</canvas>
-                                
-                            </div>
-                            <div class="d-flex align-items-center p-3">
-                                <div>
-                                    <span class="mb-0 display-7"><span class="font-medium">26.30</span></span>
-                                    <h4 class="mb-0 font-light">AMps Used</h4>
-                                </div>
-                                <div class="ml-auto">
-                                    <button class="btn btn-info btn-circle btn-lg text-white">
-                                        <i class="icon-speedometer"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-md-12 col-lg-6">
-                        <div class="card">
-                            <div class="d-flex align-items-center p-3">
-                                <h5 class="card-title mb-0 text-uppercase">Recent Sales</h5>
-                                <div class="ml-auto">
-                                    <select class="form-control">
-                                        <option>March</option>
-                                        <option>April</option>
-                                        <option>May</option>
-                                        <option>June</option>
-                                        <option>July</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="p-3 bg-light">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <h2 class="font-normal">March 2017</h2>
-                                        <p class="mb-2 text-uppercase font-14 font-light">Sales Report</p>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <h1 class="text-info mb-0 font-light">$3,690</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <div class="table-responsive">
-                                    <table class="table text-muted mb-0 no-wrap recent-table font-light">
-                                        <thead>
-                                            <tr class="text-uppercase">
-                                                <th class="border-0">#</th>
-                                                <th class="border-0">Name</th>
-                                                <th class="border-0">Status</th>
-                                                <th class="border-0">Date</th>
-                                                <th class="border-0">Price</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td class="txt-oflo">Elite admin</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-success label-rouded">SALE</span> </td>
-                                                <td class="txt-oflo">April 18, 2017</td>
-                                                <td><span class="text-success">$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td class="txt-oflo">Real Homes WP Theme</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">EXTENDED</span></td>
-                                                <td class="txt-oflo">April 19, 2017</td>
-                                                <td><span class="text-info">$1250</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td class="txt-oflo">Ample Admin</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">EXTENDED</span></td>
-                                                <td class="txt-oflo">April 19, 2017</td>
-                                                <td><span class="text-info">$1250</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td class="txt-oflo">Medical Pro WP Theme</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-danger label-rouded">TAX</span></td>
-                                                <td class="txt-oflo">April 20, 2017</td>
-                                                <td><span class="text-danger">-$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td class="txt-oflo">Hosting press html</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-warning label-rouded">SALE</span></td>
-                                                <td class="txt-oflo">April 21, 2017</td>
-                                                <td><span class="text-success">$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td class="txt-oflo">Digital Agency PSD</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-success label-rouded">SALE</span> </td>
-                                                <td class="txt-oflo">April 23, 2017</td>
-                                                <td><span class="text-danger">-$14</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td class="txt-oflo">Helping Hands WP Theme</td>
-                                                <td><span class="badge badge-pill text-uppercase text-white font-medium badge-warning label-rouded">member</span></td>
-                                                <td class="txt-oflo">April 22, 2017</td>
-                                                <td><span class="text-success">$64</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Recent Comment & Sales Chart Row  -->
-                <!-- ============================================================== -->
-                
-                <!-- ============================================================== -->
-                <!-- Profile Card & Email App Row  -->
-                <!-- ============================================================== -->
-                
-                <!-- ============================================================== -->
-                <!-- Earnings & Feed Row  -->
-                <!-- ============================================================== -->
+
+  <div class="row" id="topmostBanner">
+    <div class="col-2">
+      User Info
+    </div>
+
+    <div class="col-8">
+      <center>DXGN</center>
+    </div>
+
+    <div class="col-2">
+      <span id="datetime"></span>
+
+      <script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
+    </div>
+  </div>
+
+    <br>
+
+  <div class="row" id="forOptions">
+    <div class="col-4" data-toggle="modal" data-target="#itemsModal" style="cursor:pointer;">
+      <img src="{{ asset('img/items.png') }}" style="width:60px;"></img><br>
+      PRODUCTS
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="itemsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Products</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+               <a href="/prod" target="_blank"><button type="button" class="btn btn-primary">Add New Product</button></a>
+<!--                <button type="button" class="btn btn-secondary">Add New Category</button> -->
+               <br><br>
+               <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">SKU</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Information</th>
+                      <th scope="col">Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+<!--         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--     <div class="modal fade" id="itemsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Manage Products</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+    <div class="col-4" data-toggle="modal" data-target="#customerModal" style="cursor:pointer;">
+      <img src="{{ asset('img/customer.png') }}" style="width:60px;"></img><br>
+      CUSTOMERS
+    </div>
+
+    <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Customers</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+        <a href="/cust" target="_blank"><button type="button" class="btn btn-primary">Add New Customer</button></a>
+        <a href="/cust" target="_blank"><button type="button" class="btn btn-primary">View Customers List</button></a>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="col-4" style="cursor:pointer;">
+      <img src="{{ asset('img/supplier.png') }}" style="width:60px;"></img><br>
+      SUPPLIERS
+    </div>    
+  </div>
+
+  <br>
+  <center>
+  <div class="row">
+    <div class="col-3" id="forForm">
+        <form>
+      Item Code: <input type="text" name="code">
+
+      <br><br>
+      
+      Item Name: <input type="text" name="name">
+
+      <br><br>
+      
+      Description: <input type="text" name="desc">
+
+      <br><br>
+      
+      Category: <select name="category">
+                    <option selected hidden></option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                  </select>
+
+      <br><br>
+      
+      Price: <input type="text" name="price">
+
+      <br><br>
+      
+      Stock: <input type="text" name="stock">
+
+<br><br><br>
+      <input type="button" value="Edit Item">
+      <input type="button" value="Delete Item">
+      <input type="button" value="Cancel">
+        </form>
+    </div>
+
+
+
+    <div class="col-8" id="forTable">
+
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+
+    </div>
+  </div>
+</center>
+
                 
             </div>
             <!-- ============================================================== -->
