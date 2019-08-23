@@ -48,7 +48,7 @@ class AnchorController extends Controller
             'anchor_bdate' => 'required'
         ]);
 
-        if($request->has('radioSexM')){       
+        if($request->get('radioSex') == 'male'){       
             DB::table('anchors')->insert([
                 'anchor_fname' => $request->get('anchor_fname'),
                 'anchor_lname' => $request->get('anchor_lname'),
@@ -120,7 +120,7 @@ class AnchorController extends Controller
         ]);
 
         if ($request->has('anchor_status')){
-            if ($request->has('radioSexM')){
+            if ($request->get('radioSexM') == 'male'){
                 DB::table('anchors')
                 ->where('anchor_id', $id)
                 ->update([
@@ -150,7 +150,7 @@ class AnchorController extends Controller
             }
         }
         else {
-            if ($request->has('radioSexM')){
+            if ($request->get('radioSex') == 'male'){
                 DB::table('anchors')
                 ->where('anchor_id', $id)
                 ->update([
