@@ -46,3 +46,6 @@ Route::get('/appointment', 'AppointmentController@index')->name('appointment');
 
 //INVENTORY
 Route::get('/inventory', 'InventoryController@index')->name('inventory');
+Route::get('/products', 'ProductsController@index')->name('products');
+Route::get('/supplier', 'SupplierController@index')->name('supplier');
+Route::get('/customer', 'CustomerController@index')->name('customer');
