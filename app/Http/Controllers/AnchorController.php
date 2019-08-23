@@ -116,8 +116,7 @@ class AnchorController extends Controller
             'anchor_lname' => 'required',
             'anchor_email' => 'required',
             'anchor_cnumber' => 'required',
-            'anchor_bdate' => 'required',
-            'anchor_sex' => 'required'
+            'anchor_bdate' => 'required'
         ]);
 
         if ($request->has('anchor_status')){
@@ -129,7 +128,6 @@ class AnchorController extends Controller
                 'anchor_email' => $request->get('anchor_email'),
                 'anchor_cnumber' => $request->get('anchor_cnumber'),
                 'anchor_bdate' => $request->get('anchor_bdate'),
-                'anchor_sex' => $request->get('anchor_sex'),
                 'anchor_status' => 'Active',
                 'updated_at' => date("Y-m-d H:i:s")
             ]);
@@ -143,7 +141,6 @@ class AnchorController extends Controller
                 'anchor_email' => $request->get('anchor_email'),
                 'anchor_cnumber' => $request->get('anchor_cnumber'),
                 'anchor_bdate' => $request->get('anchor_bdate'),
-                'anchor_sex' => $request->get('anchor_sex'),
                 'anchor_status' => 'Inactive',
                 'updated_at' => date("Y-m-d H:i:s")
             ]);
