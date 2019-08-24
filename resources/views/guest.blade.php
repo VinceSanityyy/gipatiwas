@@ -460,7 +460,7 @@
                                     <li class="sidebar-item">
                                         <a href="{{ route('appointment') }}" class="sidebar-link">
                                             <i class="mdi mdi-adjust"></i>
-                                            <span class="hide-menu"> Appointment List </span>
+                                            <span class="hide-menu"> Guest Appointments </span>
                                         </a>
                                     </li>
 
@@ -672,8 +672,7 @@
                                                 <td>
                                                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#guestModal" data-whatever="@mdo">  View</button>
 
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#guestModal" data-whatever="@mdo">  Mark Inactive</button>
-
+                                                    
                                                     <div class="modal fade" id="guestModal" tabindex="-1" role="dialog" aria-labelledby="guestModalLabel1">
                                                         <div class="modal-dialog modal modal-dialog-centered" role="document">
                                                             <div class="modal-content">

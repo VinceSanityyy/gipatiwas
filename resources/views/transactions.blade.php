@@ -473,10 +473,11 @@
                                         <span class="hide-menu"> Create Guest</span>
                                     </a>
                                 </li>
+
                                 <li class="sidebar-item">
                                     <a href="{{ route('appointment') }}" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Appointment List </span>
+                                        <span class="hide-menu"> Guest Appointments </span>
                                     </a>
                                 </li>
 
