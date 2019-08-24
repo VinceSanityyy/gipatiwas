@@ -465,7 +465,7 @@
                                 <li class="sidebar-item">
                                     <a href="{{ route('guest') }}" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Create Guest</span>
+                                        <span class="hide-menu"> Create Guest Appointment </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
@@ -688,195 +688,12 @@
                 </div>
             </div>
 
-            <div class="row">    
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Bar Chart</h4>
-                            <div id="morris-bar-chart"></div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-6">
-                    <div class="card">
-                        <div class="d-flex align-items-center p-3">
-                            <h5 class="card-title mb-0 text-uppercase">Recent Sales</h5>
-                            <div class="ml-auto">
-                                <select class="form-control">
-                                    <option>March</option>
-                                    <option>April</option>
-                                    <option>May</option>
-                                    <option>June</option>
-                                    <option>July</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="p-3 bg-light">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <h2 class="font-normal">March 2017</h2>
-                                    <p class="mb-2 text-uppercase font-14 font-light">Sales Report</p>
-                                </div>
-                                <div class="ml-auto">
-                                    <h1 class="text-info mb-0 font-light">$3,690</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-3">
-                            <div class="table-responsive">
-                                <table class="table text-muted mb-0 no-wrap recent-table font-light">
-                                    <thead>
-                                        <tr class="text-uppercase">
-                                            <th class="border-0">#</th>
-                                            <th class="border-0">Name</th>
-                                            <th class="border-0">Transaction Type</th>
-                                            <th class="border-0">Status</th>
-                                            <th class="border-0">Date</th>
-                                            <th class="border-0">Amount</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td class="txt-oflo">Elite admin</td>
-                                            <td class="txt-oflo">Program Advertisement</td>
-                                            <td><span class="badge badge-pill text-uppercase text-white font-medium badge-success label-rouded">PARTIAL PAYMENT</span> </td>
-                                            <td class="txt-oflo">April 18, 2017</td>
-                                            <td><span class="text-success">$24</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td class="txt-oflo">Real Homes WP Theme</td>
-                                            <td class="txt-oflo">Program Sponsorship</td>
-                                            <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">FULLY PAID</span></td>
-                                            <td class="txt-oflo">April 19, 2017</td>
-                                            <td><span class="text-info">$1250</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td class="txt-oflo">Ample Admin</td>
-                                            <td class="txt-oflo">Program Sponsorship</td>
-                                            <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">FULLY PAID</span></td>
-                                            <td class="txt-oflo">April 19, 2017</td>
-                                            <td><span class="text-info">$1250</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td class="txt-oflo">Medical Pro WP Theme</td>
-                                            <td class="txt-oflo">Program Advertisement</td>
-                                            <td><span class="badge badge-pill text-uppercase text-white font-medium badge-success label-rouded">PARTIAL PAYMENT</span></td>
-                                            <td class="txt-oflo">April 20, 2017</td>
-                                            <td><span class="text-danger">-$24</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td class="txt-oflo">Hosting press html</td>
-                                            <td class="txt-oflo">Program Sponsorship</td>
-                                            <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">FULLY PAID</span></td>
-                                            <td class="txt-oflo">April 21, 2017</td>
-                                            <td><span class="text-success">$24</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td class="txt-oflo">Digital Agency PSD</td>
-                                            <td class="txt-oflo">Program Advertisement</td>
-                                            <td><span class="badge badge-pill text-uppercase text-white font-medium badge-success label-rouded">PARTIAL PAYMENT</span> </td>
-                                            <td class="txt-oflo">April 23, 2017</td>
-                                            <td><span class="text-danger">-$14</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td class="txt-oflo">Helping Hands WP Theme</td>
-                                            <td class="txt-oflo">Program Sponsorship</td>
-                                            <td><span class="badge badge-pill text-uppercase text-white font-medium badge-info label-rouded">FULLY PAID</span></td>
-                                            <td class="txt-oflo">April 22, 2017</td>
-                                            <td><span class="text-success">$64</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row">
-                <!-- column -->
-                <div class="col-lg-6" style="
-                width: 40px;
-                height: 10px;
-                ">
-                <div class="invisible">
-                    <div class="card-body">
-                        <h4 class="card-title">Product line Chart</h4>
-                        <ul class="list-inline text-right">
-                            <li class="list-inline-item">
-                                <h5><i class="fa fa-circle mr-1 text-inverse"></i>iPhone</h5>
-                            </li>
-                            <li class="list-inline-item">
-                                <h5><i class="fa fa-circle mr-1 text-info"></i>iPad</h5>
-                            </li>
-                            <li class="list-inline-item">
-                                <h5><i class="fa fa-circle mr-1 text-success"></i>iPod</h5>
-                            </li>
-                        </ul>
-                        <div id="morris-area-chart"></div>
-                    </div>
+                <div class="container">
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
             </div>
-            <!-- column -->
-            <!-- column -->
-            <div class="col-lg-6" style="
-            width: 40px;
-            height: 10px;
-            ">
-            <div class="invisible">
-                <div class="card-body">
-                    <h4 class="card-title">Site visit Chart</h4>
-                    <ul class="list-inline text-right">
-                        <li class="list-inline-item">
-                            <h5><i class="fa fa-circle mr-1 text-info"></i>Site A View</h5>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5><i class="fa fa-circle mr-1 text-inverse"></i>Site B View</h5>
-                        </li>
-                    </ul>
-                    <div id="morris-area-chart2"></div>
-                </div>
-            </div>
-        </div>
-        <!-- column -->
-        <!-- column -->
-        <div class="col-lg-6" style="
-        width: 40px;
-        height: 10px;
-        ">
-        <div class="invisible">
-            <div class="card-body">
-                <h4 class="card-title">Line Chart</h4>
-                <div id="morris-line-chart"></div>
-            </div>
-        </div>
-    </div>
-    <!-- column -->
-    <!-- column -->
-    <div class="col-lg-6" style="
-    width: 40px;
-    height: 10px;
-    ">
-    <div class="invisible">
-        <div class="card-body">
-            <h4 class="card-title">Donute Chart</h4>
-            <div id="morris-donut-chart"></div>
-        </div>
-    </div>
-</div>
-<!-- column -->
-<!-- column -->
 
-
-<!-- column -->
-</div>
 <!-- ============================================================== -->
 <!-- End PAge Content -->
 <!-- ============================================================== -->
