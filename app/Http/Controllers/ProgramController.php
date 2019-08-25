@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class ProgramController extends Controller
 {
@@ -13,7 +15,14 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        return view('programs');
+        $programs = DB::table('programs')
+                    ->leftJoin('assignments', 'programs.program_id', '=', 'assignments.program_id')
+                    ->leftJoin('anchors', 'anchors.anchor_id', '=', 'assignments.anchor_id')
+                    ->selectRaw("program_name, program_desc, program_days, start_time, end_time, program_status, GROUP_CONCAT(anchors.anchor_fname, ' ', anchor_lname SEPARATOR ', ') as anchor_name")
+                    ->groupBy('programs.program_id')
+                    ->get();
+
+        return view('programs', ['programs' => $programs]);
     }
 
     /**

@@ -723,15 +723,23 @@
 
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
+                                    @foreach ($programs as $programs)
                                     <tr>
-                                        <td>CMN Pilipinas</td>
-                                        <td>Let us praise the Lord</td>
-                                        <td>Annie Libres</td>
-                                        <td>M,T,W,Th</td>
-                                        <td>5:00</td>
-                                        <td>6:00</td>
-                                        <td>Active</td>
+                                        <td>{{$programs->program_name}}</td>
+                                        <td>{{$programs->program_desc}}</td>
+                                        <td>{{$programs->anchor_name}}</td>
+                                        <td>{{$programs->program_days}}</td>
+                                        <td>{{$programs->start_time}}</td>
+                                        <td>{{$programs->end_time}}</td>
+                                        <td>
+                                            @if($programs->program_status === 1)
+                                            Active
+                                            @else
+                                            Inactive
+                                            @endif
+                                        </td>
                                         <td>
 
                                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#programModal" data-whatever="@mdo">  View</button>
@@ -881,17 +889,20 @@
                     </td>
                 </tr>
 
+            @endforeach
             </tbody>
+
             <tfoot>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Contact Number</th>
-                    <th>Birthdate</th>
-                    <th>Sex</th>
+                    <th>Program Name</th>
+                    <th>Program Description</th>
+                    <th>Anchor</th>
+                    <th>Days</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
                     <th>Status</th>
                     <th>Manage</th>
+
                 </tr>
             </tfoot>
         </table>
