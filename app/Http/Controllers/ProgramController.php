@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class ProgramController extends Controller
 {
@@ -13,7 +15,12 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        return view('programs');
+        $programs = DB::table('programs')
+                    ->leftJoin('assignments', 'programs.program_id', '=', 'assignments.program_id')
+                    ->leftJoin('anchors', 'anchors.anchor_id', '=', 'assignments.anchor_id')
+                    ->get();
+
+        return view('programs', ['programs' => $programs]);
     }
 
     /**
