@@ -18,7 +18,7 @@ class CreateProgramsTable extends Migration
             $table->string('program_name');
             $table->integer('program_anchor');
             $table->string('program_desc');
-            $table->string('days');
+            $table->string('program_days');
             $table->time('start_time');
             $table->time('end_time');
             $table->integer('status')->default(1);
