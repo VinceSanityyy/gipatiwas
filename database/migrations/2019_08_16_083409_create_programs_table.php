@@ -15,7 +15,8 @@ class CreateProgramsTable extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->increments('program_id');
-            $table->integer('program_anchor', '4');
+            $table->string('program_name');
+            $table->integer('program_anchor');
             $table->string('program_desc');
             $table->string('days');
             $table->time('start_time');

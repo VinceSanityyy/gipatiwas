@@ -692,6 +692,23 @@
                 <div class="container">
                     <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
+
+                <script>
+                    let myChart = document.getElementById('myChart').getContext('2d');
+                    let salesTranChart = new Chart(myChart, {
+                        type: 'bar',
+
+                        data: {
+                            labels: ['July', 'August', 'September', 'October', 'November', 'December'],
+                            datasets: [{
+                                label: 'Program Sponsorship',
+                                data:[
+
+                                ]
+                            }]
+                        }
+                    })
+                </script>
             </div>
 
 <!-- ============================================================== -->
