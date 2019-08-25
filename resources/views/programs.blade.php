@@ -729,7 +729,7 @@
                                     <tr>
                                         <td>{{$programs->program_name}}</td>
                                         <td>{{$programs->program_desc}}</td>
-                                        <td>{{$programs->anchor_fname." ".$programs->anchor_lname}}</td>
+                                        <td>{{$programs->anchor_name}}</td>
                                         <td>{{$programs->program_days}}</td>
                                         <td>{{$programs->start_time}}</td>
                                         <td>{{$programs->end_time}}</td>
