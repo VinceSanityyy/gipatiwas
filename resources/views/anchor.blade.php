@@ -205,96 +205,118 @@
                                             </ul>
                                         </li>
                                         <li class="sidebar-item">
-                                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
-                                                <i class="mdi mdi-av-timer"></i>
-                                                <span class="hide-menu">Dashboard</span> 
-                                                
-                                            </a>
+                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
+                                <i class="mdi mdi-av-timer"></i>
+                                <span class="hide-menu">Dashboard</span> 
+                                
+                            </a>
 
-                                        </li>
-                                        <li class="sidebar-item">
-                                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
-                                                <i class="mdi mdi-square-inc-cash"></i>
-                                                <span class="hide-menu">Sales</span>
-                                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
+                                <i class="mdi mdi-square-inc-cash"></i>
+                                <span class="hide-menu">Sales</span>
+                            </a>
 
-                                            <ul aria-expanded="false" class="collapse  first-level">
-                                                <li class="sidebar-item">
-                                                    <a href="{{ route('transactions') }}" class="sidebar-link">
-                                                        <i class="mdi mdi-adjust"></i>
-                                                        <span class="hide-menu"> Transactions </span>
-                                                    </a>
-                                                </li>
-                                                <li class="sidebar-item">
-                                                    <a href="{{ route('report') }}" class="sidebar-link">
-                                                        <i class="mdi mdi-adjust"></i>
-                                                        <span class="hide-menu"> Reports </span>
-                                                    </a>
-                                                </li>
-                                                
-                                            </ul>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="{{ route('transactions') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Transactions </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('report') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Reports </span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
 
-                                            
-                                            
-                                        </li>
+                            
+                            
+                        </li>
 
-                                        
-                                        <li class="sidebar-item">
-                                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                                <i class="mdi mdi-clipboard"></i>
-                                                <span class="hide-menu">Inventory</span>
-                                            </a>
-                                            
-                                        </li>
+                        
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('inventory') }}" aria-expanded="false">
+                                <i class="mdi mdi-account-box"></i>
+                                <span class="hide-menu">Inventory</span>
+                            </a>
 
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="{{ route('guest') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Products </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Suppliers </span>
+                                    </a>
+                                </li>
+                                    <li class="sidebar-item">
+                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Customers </span>
+                                    </a>
+                                </li>
 
-                                        <li class="sidebar-item">
-                                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
-                                                <i class="mdi mdi-account-box"></i>
-                                                <span class="hide-menu">Guest</span>
-                                            </a>
-
-                                            <ul aria-expanded="false" class="collapse  first-level">
-                                                <li class="sidebar-item">
-                                                    <a href="{{ route('guest') }}" class="sidebar-link">
-                                                        <i class="mdi mdi-adjust"></i>
-                                                        <span class="hide-menu"> Create Guest</span>
-                                                    </a>
-                                                </li>
-                                                <li class="sidebar-item">
-                                                    <a href="{{ route('appointment') }}" class="sidebar-link">
-                                                        <i class="mdi mdi-adjust"></i>
-                                                        <span class="hide-menu"> Guest Appointments </span>
-                                                    </a>
-                                                </li>
-
-                                            </ul>
-
+                            </ul>
+                            
+                        </li>
 
 
-                                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
+                                <i class="mdi mdi-account-box"></i>
+                                <span class="hide-menu">Guest</span>
+                            </a>
 
-                                        <li class="sidebar-item">
-                                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
-                                                <i class="mdi mdi-radio"></i>
-                                                <span class="hide-menu">Program Segments</span>
-                                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="{{ route('guest') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Create Guest</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Guest Appointments </span>
+                                    </a>
+                                </li>
 
-                                        </li>
+                            </ul>
 
-                                        <li class="sidebar-item">
-                                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('anchor') }}" aria-expanded="false">
-                                                <i class="mdi mdi-account-multiple"></i>
-                                                <span class="hide-menu">Anchors </span>
-                                            </a>
-                                        </li>
 
-                                        <li class="sidebar-item">
-                                            <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="{{ route('calendar') }}" aria-expanded="false">
-                                                <i class="mdi mdi-calendar-check"></i>
-                                                <span class="hide-menu">Calendar of Activities</span>
-                                            </a>
-                                        </li>
+
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
+                                <i class="mdi mdi-radio"></i>
+                                <span class="hide-menu">Program Segments</span>
+                            </a>
+                            
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="{{ route('anchor') }}" aria-expanded="false">
+                                <i class="mdi mdi-account-multiple"></i>
+                                <span class="hide-menu">Anchors </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="{{ route('calendar') }}" aria-expanded="false">
+                                <i class="mdi mdi-calendar-check"></i>
+                                <span class="hide-menu">Calendar of Activities</span>
+                            </a>
+                        </li>
 
                                         <div class="devider"></div>
                                         <li class="sidebar-item">

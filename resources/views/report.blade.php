@@ -205,7 +205,7 @@
                             <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
                                 <span class="hide-menu">Dashboard</span> 
-
+                                
                             </a>
 
                         </li>
@@ -228,20 +228,42 @@
                                         <span class="hide-menu"> Reports </span>
                                     </a>
                                 </li>
-
+                                
                             </ul>
 
-
-
+                            
+                            
                         </li>
 
-
+                        
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="mdi mdi-clipboard"></i>
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('inventory') }}" aria-expanded="false">
+                                <i class="mdi mdi-account-box"></i>
                                 <span class="hide-menu">Inventory</span>
                             </a>
 
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="{{ route('guest') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Products </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Suppliers </span>
+                                    </a>
+                                </li>
+                                    <li class="sidebar-item">
+                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Customers </span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                            
                         </li>
 
 
@@ -271,13 +293,12 @@
 
                         </li>
 
-                        
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
                                 <i class="mdi mdi-radio"></i>
                                 <span class="hide-menu">Program Segments</span>
                             </a>
-
+                            
                         </li>
 
                         <li class="sidebar-item">
@@ -293,7 +314,6 @@
                                 <span class="hide-menu">Calendar of Activities</span>
                             </a>
                         </li>
-
                         <div class="devider"></div>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
