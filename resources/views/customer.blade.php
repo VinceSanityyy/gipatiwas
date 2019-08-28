@@ -156,52 +156,6 @@
                     <!-- Sidebar navigation-->
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav">
-                            <li class="sidebar-item">
-                                @if(isset(Auth::user()->email))
-                                <a class="sidebar-link has-arrow waves-effect waves-dark profile-dd" href="javascript:void(0)" aria-expanded="false">
-                                    <img src="assets/images/users/1.jpg" class="rounded-circle ml-2" width="30">
-                                    <span class="hide-menu">{{ Auth::user()->name }} </span>
-                                </a>
-                                @endif
-                            <!--
-
-                            @if(isset(Auth::user()->email))
-                            <a href="#" class="waves-effect"><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> {{ Auth::user()->name }}</span>
-                            </a>
-                            @endif -->
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="javascript:void(0)" class="sidebar-link">
-                                        <i class="ti-user"></i>
-                                        <span class="hide-menu"> My Profile </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="javascript:void(0)" class="sidebar-link">
-                                        <i class="ti-wallet"></i>
-                                        <span class="hide-menu"> My Balance </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="javascript:void(0)" class="sidebar-link">
-                                        <i class="ti-email"></i>
-                                        <span class="hide-menu"> Inbox </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="javascript:void(0)" class="sidebar-link">
-                                        <i class="ti-settings"></i>
-                                        <span class="hide-menu"> Account Setting </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="{{ route('logout') }}" class="sidebar-link">
-                                        <i class="fas fa-power-off"></i>
-                                        <span class="hide-menu"> Logout </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
@@ -237,7 +191,7 @@
                         </li>
 
                         
-                        <li class="sidebar-item">
+                                                <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('inventory') }}" aria-expanded="false">
                                 <i class="mdi mdi-account-box"></i>
                                 <span class="hide-menu">Inventory</span>
@@ -245,19 +199,19 @@
 
                                 <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="{{ route('guest') }}" class="sidebar-link">
+                                    <a href="{{ route('products') }}" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
                                         <span class="hide-menu"> Products </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                    <a href="{{ route('supplier') }}" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
                                         <span class="hide-menu"> Suppliers </span>
                                     </a>
                                 </li>
                                     <li class="sidebar-item">
-                                    <a href="{{ route('appointment') }}" class="sidebar-link">
+                                    <a href="{{ route('customer') }}" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
                                         <span class="hide-menu"> Customers </span>
                                     </a>
@@ -343,14 +297,14 @@
             <div class="page-breadcrumb border-bottom">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-xs-12 align-self-center">
-                        <h5 class="font-medium text-uppercase mb-0">Dashboard</h5>
+                        <h5 class="font-medium text-uppercase mb-0">Customers</h5>
                     </div>
                     <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
                         
                         <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                             <ol class="breadcrumb mb-0 justify-content-end p-0">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                <li class="breadcrumb-item active" aria-current="page">Customers</li>
                             </ol>
                         </nav>
                     </div>
@@ -362,33 +316,22 @@
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="page-content container-fluid">
 
+<div class="page-content container-fluid">
 
-    <div class="row" id="topmostBanner">
-    <div class="col-2">
-      User Info
-    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#custModal" data-whatever="@mdo" style=" margin-bottom: 10px;"><i class="fa fa-plus"></i> New Customer</button>
 
-    <div class="col-8">
-      <center>DXGN</center>
-    </div>
-
-    <div class="col-2">
-      <span id="datetime"></span>
-
-      <script>
-      var dt = new Date();
-      document.getElementById("datetime").innerHTML = dt.toLocaleString();
-      </script>
-    </div>
-  </div>
-
-  <br><br>
-
-   <form>
-
-      <div class="container">
+    <div class="modal fade" id="custModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel1">Customer Details:</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                
+    <div class="modal-body">
+        <form>
+<div class="container">
       <div class="row">
         <div class="col-6">
             <div class="form-group">
@@ -426,13 +369,63 @@
                   <input type="text" class="add-customer-contact form-control" name="custContact" placeholder="Contact">
                 </div>
             </div></div></div>
+        </form>
+</div>
 
-    </form>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Create</button>
+</div>
+        </div>
+    </div>
+</div>
 
-
-
-                
+<div class="row">
+                <div class="col-12">
+                    <div class="material-card card">
+                        <div class="card-body">
+                            <h4 class="card-title">Sales Transactions</h4>
+                            <h6 class="card-subtitle"></h6>
+                            <div class="table-responsive">
+                                <table id="default_order" class="table table-striped border display" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Code</th>
+                                            <th>Name / Company</th>
+                                            <th>Address</th>
+                                            <th>E-mail</th>
+                                            <th>Contact</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>001</td>
+                                            <td>AdDU</td>
+                                            <td>Roxas Ave</td>
+                                            <td>addu@addu.edu.ph</td>
+                                            <td>09123456789</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Code</th>
+                                            <th>Name / Company</th>
+                                            <th>Address</th>
+                                            <th>E-mail</th>
+                                            <th>Contact</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+</div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
