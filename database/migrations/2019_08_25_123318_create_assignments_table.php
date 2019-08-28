@@ -15,17 +15,8 @@ class CreateAssignmentsTable extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->increments('assignment_id');
-            $table->integer('assign_anchor_id')->unsigned();
-            $table->integer('assign_program_id')->unsigned();
-
-            $table->foreign('assign_anchor_id')
-                    ->references('anchor_id')
-                    ->on('anchors');
-
-            $table->foreign('assign_program_id')
-                    ->references('program_id')
-                    ->on('programs');        
-
+            $table->integer('anchor_id')->unsigned();
+            $table->integer('program_id')->unsigned();
 
             $table->timestamps();
         });
