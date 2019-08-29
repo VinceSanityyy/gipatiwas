@@ -129,9 +129,9 @@
                                             <a href="javascript:void(0)" class="btn btn-sm btn-danger text-white mt-2 btn-rounded">View Profile</a>
                                         </div>
                                     </div>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user mr-1 ml-1"></i> My Profile</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
+                                         <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user mr-1 ml-1"></i> My Profile</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="/logout"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
                                 </div>
                             </li>
                             <!-- ============================================================== -->
@@ -300,9 +300,9 @@
 
                         <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                             <ol class="breadcrumb mb-0 justify-content-end p-0">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                
-                                <li class="breadcrumb-item active" aria-current="page">Programs Segments</li>
+                                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                                <li class="breadcrumb-item"><a href="index.html">Sales</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Transactions</li>
                             </ol>
                         </nav>
                     </div>
