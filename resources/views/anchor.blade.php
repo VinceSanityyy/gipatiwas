@@ -221,13 +221,13 @@
 
 
 
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#anchorModal" data-whatever="@mdo" style=" margin-bottom: 10px;"><i class="fa fa-plus"></i>  New Anchor</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newAnchorModal" data-whatever="@mdo" style=" margin-bottom: 10px;"><i class="fa fa-plus"></i>  New Anchor</button>
 
-                                <div class="modal fade" id="anchorModal" tabindex="-1" role="dialog" aria-labelledby="anchorModalLabel1">
+                                <div class="modal fade" id="newAnchorModal" tabindex="-1" role="dialog" aria-labelledby="anchorModalLabel1">
                                     <div class="modal-dialog modal modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title" id="exampleModalLabel1">Anchor Details:</h4>
+                                                <h4 class="modal-title" id="anchorModalLabel1">Anchor Details:</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
 

@@ -120,7 +120,7 @@ class AnchorController extends Controller
         ]);
 
         if ($request->has('anchor_status')){
-            if ($request->get('radioSexM') == 'male'){
+            if ($request->get('radioSex') == 'male'){
                 DB::table('anchors')
                 ->where('anchor_id', $id)
                 ->update([
