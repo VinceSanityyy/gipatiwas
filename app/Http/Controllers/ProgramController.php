@@ -47,7 +47,9 @@ class ProgramController extends Controller
     {
         //
         $validator = $request->validate([
-            'program_name' => 'required'
+            'program_name' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required'
         ]);
 
         $sched = "";

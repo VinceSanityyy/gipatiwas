@@ -235,12 +235,12 @@
                                                 @csrf
                                                 <div class="form-group">
                                                     <label for="program_name" class="control-label">Program Name:</label>
-                                                    <input type="text" class="form-control" id="program_name">
+                                                    <input type="text" class="form-control" name="program_name">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="program_desc" class="control-label">Program Description:</label>
-                                                    <textarea class="form-control" id="program_desc"></textarea>
+                                                    <textarea class="form-control" name="program_desc"></textarea>
                                                 </div>
 
                                                 <div class="email-repeater form-group">
@@ -283,7 +283,7 @@
                                         <div class="row" style="margin-left: 50px;">        
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="monCheck">
+                                                    <input type="checkbox" class="custom-control-input" name="monCheck" id="monCheck">
                                                     <label class="custom-control-label" for="monCheck">Mon</label>
                                                 </div>
                                             </div>
@@ -291,42 +291,42 @@
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="tueCheck">
+                                                    <input type="checkbox" class="custom-control-input" name="tueCheck" id="tueCheck">
                                                     <label class="custom-control-label" for="tueCheck">Tue</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="wedCheck">
+                                                    <input type="checkbox" class="custom-control-input" name="wedCheck" id="wedCheck">
                                                     <label class="custom-control-label" for="wedCheck">Wed</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="thurCheck">
+                                                    <input type="checkbox" class="custom-control-input" name="thurCheck" id="thurCheck">
                                                     <label class="custom-control-label" for="thurCheck">Th</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="friCheck">
+                                                    <input type="checkbox" class="custom-control-input" name="friCheck" id="friCheck">
                                                     <label class="custom-control-label" for="friCheck">Fri</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="satCheck">
+                                                    <input type="checkbox" class="custom-control-input" name="satCheck" id="satCheck">
                                                     <label class="custom-control-label" for="satCheck">Sat</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="sunCheck">
+                                                    <input type="checkbox" class="custom-control-input" name="sunCheck" id="sunCheck">
                                                     <label class="custom-control-label" for="sunCheck">Sun</label>
                                                 </div>
                                             </div>
@@ -339,7 +339,7 @@
                                         ">
                                         <label for="start_time" class="col-sm-3 text-right control-label col-form-label">Start Time</label>
                                         <div class="col-sm-9">
-                                            <input type="time" class="form-control" id="start_time" placeholder="Start Time Here" style="
+                                            <input type="time" class="form-control" name="start_time" placeholder="Start Time Here" style="
                                             width: 126px;
                                             ">
                                         </div>
@@ -350,7 +350,7 @@
                                     ">
                                     <label for="end_time" class="col-sm-3 text-right control-label col-form-label">End Time</label>
                                     <div class="col-sm-9">
-                                        <input type="time" class="form-control" id="end_time" placeholder="End Time Here" style="
+                                        <input type="time" class="form-control" name="end_time" placeholder="End Time Here" style="
                                         width: 126px;
                                         ">
                                     </div>
@@ -370,6 +370,14 @@
         <!-- ============================================================== -->
         <!-- Start Page Content -->
         <!-- ============================================================== -->
+
+        @if (\Session::has('success'))
+                                <div class="alert alert-success">
+                                    <ul>
+                                        <li>{!! \Session::get('success') !!}</li>
+                                    </ul>
+                                </div>
+                                @endif
 
 
         <!-- order table -->
