@@ -89,7 +89,7 @@ class ProgramController extends Controller
             $sched = $sched."Su";
         };
 
-        DB::table('programs')->insert([
+        $programId = DB::table('programs')->insertGetId([
             'program_name' => $request->get('program_name'),
             'program_desc' => $request->get('program_desc'),
             'program_days' => $sched,
@@ -99,6 +99,16 @@ class ProgramController extends Controller
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
         ]);
+
+        for($i = 1; $i < count($request->get('anchor_id[]')); i++)
+        {
+            DB::table('assignments')->insert([
+                'anchor_id' => $request->get('anchor_id[$i]'),
+                'program_id' => $programId,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]);
+        };
 
         return redirect('programs')->with('success', 'Program added successfully!');
     }
