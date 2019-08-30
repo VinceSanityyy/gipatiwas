@@ -103,10 +103,10 @@ class ProgramController extends Controller
 
         
 
-        foreach($request->get('anchor_id[]'))
+        foreach($request->get('anchor_id[]') as $anchorId)
         {
             DB::table('assignments')->insert([
-                'anchor_id' => $request->get('anchor_id[$i]'),
+                'anchor_id' => $anchorId,
                 'program_id' => $programId,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
