@@ -220,26 +220,27 @@
                         <!-- ============================================================== -->
                         <div class="page-content container-fluid">
 
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style=" margin-bottom: 10px;"><i class="fa fa-plus"></i> New Program Segment</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProgramModal" data-whatever="@mdo" style=" margin-bottom: 10px;"><i class="fa fa-plus"></i> New Program Segment</button>
 
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                            <div class="modal fade" id="newProgramModal" tabindex="-1" role="dialog" aria-labelledby="programModalLabel1">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title" id="exampleModalLabel1">Program Details</h4>
+                                            <h4 class="modal-title" id="programModalLabel1">Program Details</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         </div>
                                         
                                         <div class="modal-body">
-                                            <form>
+                                            <form method="post" action="{{ route('programs.store') }}">
+                                                @csrf
                                                 <div class="form-group">
-                                                    <label for="recipient-name" class="control-label">Program Name:</label>
-                                                    <input type="text" class="form-control" id="recipient-name1">
+                                                    <label for="program_name" class="control-label">Program Name:</label>
+                                                    <input type="text" class="form-control" id="program_name">
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="message-text" class="control-label">Program Description:</label>
-                                                    <textarea class="form-control" id="message-text1"></textarea>
+                                                    <label for="program_desc" class="control-label">Program Description:</label>
+                                                    <textarea class="form-control" id="program_desc"></textarea>
                                                 </div>
 
                                                 <div class="email-repeater form-group">
@@ -248,18 +249,17 @@
                                                             <div class="col-md-10" style="
                                                             height: 60px;
                                                             ">
-                                                            <form class="mt-4">
+                                                            <!--<form class="mt-4">-->
                                                                 <div class="form-group mb-4">
-                                                                    <label for="exampleFormControlSelect1">Select Anchor</label>
-                                                                    <select class="form-control" id="exampleFormControlSelect1">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                        <option>4</option>
-                                                                        <option>5</option>
+                                                                    <label for="anchorFormControlSelect">Select Anchor</label>
+                                                                    <select class="form-control" id="anchor_id">
+                                                                        @foreach ($anchors as $anchors)
+                                                                            <option value="{{$anchors->anchor_id}}">{{$anchors->anchor_fname}} {{$anchors->anchor_lname}}</option>
+                                                                        @endforeach
+
                                                                     </select>
                                                                 </div>
-                                                            </form>
+                                                            <!--</form>-->
                                                         </div>
                                                         <div class="col-md-2" style="
                                                         margin-top: 28px;
@@ -283,44 +283,51 @@
                                         <div class="row" style="margin-left: 50px;">        
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Mon</label>
+                                                    <input type="checkbox" class="custom-control-input" id="monCheck">
+                                                    <label class="custom-control-label" for="monCheck">Mon</label>
                                                 </div>
                                             </div>
 
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                    <label class="custom-control-label" for="customCheck2">Tue</label>
+                                                    <input type="checkbox" class="custom-control-input" id="tueCheck">
+                                                    <label class="custom-control-label" for="tueCheck">Tue</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                                    <label class="custom-control-label" for="customCheck3">Wed</label>
+                                                    <input type="checkbox" class="custom-control-input" id="wedCheck">
+                                                    <label class="custom-control-label" for="wedCheck">Wed</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                                    <label class="custom-control-label" for="customCheck4">Th</label>
+                                                    <input type="checkbox" class="custom-control-input" id="thurCheck">
+                                                    <label class="custom-control-label" for="thurCheck">Th</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                                    <label class="custom-control-label" for="customCheck5">Fri</label>
+                                                    <input type="checkbox" class="custom-control-input" id="friCheck">
+                                                    <label class="custom-control-label" for="friCheck">Fri</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                                    <label class="custom-control-label" for="customCheck6">Sat</label>
+                                                    <input type="checkbox" class="custom-control-input" id="satCheck">
+                                                    <label class="custom-control-label" for="satCheck">Sat</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-check form-check-inline">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="sunCheck">
+                                                    <label class="custom-control-label" for="sunCheck">Sun</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -330,9 +337,9 @@
                                         margin-right: 90px;
                                         margin-left: -50;
                                         ">
-                                        <label for="inputEmail3" class="col-sm-3 text-right control-label col-form-label">Start Time</label>
+                                        <label for="start_time" class="col-sm-3 text-right control-label col-form-label">Start Time</label>
                                         <div class="col-sm-9">
-                                            <input type="time" class="form-control" id="inputEmail3" placeholder="Start Time Here" style="
+                                            <input type="time" class="form-control" id="start_time" placeholder="Start Time Here" style="
                                             width: 126px;
                                             ">
                                         </div>
@@ -341,27 +348,25 @@
                                     margin-right: 90px;
                                     margin-left: -50;
                                     ">
-                                    <label for="inputEmail3" class="col-sm-3 text-right control-label col-form-label">End Time</label>
+                                    <label for="end_time" class="col-sm-3 text-right control-label col-form-label">End Time</label>
                                     <div class="col-sm-9">
-                                        <input type="time" class="form-control" id="inputEmail3" placeholder="End Time Here" style="
+                                        <input type="time" class="form-control" id="end_time" placeholder="End Time Here" style="
                                         width: 126px;
                                         ">
                                     </div>
                                 </div>
                             </div>
-
-
-
-                        </form>
-                    </div>
+                    
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Create</button>
+                        <input type="submit" class="btn btn-success" value="Create">
                     </div>
+                </form>
                 </div>
             </div>
         </div>
+    </div>
         <!-- ============================================================== -->
         <!-- Start Page Content -->
         <!-- ============================================================== -->

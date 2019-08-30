@@ -31,6 +31,7 @@ Route::get('/guest', 'GuestController@index')->name('guest');
 
 //PROGRAMS
 Route::get('/programs', 'ProgramController@index')->name('programs');
+Route::post('/programs', 'ProgramController@store')->name('programs.store');
 
 //REPORT
 Route::get('/report', 'ReportController@index')->name('report');
