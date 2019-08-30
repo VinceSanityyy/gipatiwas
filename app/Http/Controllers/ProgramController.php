@@ -45,7 +45,7 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        unserialize('anchor_id_string');
+
         //
         $validator = $request->validate([
             'program_name' => 'required',
@@ -101,9 +101,9 @@ class ProgramController extends Controller
             'updated_at' => date("Y-m-d H:i:s")
         ]);
 
-        $anchorId = $request->get('anchor_id[]');
+        
 
-        for($i = 1; $i < count($anchorId); $i++)
+        foreach($request->get('anchor_id[]'))
         {
             DB::table('assignments')->insert([
                 'anchor_id' => $request->get('anchor_id[$i]'),
