@@ -252,7 +252,7 @@
                                                             <!--<form class="mt-4">-->
                                                                 <div class="form-group mb-4">
                                                                     <label for="anchorFormControlSelect">Select Anchor</label>
-                                                                    <select class="form-control" id="anchor_id">
+                                                                    <select class="form-control" id="anchor_id" name="anchor_id[]">
                                                                         @foreach ($anchors as $anchors)
                                                                             <option value="{{$anchors->anchor_id}}">{{$anchors->anchor_fname}} {{$anchors->anchor_lname}}</option>
                                                                         @endforeach
