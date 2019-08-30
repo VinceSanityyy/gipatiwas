@@ -356,7 +356,8 @@
                                     </div>
                                 </div>
                             </div>
-                    
+
+                            <input type="hidden" name="anchor_id_string" id="anchor_id_string" value="{{echo base64_encode(serialize(anchor_id[]))}}">
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

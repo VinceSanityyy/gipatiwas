@@ -45,6 +45,7 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
+        unserialize('anchor_id_string');
         //
         $validator = $request->validate([
             'program_name' => 'required',
