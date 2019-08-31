@@ -22,7 +22,9 @@ class ProgramController extends Controller
                     ->groupBy('programs.program_id')
                     ->get();
 
-        return view('programs', ['programs' => $programs]);
+        $anchors = DB::table('anchors')->get();
+
+        return view('programs', ['programs' => $programs], ['anchors' => $anchors]);
     }
 
     /**
@@ -43,7 +45,76 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
+
         //
+        $validator = $request->validate([
+            'program_name' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required'
+        ]);
+
+        $sched = "";
+
+        if($request->has('monCheck'))
+        {
+            $sched = $sched."M";
+        };
+
+        if($request->has('tueCheck'))
+        {
+            $sched = $sched."T";
+        };
+
+        if($request->has('wedCheck'))
+        {
+            $sched = $sched."W";
+        };
+
+        if($request->has('thurCheck'))
+        {
+            $sched = $sched."Th";
+        };
+
+        if($request->has('friCheck'))
+        {
+            $sched = $sched."F";
+        };
+
+        if($request->has('satCheck'))
+        {
+            $sched = $sched."Sa";
+        };
+
+        if($request->has('sunCheck'))
+        {
+            $sched = $sched."Su";
+        };
+
+        $programId = DB::table('programs')->insertGetId([
+            'program_name' => $request->get('program_name'),
+            'program_desc' => $request->get('program_desc'),
+            'program_days' => $sched,
+            'start_time' => $request->get('start_time'),
+            'end_time' => $request->get('end_time'),
+            'program_status' => '1',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
+        ]);
+
+
+        
+
+        for($i = 0; $i < count($request->assignments); $i++)
+        {
+            DB::table('assignments')->insert([
+                'anchor_id' => $request->get('assignments')[$i]['anchor_id'],
+                'program_id' => $programId,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]);
+        };
+
+        return redirect('programs')->with('success', 'Program added successfully!');
     }
 
     /**
