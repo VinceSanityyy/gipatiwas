@@ -244,7 +244,7 @@
                                                 </div>
 
                                                 <div class="email-repeater form-group">
-                                                    <div data-repeater-list="repeater-group">
+                                                    <div data-repeater-list="assignments">
                                                         <div data-repeater-item class="row mb-3">
                                                             <div class="col-md-10" style="
                                                             height: 60px;

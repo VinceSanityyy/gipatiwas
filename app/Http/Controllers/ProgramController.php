@@ -101,12 +101,13 @@ class ProgramController extends Controller
             'updated_at' => date("Y-m-d H:i:s")
         ]);
 
+
         
 
-        foreach($request->get('anchor_id[]') as $anchorId)
+        for($i = 0; $i < count($request->assignments); $i++)
         {
             DB::table('assignments')->insert([
-                'anchor_id' => $anchorId,
+                'anchor_id' => $request->get('assignments')[$i]['anchor_id'],
                 'program_id' => $programId,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
