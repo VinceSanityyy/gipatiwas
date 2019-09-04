@@ -222,11 +222,11 @@
 
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProgramModal" data-whatever="@mdo" style=" margin-bottom: 10px;"><i class="fa fa-plus"></i> New Program Segment</button>
 
-                            <div class="modal fade" id="newProgramModal" tabindex="-1" role="dialog" aria-labelledby="programModalLabel">
+                            <div class="modal fade" id="newProgramModal" tabindex="-1" role="dialog" aria-labelledby="programModalLabel1">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title" id="programModalLabel">Program Details</h4>
+                                            <h4 class="modal-title" id="programModalLabel1">Program Details</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         </div>
                                         
@@ -420,51 +420,44 @@
                                         </td>
                                         <td>
 
-                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#programModal{{$programs->program_id}}" data-whatever="{{$programs->program_id}}">  View</button>
+                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#programModal" data-whatever="@mdo">  View</button>
                                             <button type="button" class="btn btn-danger">  Delete</button>
 
-                                            <div class="modal fade" id="programModal{{$programs->program_id}}" tabindex="-1" role="dialog" aria-labelledby="programModalLabel{{$programs->program_id}}">
+                                            <div class="modal fade" id="programModal" tabindex="-1" role="dialog" aria-labelledby="programModalLabel1">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title" id="programModalName{{$programs->program_id}}">Program Details</h4>
+                                                            <h4 class="modal-title" id="exampleModalLabel1">Program Details</h4>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            <form method="POST" action="{{ route('programs.update', '$programs->program_id') }}">
-                                                                @method('PATCH')
-                                                                @csrf
+                                                            <form>
                                                                 <div class="form-group">
-                                                                    <label for="program-name" class="control-label">Program Name:</label>
-                                                                    <input type="text" class="form-control" name="program_name" value="{{$programs->program_name}}">
+                                                                    <label for="recipient-name" class="control-label">Program Name:</label>
+                                                                    <input type="text" class="form-control" id="recipient-name1">
                                                                 </div>
 
                                                                 <div class="form-group">
-                                                                    <label for="program-desc" class="control-label">Program Description:</label>
-                                                                    <textarea class="form-control" name="program_desc" value="{{$programs->program_desc}}"></textarea>
+                                                                    <label for="message-text" class="control-label">Program Description:</label>
+                                                                    <textarea class="form-control" id="message-text1"></textarea>
                                                                 </div>
 
                                                                 <div class="email-repeater form-group">
-                                                                    <div data-repeater-list="assignments">
-                                                                        @foreach ($assignments as $assignments)
-                                                                        @if($assignments->program_id === $programs->program_id)
+                                                                    <div data-repeater-list="repeater-group">
                                                                         <div data-repeater-item class="row mb-3">
                                                                             <div class="col-md-10" style="
                                                                             height: 60px;
                                                                             ">
                                                                             <form class="mt-4">
                                                                                 <div class="form-group mb-4">
-                                                                                    <label for="programFormSelect{{$programs->program_id}}">Select Anchor</label>
-                                                                                    <select class="form-control" id="anchor_id" name="anchor_id[]">
-                                                                                        @foreach ($anchors as $anchors)
-                                                                                        @if($assignment->anchor_id === $anchors->anchor_id)
-                                                                                            <option value="{{$anchors->anchor_id}}" selected>{{$anchors->anchor_fname}} {{$anchors->anchor_lname}}</option>
-                                                                                        @else
-                                                                                            <option value="{{$anchors->anchor_id}}">{{$anchors->anchor_fname}} {{$anchors->anchor_lname}}</option>
-                                                                                        @endif
-                                                                                        @endforeach
-
+                                                                                    <label for="exampleFormControlSelect1">Select Anchor</label>
+                                                                                    <select class="form-control" id="exampleFormControlSelect1">
+                                                                                        <option>1</option>
+                                                                                        <option>2</option>
+                                                                                        <option>3</option>
+                                                                                        <option>4</option>
+                                                                                        <option>5</option>
                                                                                     </select>
                                                                                 </div>
                                                                             </form>
@@ -479,8 +472,6 @@
                                                                     </button>
                                                                 </div>
                                                             </div>
-                                                            @endif
-                                                            @endforeach
                                                         </div>
                                                         <button type="button" data-repeater-create="" class="btn btn-info waves-effect waves-light">Add Anchor
                                                         </button>
@@ -493,86 +484,44 @@
                                                         <div class="row" style="margin-left: 50px;">        
                                                             <div class="form-check form-check-inline">
                                                                 <div class="custom-control custom-checkbox">
-                                                                    @if(str_contains($programs->program_days, 'Mon'))
-                                                                    <input type="checkbox" class="custom-control-input" name="monCheck" checked>
-                                                                    <label class="custom-control-label" for="monCheck">Mon</label>
-                                                                    @else
-                                                                    <input type="checkbox" class="custom-control-input" name="monCheck">
-                                                                    <label class="custom-control-label" for="monCheck">Mon</label>
-                                                                    @endif
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                                    <label class="custom-control-label" for="customCheck1">Mon</label>
                                                                 </div>
                                                             </div>
 
 
                                                             <div class="form-check form-check-inline">
                                                                 <div class="custom-control custom-checkbox">
-                                                                    @if(str_contains($programs->program_days, 'Tue'))
-                                                                    <input type="checkbox" class="custom-control-input" name="tueCheck" checked>
-                                                                    <label class="custom-control-label" for="tueCheck">Tue</label>
-                                                                    @else
-                                                                    <input type="checkbox" class="custom-control-input" name="tueCheck">
-                                                                    <label class="custom-control-label" for="tueCheck">Tue</label>
-                                                                    @endif
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                                    <label class="custom-control-label" for="customCheck2">Tue</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-check form-check-inline">
                                                                 <div class="custom-control custom-checkbox">
-                                                                    @if(str_contains($programs->program_days, 'Wed'))
-                                                                    <input type="checkbox" class="custom-control-input" name="wedCheck" checked>
-                                                                    <label class="custom-control-label" for="wedCheck">Wed</label>
-                                                                    @else
-                                                                    <input type="checkbox" class="custom-control-input" name="wedCheck">
-                                                                    <label class="custom-control-label" for="wedCheck">Wed</label>
-                                                                    @endif
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                                                    <label class="custom-control-label" for="customCheck3">Wed</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-check form-check-inline">
                                                                 <div class="custom-control custom-checkbox">
-                                                                    @if(str_contains($programs->program_days, 'Thu'))
-                                                                    <input type="checkbox" class="custom-control-input" name="thurCheck" checked>
-                                                                    <label class="custom-control-label" for="thurCheck">Th</label>
-                                                                    @else
-                                                                    <input type="checkbox" class="custom-control-input" name="thurCheck">
-                                                                    <label class="custom-control-label" for="thurCheck">Th</label>
-                                                                    @endif
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                                                    <label class="custom-control-label" for="customCheck4">Th</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-check form-check-inline">
                                                                 <div class="custom-control custom-checkbox">
-                                                                    @if(str_contains($programs->program_days, 'Fri'))
-                                                                    <input type="checkbox" class="custom-control-input" name="friCheck" checked>
-                                                                    <label class="custom-control-label" for="friCheck">Fri</label>
-                                                                    @else
-                                                                    <input type="checkbox" class="custom-control-input" name="friCheck">
-                                                                    <label class="custom-control-label" for="friCheck">Fri</label>
-                                                                    @endif
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                                                    <label class="custom-control-label" for="customCheck5">Fri</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-check form-check-inline">
                                                                 <div class="custom-control custom-checkbox">
-                                                                    @if(str_contains($programs->program_days, 'Sat'))
-                                                                    <input type="checkbox" class="custom-control-input" name="satCheck" checked>
-                                                                    <label class="custom-control-label" for="satCheck">Sat</label>
-                                                                    @else
-                                                                    <input type="checkbox" class="custom-control-input" name="satCheck">
-                                                                    <label class="custom-control-label" for="satCheck">Sat</label>
-                                                                    @endif
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-check form-check-inline">
-                                                                <div class="custom-control custom-checkbox">
-                                                                    @if(str_contains($programs->program_days, 'Sun'))
-                                                                    <input type="checkbox" class="custom-control-input" name="sunCheck" checked>
-                                                                    <label class="custom-control-label" for="sunCheck">Sun</label>
-                                                                    @else
-                                                                    <input type="checkbox" class="custom-control-input" name="sunCheck">
-                                                                    <label class="custom-control-label" for="sunCheck">Sun</label>
-                                                                    @endif
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck6">
+                                                                    <label class="custom-control-label" for="customCheck6">Sat</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -584,9 +533,9 @@
                                                         ">
                                                         <label for="inputEmail3" class="col-sm-3 text-right control-label col-form-label">Start Time</label>
                                                         <div class="col-sm-9">
-                                                            <input type="time" class="form-control" name="start_time" placeholder="Start Time Here" style="
+                                                            <input type="time" class="form-control" id="inputEmail3" placeholder="Start Time Here" style="
                                                             width: 126px;
-                                                            " value="{{$programs->start_time}}">
+                                                            ">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row pb-3" style="
@@ -595,9 +544,9 @@
                                                     ">
                                                     <label for="inputEmail3" class="col-sm-3 text-right control-label col-form-label">End Time</label>
                                                     <div class="col-sm-9">
-                                                        <input type="time" class="form-control" name="end_time" placeholder="End Time Here" style="
+                                                        <input type="time" class="form-control" id="inputEmail3" placeholder="End Time Here" style="
                                                         width: 126px;
-                                                        " value={{$programs->end_time}}>
+                                                        ">
                                                     </div>
                                                 </div>
                                             </div>
