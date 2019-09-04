@@ -32,6 +32,8 @@ Route::get('/guest', 'GuestController@index')->name('guest');
 //PROGRAMS
 Route::get('/programs', 'ProgramController@index')->name('programs');
 Route::post('/programs', 'ProgramController@store')->name('programs.store');
+Route::patch('/programs/update/{id}', 'ProgramController@update')->name('programs.update');
+Route::patch('/programs/inactive/{id}', 'ProgramController@inactive')->name('programs.inactive');
 
 //REPORT
 Route::get('/report', 'ReportController@index')->name('report');
