@@ -18,13 +18,15 @@ class ProgramController extends Controller
         $programs = DB::table('programs')
                     ->leftJoin('assignments', 'programs.program_id', '=', 'assignments.program_id')
                     ->leftJoin('anchors', 'anchors.anchor_id', '=', 'assignments.anchor_id')
-                    ->selectRaw("program_name, program_desc, program_days, start_time, end_time, program_status, GROUP_CONCAT(anchors.anchor_fname, ' ', anchor_lname SEPARATOR ', ') as anchor_name")
+                    ->selectRaw("programs.program_id, program_name, program_desc, program_days, start_time, end_time, program_status, GROUP_CONCAT(anchors.anchor_fname, ' ', anchor_lname SEPARATOR ', ') as anchor_name")
                     ->groupBy('programs.program_id')
                     ->get();
 
         $anchors = DB::table('anchors')->get();
 
-        return view('programs', ['programs' => $programs], ['anchors' => $anchors]);
+        $assignments = DB::table('assignments')->get();
+
+        return view('programs', ['programs' => $programs], ['anchors' => $anchors], ['assignments' => $assignments]);
     }
 
     /**
@@ -57,37 +59,37 @@ class ProgramController extends Controller
 
         if($request->has('monCheck'))
         {
-            $sched = $sched."M";
+            $sched = $sched."Mon";
         };
 
         if($request->has('tueCheck'))
         {
-            $sched = $sched."T";
+            $sched = $sched."Tue";
         };
 
         if($request->has('wedCheck'))
         {
-            $sched = $sched."W";
+            $sched = $sched."Wed";
         };
 
         if($request->has('thurCheck'))
         {
-            $sched = $sched."Th";
+            $sched = $sched."Thu";
         };
 
         if($request->has('friCheck'))
         {
-            $sched = $sched."F";
+            $sched = $sched."Fri";
         };
 
         if($request->has('satCheck'))
         {
-            $sched = $sched."Sa";
+            $sched = $sched."Sat";
         };
 
         if($request->has('sunCheck'))
         {
-            $sched = $sched."Su";
+            $sched = $sched."Sun";
         };
 
         $programId = DB::table('programs')->insertGetId([
@@ -160,5 +162,10 @@ class ProgramController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function inactive($id)
+    {
+
     }
 }
