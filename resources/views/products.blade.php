@@ -127,12 +127,7 @@
                                 <span class="hide-menu"> Products </span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="{{ route('supplier') }}" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> Suppliers </span>
-                            </a>
-                        </li>
+                    
                             <li class="sidebar-item">
                             <a href="{{ route('customer') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
@@ -218,8 +213,37 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="page-content container-fluid">
+                <button class="btn btn-primary">Add new Product</button>
+                <br><br><br>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Product ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Supplier</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Actions</th>
 
-
+                  </tr>
+              </thead>
+              <tbody>
+                @foreach($products as $product)
+                <tr>
+                  <td>{{$product->id}}</td>
+                  <td>{{$product->product_name}}</td>
+                  <td>{{$product->name}}</td>
+                  <td>{{$product->quantity}}</td>
+                  <td>
+                      
+                   
+                     <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                     <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                  </td>
+                     @endforeach
+              </tr>
+                </tbody>
+              </table>
+            
 
 
                 

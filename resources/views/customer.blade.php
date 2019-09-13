@@ -128,7 +128,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{ route('supplier') }}" class="sidebar-link">
+                            <a href="/supplier" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Suppliers </span>
                             </a>

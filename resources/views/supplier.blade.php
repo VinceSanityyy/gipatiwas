@@ -19,6 +19,7 @@
     <link href="assets/libs/morris.js/morris.css" rel="stylesheet">
     <!-- needed css -->
     <link href="dist/css/style.min.css" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -127,12 +128,7 @@
                                 <span class="hide-menu"> Products </span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="{{ route('supplier') }}" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> Suppliers </span>
-                            </a>
-                        </li>
+                      
                             <li class="sidebar-item">
                             <a href="{{ route('customer') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
@@ -219,141 +215,96 @@
             <!-- ============================================================== -->
 <div class="page-content container-fluid">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style=" margin-bottom: 10px;"><i class="fa fa-plus"></i>New Supplier</button>
+                 <button style="float: right;" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+                     Add Supplier
+                </button>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
-                    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="exampleModalLabel1">Supplier Details:</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            
-        <div class="modal-body">
-            <form>
-                <div class="container">
-                <div class="row">
-                  <div class="col-6">
-                      <div class="form-group">
-                        <label for="SKU">Code</label>
-                        <input type="text" class="add-supplier-code form-control" name="prodSKU" placeholder="Code">
-                      </div>
-                  </div>
-                  <div class="col-6">
-                      <div class="form-group">
-                        <label for="PName">Company Name</label>
-                        <input type="text" class="add-supplier-company form-control" name="prodName" placeholder="Company Name">
-                      </div>
-                  </div></div></div>
+                <br><br><br>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col"> ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Actions</th>
+                   
 
-                          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                  <div class="form-group">
-                    <label for="Address">Address</label>
-                    <textarea class="add-supplier-address form-control" name="suppAddress" rows="3" placeholder="Address"></textarea>
-                  </div>
-              </div></div></div>
-
-            <div class="container">
-            <div class="row">
-              <div class="col-6">
-                  <div class="form-group">
-                    <label for="Email">Email</label>
-                    <input type="email" class="add-supplier-email form-control" name="suppEmail" placeholder="Email">
-                  </div>
-              </div>
-              <div class="col-6">
-                  <div class="form-group">
-                    <label for="Contact">Contact</label>
-                    <input type="tel" class="add-supplier-contact form-control" name="suppContact" placeholder="Contact">
-                  </div>
-              </div></div></div>
-
-        </form>
-    </div>
-
-        <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
-            </div>
+                  </tr>
+              </thead>
+              <tbody>
+                @foreach($suppliers as $supplier)
+                <tr>
+                  <td>{{$supplier->id}}</td>
+                  <td>{{$supplier->name}}</td>
+                
+                  <td>
+                      
+                   
+                     <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                     <button id="{{$supplier->id}}" class="btn btn-danger delete-data"  data-toggle="modal" data-target="#exampleModalCenter_delete"><i class="fa fa-trash"></i></button>
+                  </td>
+                     @endforeach
+              </tr>
+                </tbody>
+              </table>
         </div>
-    </div>
-</div>
 
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="material-card card">
-                        <div class="card-body">
-                            <h4 class="card-title">Sales Transactions</h4>
-                            <h6 class="card-subtitle"></h6>
-                            <div class="table-responsive">
-                                <table id="default_order" class="table table-striped border display" style="width:100%">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Code</th>
-                                            <th>Company Name</th>
-                                            <th>Address</th>
-                                            <th>E-mail</th>
-                                            <th>Contact</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>001</td>
-                                            <td>AdDU</td>
-                                            <td>Roxas Ave</td>
-                                            <td>addu@addu.edu.ph</td>
-                                            <td>09123456789</td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Code</th>
-                                            <th>Company</th>
-                                            <th>Address</th>
-                                            <th>E-mail</th>
-                                            <th>Contact</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                        </div>
+        <!-- modal create -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Supplier</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                      <p style="font-weight: bold;">Name </p>
+                        <input style="text-transform:uppercase"   type="text" class="form-control" id="supplier"/>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="add_supplier">Add</button>
+                      </div>
                     </div>
+                  </div>
+                </div> 
+            <!-- modal -->
+
+            <!-- delete -->
+            <div class="modal fade bd-example-modal-sm" id="exampleModalCenter_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                <p style="font-weight: bold; text-align: center;"> Do you want to delete? </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Back</button>
+                    <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+            <!-- delete -->
+
             <footer class="footer text-center">
                 All Rights Reserved by Ample admin. Designed and Developed by
                 <a href="https://wrappixel.com">WrapPixel</a>.
             </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+ 
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+      
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- customizer Panel -->
-    <!-- ============================================================== -->
+  
 
             <div class="chat-windows"></div>
+
             <!-- ============================================================== -->
             <!-- All Jquery -->
             <!-- ============================================================== -->
@@ -383,4 +334,70 @@
             <!-- Animated skill bar -->
             <script src="assets/libs/gaugeJS/dist/gauge.min.js"></script>
             <script src="dist/js/pages/dashboards/dashboard5.js"></script>
+
+
+            <script type="text/javascript">
+                
+            $(document).ready(function(){
+                // add
+                $('#add_supplier').click(function(e){
+                    e.preventDefault();
+                    var input = $('#supplier').val();
+
+
+                    $.ajaxSetup({
+                        headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        url: "{{    url('/supplier')    }}",
+                        method: 'post',
+                        data: {
+                            name: input
+                        },
+                        success: function (res){
+                            console.log(res);
+                            window.location.href = '{{route("supplier.index")}}';
+                        }
+                    });
+                });
+                // add
+
+                // delete
+                $('.delete-data').click(function(e) {
+                    e.preventDefault();
+                    const myValue = $(this).attr('id');
+
+
+                    $('#delete-button').click(function(e) {
+                        $.ajaxSetup({
+                          headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                        $.ajax({
+                          url: "{{ url('/supplier') }}" + '/'+ myValue,
+                          type: 'DELETE',
+                          data: {},
+                          success: function(res){
+                           window.location.href='{{route("supplier.index")}}';
+                       }
+                       });
+                    });
+                 });
+
+                // delete
+
+
+            });
+
+
+
+            </script>
+
+
+
             </html>

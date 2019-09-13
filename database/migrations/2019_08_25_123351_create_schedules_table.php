@@ -17,19 +17,23 @@ class CreateSchedulesTable extends Migration
             $table->increments('sched_id');
             $table->integer('sched_guest_id')->unsigned();
             $table->integer('sched_appointment_id')->unsigned();
-           
+            $table->timestamps();
+        });
+
+
+
+        Schema::table('schedules', function($table)
+        {
             $table->foreign('sched_guest_id')
                     ->references('guest_id')
                     ->on('guests');
-
+                    
             $table->foreign('sched_appointment_id')
                   ->references('appointment_id')
                   ->on('appointments');
-            
-
-
-            $table->timestamps();
         });
+
+           
     }
 
     /**

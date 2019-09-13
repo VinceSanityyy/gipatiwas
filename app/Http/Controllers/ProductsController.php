@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Product;
+use DB;
 class ProductsController extends Controller
 {
     /**
@@ -13,7 +14,18 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('products');
+        // $products = Product::all();
+
+        // 
+
+        $products = DB::select("
+             SELECT products.id, products.product_name, products.description, products.quantity, suppliers.name
+             FROM products 
+             JOIN suppliers ON products.supplier_id = suppliers.id
+            ");
+       
+       return view('products', compact('products'));
+
     }
 
     /**

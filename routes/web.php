@@ -47,10 +47,17 @@ Route::get('/appointment', 'AppointmentController@index')->name('appointment');
 
 //INVENTORY
 Route::get('/inventory', 'InventoryController@index')->name('inventory');
+
+
 Route::get('/products', 'ProductsController@index')->name('products');
-Route::get('/supplier', 'SupplierController@index')->name('supplier');
+// Route::get('/supplier', 'SupplierController@index')->name('supplier');
 Route::get('/customer', 'CustomerController@index')->name('customer');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+//Suppliers
+Route::resource('supplier', 'SupplierController');

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Supplier;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\View;
 class SupplierController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        return view('supplier');
+        $suppliers = Supplier::all();
+
+        return view('supplier', compact('suppliers'));
     }
 
     /**
@@ -34,7 +38,13 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['name'] = strtoupper($data['name']);
+
+        Supplier::create($data);
+
+        return response()->json($data);
     }
 
     /**
@@ -79,6 +89,7 @@ class SupplierController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $supplier = Supplier::findOrFail($id);
+        $supplier->delete();
     }
 }
