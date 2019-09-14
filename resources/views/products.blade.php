@@ -17,14 +17,14 @@
     <link href="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <!--morris CSS -->
     <link href="assets/libs/morris.js/morris.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
     <!-- needed css -->
     <link href="dist/css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+
 </head>
 
 <body>
@@ -43,14 +43,14 @@
                         <b class="logo-icon">
                             <img src="../../assets/images/logos/radio-icon.png" alt="homepage" class="light-logo" style="margin-left:5px;" />
                         </b>
-                        <span class="logo-text"> 
+                        <span class="logo-text">
                            <img src="../../assets/images/logos/dxgn-logo.png" class="light-logo" alt="homepage" style="width:120px;margin-left:30px;"/>
                        </span>
                    </a>
                </div>
                <div class="navbar-collapse collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav float-left mr-auto">
-                    <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-18"></i></a></li>                            
+                    <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-18"></i></a></li>
                 </ul>
                 <ul class="navbar-nav float-right">
                     <li class="nav-item dropdown">
@@ -88,7 +88,7 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
                         <i class="mdi mdi-av-timer"></i>
-                        <span class="hide-menu">Dashboard</span>  
+                        <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -113,29 +113,39 @@
                     </ul>
                 </li>
 
-                
-                    <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('inventory') }}" aria-expanded="false">
-                        <i class="mdi mdi-account-box"></i>
-                        <span class="hide-menu">Inventory</span>
-                    </a>
+                <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('inventory') }}" aria-expanded="false">
+                            <i class="mdi mdi-account-box"></i>
+                            <span class="hide-menu">Inventory</span>
+                        </a>
 
-                        <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item">
-                            <a href="{{ route('products') }}" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> Products </span>
-                            </a>
-                        </li>
-                    
+                            <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
-                            <a href="{{ route('customer') }}" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> Customers </span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                                <a href="/product" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Products </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="/supplier" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Suppliers </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                    <a href="/damage" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Damages </span>
+                                    </a>
+                                 </li>
+                                <li class="sidebar-item">
+                                <a href="{{ route('customer') }}" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Customers </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
 
                 <li class="sidebar-item">
@@ -179,7 +189,7 @@
                         <span class="hide-menu">Calendar of Activities</span>
                     </a>
                 </li>
-                
+
                 <div class="devider"></div>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
@@ -200,7 +210,7 @@
                 <h5 class="font-medium text-uppercase mb-0">Dashboard</h5>
             </div>
             <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
-                
+
                 <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                     <ol class="breadcrumb mb-0 justify-content-end p-0">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -213,14 +223,16 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="page-content container-fluid">
-                <button class="btn btn-primary">Add new Product</button>
+                <button style="float: right" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Register New Product</button>
                 <br><br><br>
-                <table class="table table-hover">
+                <table id="productsTable" class="table table-hover">
                   <thead>
                     <tr>
                       <th scope="col">Product ID</th>
                       <th scope="col">Name</th>
                       <th scope="col">Supplier</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Price</th>
                       <th scope="col">Quantity</th>
                       <th scope="col">Actions</th>
 
@@ -232,52 +244,193 @@
                   <td>{{$product->id}}</td>
                   <td>{{$product->product_name}}</td>
                   <td>{{$product->name}}</td>
+                  <td>{{$product->description}}</td>
+                  <td>{{$product->price}}</td>
                   <td>{{$product->quantity}}</td>
                   <td>
-                      
-                   
-                     <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
-                     <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+
+
+                    <button id="{{$product->id}}"  class="btn btn-warning editButton" data-toggle="modal" data-target="#exampleModalCenter_edit"><i class="fa fa-edit"></i></button>
+                     <button id="{{$product->id}}" class="btn btn-danger delete-data"  data-toggle="modal" data-target="#exampleModalCenter_delete"><i class="fa fa-trash"></i></button>
+                     <button id="{{$product->id}}" class="btn btn-success addQty" data-toggle="modal" data-target="#exampleModalCenter_qty"><i class="fa fa-plus"></i></button>
+                     <button id="{{$product->id}}" class="btn btn-info addDmg" data-toggle="modal" data-target="#exampleModalCenter_dmg"><i class="fa fa-minus"></i></button>
                   </td>
                      @endforeach
               </tr>
                 </tbody>
               </table>
-            
-
-
-                
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+
+                  {{-- add to damaged --}}
+                  <div class="modal fade" id="exampleModalCenter_dmg" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalCenterTitle">Add to damaged products</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                            <p style="font-weight: bold;">Number of damaged products</p>
+                              <input    type="text" class="form-control" id="remove_quantity"/>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-success" id="addtoDmg">Update</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {{-- damaged --}}
+
+             <!-- modal create -->
+             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalCenterTitle">Register New Product</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                        <p style="font-weight: bold;">Name </p>
+                          <input   type="text" class="form-control" id="product_name"/>
+                          <p style="font-weight: bold;">Description </p>
+                          <input   type="text" class="form-control" id="description"/>
+                          <p style="font-weight: bold;">Supplier </p>
+                          {{-- <input style="text-transform:uppercase"   type="text" class="form-control" id="supplier_id"/> --}}
+                          <select class="form-control"  id="supplier_id"  >
+                              @foreach ($suppliers as $supplier)
+                          <option value="{{$supplier->id}}">{{$supplier->name}}</option>
+                              @endforeach
+                              </select>
+                              <p style="font-weight: bold;">Price </p>
+                              <input   type="text" class="form-control" id="price"/>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" id="add_product">Add</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              <!-- modal -->
+            </div>
+                   <!-- delete -->
+            <div class="modal fade bd-example-modal-sm" id="exampleModalCenter_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                      <p style="font-weight: bold; text-align: center;"> Do you want to delete? </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Back</button>
+                          <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- delete -->
+
+            </div>
+                    {{-- edit --}}
+            <div class="modal fade" id="exampleModalCenter_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalCenterTitle">Edit Product</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                        <p style="font-weight: bold;">New Name </p>
+                          <input    type="text" class="form-control" id="update_product"/>
+                          <p style="font-weight: bold;">New Description </p>
+                          <input    type="text" class="form-control" id="update_description"/>
+                          <p style="font-weight: bold;">New Supplier </p>
+
+                          <select class="form-control"  id="update_supplier"  >
+                                @foreach ($suppliers as $supplier)
+                            <option value="{{$supplier->id}}">{{$supplier->name}}</option>
+                                @endforeach
+                                </select>
+                                <p style="font-weight: bold;">New Price </p>
+                                <input   type="text" class="form-control" id="update_price"/>
+                        </div>
+
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-success" id="edit_product">Update</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {{-- edit --}}
+
+            </div>
+
+
+                             {{-- add qty --}}
+            <div class="modal fade" id="exampleModalCenter_qty" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalCenterTitle">Add Quantity</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                        <p style="font-weight: bold;">Enter Quantity to be added</p>
+                          <input    type="text" class="form-control" id="add_quantity"/>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-success" id="stockIn">Update</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {{-- add qty --}}
+
+
+
+
+
+
+
+
+
             <footer class="footer text-center">
                 All Rights Reserved by Ample admin. Designed and Developed by
                 <a href="https://wrappixel.com">WrapPixel</a>.
             </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- customizer Panel -->
-    <!-- ============================================================== -->
+
 
             <div class="chat-windows"></div>
             <!-- ============================================================== -->
             <!-- All Jquery -->
             <!-- ============================================================== -->
-            <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+
+
+              {{-- datatables --}}
+           <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+           <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+           <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+             {{-- datatables --}}
+
             <!-- Bootstrap tether Core JavaScript -->
             <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
             <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -303,4 +456,205 @@
             <!-- Animated skill bar -->
             <script src="assets/libs/gaugeJS/dist/gauge.min.js"></script>
             <script src="dist/js/pages/dashboards/dashboard5.js"></script>
+
+
+            <script type="text/javascript">
+
+            $(document).ready(function(){
+                //add
+                $('#add_product').click(function(e){
+                    e.preventDefault();
+                    var name = $('#product_name').val();
+                    var description = $('#description').val();
+                    var price = $('#price').val();
+                    var supplier_id = $('#supplier_id').val();
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        url: "{{    url('/product')     }}",
+                        method: 'post',
+                        data:{
+                            product_name: name,
+                            description: description,
+                            price: price,
+                            supplier_id: supplier_id
+                        },
+                        success: function (res){
+                            console.log(res);
+                            window.location.href = '{{route("product.index")}}'
+                        }
+                    });
+
+                });
+                //add
+
+                     // delete
+                     $('.delete-data').click(function(e) {
+                    e.preventDefault();
+                    const myValue = $(this).attr('id');
+
+
+                    $('#delete-button').click(function(e) {
+                        $.ajaxSetup({
+                          headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                        $.ajax({
+                          url: "{{ url('/product') }}" + '/'+ myValue,
+                          type: 'DELETE',
+                          data: {},
+                          success: function(res){
+                           window.location.href='{{route("product.index")}}';
+                       }
+                       });
+                    });
+                 });
+
+                // delete
+
+                //edit
+                $('.editButton').on('click',function(e){
+
+                    const myValue = $(this).attr('id');
+
+                      let pname = $(this).closest('tr').find('td:eq(1)').text();
+                      let sname = $(this).closest('tr').find('td:eq(2)').text();
+                      let des = $(this).closest('tr').find('td:eq(3)').text();
+                      let pr = $(this).closest('tr').find('td:eq(4)').text();
+
+                      $('#update_product').val(pname);
+                      $('#update_description').val(des);
+                      $('#update_supplier').val(sname);
+                      $('#update_price').val(pr);
+
+
+                      $('#edit_product').click(function(e){
+                        e.preventDefault();
+
+                        let product_name = $('#update_product').val();
+                        let description = $('#update_description').val();
+                        let supplier_id = $('#update_supplier').val();
+                        let price = $('#update_price').val();
+                        console.log(name);
+                        $.ajaxSetup({
+                            headers:{
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+                        $.ajax({
+                            url: "{{url('/product')}}" + '/'+ myValue,
+                            method: 'put',
+                            data: {
+                                product_name: product_name,
+                                description: description,
+                                supplier_id: supplier_id,
+                                price: price
+                            },
+                            success: function(res){
+                                console.log(this.data);
+                                window.location.href = "{{route('product.index')}}"
+                            }
+                        });
+
+                      });
+
+
+                });
+
+                     //addqty
+            $('.addQty').on('click', function(e) {
+ 			 	const myValue = $(this).attr('id');
+
+
+ 			 	$('#add_quantity').val();
+
+
+ 			 	 $('#stockIn').click(function(e) {
+ 			 	 	e.preventDefault();
+
+ 			 	 	let quantity = $('#add_quantity').val();
+
+ 			 	 	$.ajaxSetup({
+ 			 		headers:{
+ 			 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+ 			 			}
+ 			 		});
+
+ 			 		$.ajax({
+ 			 			url: "{{ url('/addStocks') }}" + '/'+ myValue,
+ 			 			method: 'put',
+ 			 			data: {
+ 			 				quantity: quantity
+ 			 			},
+ 			 			success: function(res){
+                            console.log(res);
+ 			 				 window.location.href='{{route("product.index")}}';
+ 			 			}
+ 			 		})
+
+ 			 	 });
+              });
+              //
+
+                       //addDmg
+            $('.addDmg').on('click', function(e) {
+ 			 	const myValue = $(this).attr('id');
+
+
+ 			 	$('#remove_quantity').val();
+
+
+ 			 	 $('#addtoDmg').click(function(e) {
+ 			 	 	e.preventDefault();
+
+ 			 	 	let quantity = $('#remove_quantity').val();
+
+ 			 	 	$.ajaxSetup({
+ 			 		headers:{
+ 			 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+ 			 			}
+ 			 		});
+
+ 			 		$.ajax({
+ 			 			url: "{{ url('/addDamage') }}" + '/'+ myValue,
+ 			 			method: 'put',
+ 			 			data: {
+ 			 				quantity: quantity
+ 			 			},
+ 			 			success: function(res){
+                            console.log(res);
+ 			 				 window.location.href='{{route("product.index")}}';
+ 			 			}
+ 			 		})
+
+ 			 	 });
+              });
+
+
+            });
+
+            </script>
+
+
+
+
+
+
+
+
+
+            <script>
+                    $(document).ready(function() {
+                        $('#productsTable').DataTable();
+                    } );
+                </script>
+
+
             </html>

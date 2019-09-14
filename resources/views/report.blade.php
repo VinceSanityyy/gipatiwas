@@ -50,14 +50,14 @@
                         <b class="logo-icon">
                             <img src="../../assets/images/logos/radio-icon.png" alt="homepage" class="light-logo" style="margin-left:5px;" />
                         </b>
-                        <span class="logo-text"> 
+                        <span class="logo-text">
                            <img src="../../assets/images/logos/dxgn-logo.png" class="light-logo" alt="homepage" style="width:120px;margin-left:30px;"/>
                        </span>
                    </a>
                </div>
                <div class="navbar-collapse collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav float-left mr-auto">
-                    <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-18"></i></a></li>                            
+                    <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-18"></i></a></li>
                 </ul>
                 <ul class="navbar-nav float-right">
                     <li class="nav-item dropdown">
@@ -95,7 +95,7 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
                         <i class="mdi mdi-av-timer"></i>
-                        <span class="hide-menu">Dashboard</span>  
+                        <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -120,7 +120,7 @@
                     </ul>
                 </li>
 
-                
+
                     <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('inventory') }}" aria-expanded="false">
                         <i class="mdi mdi-account-box"></i>
@@ -128,18 +128,24 @@
                     </a>
 
                         <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item">
-                            <a href="{{ route('products') }}" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> Products </span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="{{ route('supplier') }}" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> Suppliers </span>
-                            </a>
-                        </li>
+                                <li class="sidebar-item">
+                                        <a href="/product" class="sidebar-link">
+                                            <i class="mdi mdi-adjust"></i>
+                                            <span class="hide-menu"> Products </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="/supplier" class="sidebar-link">
+                                            <i class="mdi mdi-adjust"></i>
+                                            <span class="hide-menu"> Suppliers </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                            <a href="/damage" class="sidebar-link">
+                                            <i class="mdi mdi-adjust"></i>
+                                            <span class="hide-menu"> Damages </span>
+                                            </a>
+                                         </li>
                             <li class="sidebar-item">
                             <a href="{{ route('customer') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
@@ -191,7 +197,7 @@
                         <span class="hide-menu">Calendar of Activities</span>
                     </a>
                 </li>
-                
+
                 <div class="devider"></div>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
@@ -212,7 +218,7 @@
                 <h5 class="font-medium text-uppercase mb-0">Dashboard</h5>
             </div>
             <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
-                
+
                 <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                     <ol class="breadcrumb mb-0 justify-content-end p-0">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -240,7 +246,7 @@
                                     <span class="text-muted">Today's Income</span>
                                     <h2 class="mt-2 display-7"><sup><i class="ti-arrow-up text-success"></i></sup>$12,000</h2>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -252,7 +258,7 @@
                                     <span class="text-muted">Weekly Income</span>
                                     <h2 class="mt-2 display-7"><sup><i class="ti-arrow-up text-info"></i></sup>$5,000</h2>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -264,7 +270,7 @@
                                     <span class="text-muted">Monthly Income</span>
                                     <h2 class="mt-2 display-7"><sup><i class="ti-arrow-up text-info"></i></sup>$10,000</h2>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -276,7 +282,7 @@
                                     <span class="text-muted">Yearly Income</span>
                                     <h2 class="mt-2 display-7"><sup><i class="ti-arrow-up text-inverse"></i></sup>$9,000</h2>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -288,7 +294,7 @@
                                 <h4 class="modal-title" id="exampleModalLabel1">Generate Report</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
-                            
+
                             <div class="modal-body">
                                 <form>
 
@@ -362,7 +368,7 @@
                 </div>
             </div>
 
-            <div class="row">    
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
@@ -614,7 +620,7 @@
                                 <script src="assets/libs/moment/min/moment.min.js"></script>
                                 <script src="assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
                                 <script src="dist/js/pages/calendar/cal-init.js"></script>
-                                
+
                                 <script src="assets/libs/raphael/raphael.min.js"></script>
                                 <script src="assets/libs/morris.js/morris.min.js"></script>
                                 <script src="dist/js/pages/morris/morris-data.js"></script>

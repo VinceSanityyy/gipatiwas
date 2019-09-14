@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->integer('supplier_id')->unsigned();
             $table->integer('quantity')->default(0);
+            $table->double('price');
             $table->timestamps();
         });
 

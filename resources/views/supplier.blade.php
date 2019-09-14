@@ -17,6 +17,10 @@
     <link href="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <!--morris CSS -->
     <link href="assets/libs/morris.js/morris.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+
     <!-- needed css -->
     <link href="dist/css/style.min.css" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -44,14 +48,14 @@
                         <b class="logo-icon">
                             <img src="../../assets/images/logos/radio-icon.png" alt="homepage" class="light-logo" style="margin-left:5px;" />
                         </b>
-                        <span class="logo-text"> 
+                        <span class="logo-text">
                            <img src="../../assets/images/logos/dxgn-logo.png" class="light-logo" alt="homepage" style="width:120px;margin-left:30px;"/>
                        </span>
                    </a>
                </div>
                <div class="navbar-collapse collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav float-left mr-auto">
-                    <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-18"></i></a></li>                            
+                    <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-18"></i></a></li>
                 </ul>
                 <ul class="navbar-nav float-right">
                     <li class="nav-item dropdown">
@@ -89,7 +93,7 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
                         <i class="mdi mdi-av-timer"></i>
-                        <span class="hide-menu">Dashboard</span>  
+                        <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -114,7 +118,7 @@
                     </ul>
                 </li>
 
-                
+
                     <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('inventory') }}" aria-expanded="false">
                         <i class="mdi mdi-account-box"></i>
@@ -123,12 +127,23 @@
 
                         <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item">
-                            <a href="{{ route('products') }}" class="sidebar-link">
+                            <a href="/product" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Products </span>
                             </a>
                         </li>
-                      
+                        <li class="sidebar-item">
+                            <a href="/supplier" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu"> Suppliers </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                                <a href="/damage" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu"> Damages </span>
+                                </a>
+                             </li>
                             <li class="sidebar-item">
                             <a href="{{ route('customer') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
@@ -180,7 +195,7 @@
                         <span class="hide-menu">Calendar of Activities</span>
                     </a>
                 </li>
-                
+
                 <div class="devider"></div>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
@@ -201,7 +216,7 @@
                 <h5 class="font-medium text-uppercase mb-0">Dashboard</h5>
             </div>
             <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
-                
+
                 <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                     <ol class="breadcrumb mb-0 justify-content-end p-0">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -220,13 +235,13 @@
                 </button>
 
                 <br><br><br>
-                <table class="table table-hover">
+                <table id="suppliersTable" class="table table-hover ">
                   <thead>
                     <tr>
                       <th scope="col"> ID</th>
                       <th scope="col">Name</th>
                       <th scope="col">Actions</th>
-                   
+
 
                   </tr>
               </thead>
@@ -235,11 +250,11 @@
                 <tr>
                   <td>{{$supplier->id}}</td>
                   <td>{{$supplier->name}}</td>
-                
+
                   <td>
-                      
-                   
-                     <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
+
+
+                     <button id="{{$supplier->id}}"  class="btn btn-warning editButton" data-toggle="modal" data-target="#exampleModalCenter_edit"><i class="fa fa-edit"></i></button>
                      <button id="{{$supplier->id}}" class="btn btn-danger delete-data"  data-toggle="modal" data-target="#exampleModalCenter_delete"><i class="fa fa-trash"></i></button>
                   </td>
                      @endforeach
@@ -252,7 +267,7 @@
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                      <div class="modal-header"> 
+                      <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalCenterTitle">Supplier</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
@@ -268,7 +283,7 @@
                       </div>
                     </div>
                   </div>
-                </div> 
+                </div>
             <!-- modal -->
 
             <!-- delete -->
@@ -293,22 +308,54 @@
             </div>
             <!-- delete -->
 
+            {{-- edit --}}
+            <div class="modal fade" id="exampleModalCenter_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalCenterTitle">Edit Supplier</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <p style="font-weight: bold;">Name </p>
+                      <input style="text-transform:uppercase"   type="text" class="form-control" id="update_supplier"/>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-success" id="edit_supplier">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {{-- edit --}}
+
+
             <footer class="footer text-center">
                 All Rights Reserved by Ample admin. Designed and Developed by
                 <a href="https://wrappixel.com">WrapPixel</a>.
             </footer>
- 
+
         </div>
-      
+
     </div>
-  
+
 
             <div class="chat-windows"></div>
 
             <!-- ============================================================== -->
             <!-- All Jquery -->
             <!-- ============================================================== -->
-            <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+
+            {{-- datatables --}}
+           <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+         {{-- datatables --}}
+
+
+
             <!-- Bootstrap tether Core JavaScript -->
             <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
             <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -336,8 +383,9 @@
             <script src="dist/js/pages/dashboards/dashboard5.js"></script>
 
 
+
             <script type="text/javascript">
-                
+
             $(document).ready(function(){
                 // add
                 $('#add_supplier').click(function(e){
@@ -391,11 +439,52 @@
 
                 // delete
 
+                 //edit
+                $('.editButton').on('click', function(e) {
+ 			 	const myValue = $(this).attr('id');
+ 			 	let name = $(this).closest('tr').find('td:eq(1)').text();
+
+ 			 	$('#update_supplier').val(name.trim());
+
+
+ 			 	 $('#edit_supplier').click(function(e) {
+ 			 	 	e.preventDefault();
+
+ 			 	 	let editInput = $('#update_supplier').val();
+
+ 			 	 	$.ajaxSetup({
+ 			 		headers:{
+ 			 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+ 			 			}
+ 			 		});
+
+ 			 		$.ajax({
+ 			 			url: "{{ url('/supplier') }}" + '/'+ myValue,
+ 			 			method: 'put',
+ 			 			data: {
+ 			 				name: editInput
+ 			 			},
+ 			 			success: function(res){
+ 			 				 window.location.href='{{route("supplier.index")}}';
+ 			 			}
+ 			 		})
+
+ 			 	 });
+              });
+
+              //edit
+
 
             });
 
 
 
+            </script>
+
+            <script>
+                $(document).ready(function() {
+                    $('#suppliersTable').DataTable();
+                } );
             </script>
 
 

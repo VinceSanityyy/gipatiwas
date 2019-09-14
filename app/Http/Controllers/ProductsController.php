@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use DB;
+use App\Damage;
+use App\Supplier;
 class ProductsController extends Controller
 {
     /**
@@ -14,17 +16,15 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        // $products = Product::all();
-
-        // 
 
         $products = DB::select("
-             SELECT products.id, products.product_name, products.description, products.quantity, suppliers.name
-             FROM products 
+             SELECT products.id, products.price, products.product_name, products.description, products.quantity, suppliers.name
+             FROM products
              JOIN suppliers ON products.supplier_id = suppliers.id
             ");
-       
-       return view('products', compact('products'));
+        $suppliers = Supplier::all();
+
+       return view('products', compact('products','suppliers'));
 
     }
 
@@ -46,7 +46,15 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['product_name'] = ($data['product_name']);
+        $data['description'] = ($data['description']);
+        $data['supplier_id'] = ($data['supplier_id']);
+
+        Product::create($data);
+
+        return response()->json($data);
     }
 
     /**
@@ -80,7 +88,18 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $data = $request->all();
+
+        $product['product_name'] = ($data['product_name']);
+        $product['description'] = ($data['description']);
+        $product['price'] = ($data['price']);
+        $product['supplier_id'] = ($data['supplier_id']);
+
+        $product->save();
+
+        return response()->json($data);
+
     }
 
     /**
@@ -91,6 +110,35 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+    }
+
+    public function stockIn(Request $request, $id){
+
+
+        $product = Product::findOrFail($id);
+        $data = $request->all();
+
+        $product->increment('quantity', request('quantity'));
+
+        $product->save();
+
+        return response()->json($data);
+
+    }
+
+    public function addtoDamaged(Request $request, $id){
+        $product = Product::findOrFail($id);
+        $data = $request->all();
+
+        $product->decrement('quantity', request('quantity'));
+
+        $product->save();
+
+        // Damage::create($data);
+        Damage::create($data);
+
+        return response()->json($data);
     }
 }

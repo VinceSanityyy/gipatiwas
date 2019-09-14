@@ -64,7 +64,7 @@
                         <span class="logo-text">
                          <!-- dark Logo text -->
                          <img src="../../assets/images/logos/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
+                         <!-- Light Logo text -->
                          <img src="../../assets/images/logos/logo-light-text.png" class="light-logo" alt="homepage" />
                      </span>
                  </a>
@@ -94,7 +94,7 @@
                                             <!-- ============================================================== -->
                                             <!-- Search -->
                                             <!-- ============================================================== -->
-                                            <li class="nav-item search-box"> 
+                                            <li class="nav-item search-box">
                                                 <form class="app-search d-none d-lg-block">
                                                     <input type="text" class="form-control" placeholder="Search...">
                                                     <a href="" class="active"><i class="fa fa-search"></i></a>
@@ -141,12 +141,12 @@
                                     <!-- Sidebar navigation-->
                                     <nav class="sidebar-nav">
                                         <ul id="sidebarnav">
-                                        
+
                             <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
-                                <span class="hide-menu">Dashboard</span> 
-                                
+                                <span class="hide-menu">Dashboard</span>
+
                             </a>
 
                         </li>
@@ -169,14 +169,14 @@
                                         <span class="hide-menu"> Reports </span>
                                     </a>
                                 </li>
-                                
+
                             </ul>
 
-                            
-                            
+
+
                         </li>
 
-                        
+
                                                 <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('inventory') }}" aria-expanded="false">
                                 <i class="mdi mdi-account-box"></i>
@@ -184,18 +184,24 @@
                             </a>
 
                                 <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="{{ route('products') }}" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Products </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="{{ route('supplier') }}" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Suppliers </span>
-                                    </a>
-                                </li>
+                                        <li class="sidebar-item">
+                                                <a href="/product" class="sidebar-link">
+                                                    <i class="mdi mdi-adjust"></i>
+                                                    <span class="hide-menu"> Products </span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-item">
+                                                <a href="/supplier" class="sidebar-link">
+                                                    <i class="mdi mdi-adjust"></i>
+                                                    <span class="hide-menu"> Suppliers </span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-item">
+                                                    <a href="/damage" class="sidebar-link">
+                                                    <i class="mdi mdi-adjust"></i>
+                                                    <span class="hide-menu"> Damages </span>
+                                                    </a>
+                                                 </li>
                                     <li class="sidebar-item">
                                     <a href="{{ route('customer') }}" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
@@ -204,7 +210,7 @@
                                 </li>
 
                             </ul>
-                            
+
                         </li>
 
 
@@ -239,7 +245,7 @@
                                 <i class="mdi mdi-radio"></i>
                                 <span class="hide-menu">Program Segments</span>
                             </a>
-                            
+
                         </li>
 
                         <li class="sidebar-item">
@@ -255,7 +261,7 @@
                                 <span class="hide-menu">Calendar of Activities</span>
                             </a>
                         </li>
-                        
+
                             <div class="devider"></div>
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html" aria-expanded="false">
@@ -263,7 +269,7 @@
                                     <span class="hide-menu">Log Out</span>
                                 </a>
                             </li>
-                            
+
                         </ul>
                     </nav>
                     <!-- End Sidebar navigation -->
@@ -436,7 +442,7 @@
                                                 <td>
                                                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#guestModal" data-whatever="@mdo">  View</button>
 
-                                                    
+
                                                     <div class="modal fade" id="guestModal" tabindex="-1" role="dialog" aria-labelledby="guestModalLabel1">
                                                         <div class="modal-dialog modal modal-dialog-centered" role="document">
                                                             <div class="modal-content">
@@ -555,7 +561,7 @@
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
                 <!-- ============================================================== -->
                 <!-- End Container fluid  -->
                 <!-- ============================================================== -->
