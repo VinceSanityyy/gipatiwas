@@ -233,7 +233,7 @@
                       <th scope="col">Supplier</th>
                       <th scope="col">Description</th>
                       <th scope="col">Price</th>
-                      <th scope="col">Quantity</th>
+                      <th scope="col">Current Stocks</th>
                       <th scope="col">Actions</th>
 
                   </tr>
@@ -274,6 +274,8 @@
                             <div class="modal-body">
                             <p style="font-weight: bold;">Number of damaged products</p>
                               <input    type="text" class="form-control" id="remove_quantity"/>
+                              <p style="font-weight: bold;">Current Price</p>
+                              <input disabled="true"   type="text" class="form-control" id="price"/>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                               <button type="button" class="btn btn-success" id="addtoDmg">Update</button>
@@ -282,7 +284,7 @@
                         </div>
                       </div>
                     {{-- damaged --}}
-
+                  </div>
              <!-- modal create -->
              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -391,7 +393,7 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                        <p style="font-weight: bold;">Enter Quantity to be added</p>
+                        <p style="font-weight: bold;">Enter Stocks Quantity to be added</p>
                           <input    type="text" class="form-control" id="add_quantity"/>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -607,14 +609,18 @@
             $('.addDmg').on('click', function(e) {
  			 	const myValue = $(this).attr('id');
 
+                  let dmg = $(this).closest('tr').find('td:eq(4)').text();
 
+
+                $('#price').val(dmg);
  			 	$('#remove_quantity').val();
 
 
  			 	 $('#addtoDmg').click(function(e) {
  			 	 	e.preventDefault();
 
- 			 	 	let quantity = $('#remove_quantity').val();
+                       let quantity = $('#remove_quantity').val();
+                       let price = $('#price').val();
 
  			 	 	$.ajaxSetup({
  			 		headers:{
@@ -626,7 +632,8 @@
  			 			url: "{{ url('/addDamage') }}" + '/'+ myValue,
  			 			method: 'put',
  			 			data: {
- 			 				quantity: quantity
+                              quantity: quantity,
+                              price: price
  			 			},
  			 			success: function(res){
                             console.log(res);

@@ -17,11 +17,11 @@ class ProductsController extends Controller
     public function index()
     {
 
-        $products = DB::select("
-             SELECT products.id, products.price, products.product_name, products.description, products.quantity, suppliers.name
+        $products = DB::select(
+            "SELECT products.id, products.price, products.product_name, products.description, products.quantity, suppliers.name
              FROM products
-             JOIN suppliers ON products.supplier_id = suppliers.id
-            ");
+             JOIN suppliers ON products.supplier_id = suppliers.id"
+             );
         $suppliers = Supplier::all();
 
        return view('products', compact('products','suppliers'));
@@ -129,14 +129,16 @@ class ProductsController extends Controller
     }
 
     public function addtoDamaged(Request $request, $id){
+
         $product = Product::findOrFail($id);
+
         $data = $request->all();
-
         $product->decrement('quantity', request('quantity'));
+        $data['product_id'] = ($id);
+        $data['price'] = ($data['price']);
+        $data['quantity'] = ($data['quantity']);
 
-        $product->save();
 
-        // Damage::create($data);
         Damage::create($data);
 
         return response()->json($data);

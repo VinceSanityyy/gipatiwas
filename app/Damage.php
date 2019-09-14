@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Damage extends Model
 {
-    protected $filalble = [
+    protected $fillable = [
         'product_id','quantity','price',
     ];
+
+    public function damage(){
+        return $this->hasMany('App\Product');
+    }
 }

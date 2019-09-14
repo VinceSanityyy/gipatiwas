@@ -206,7 +206,30 @@
             </div>
             <!-- Container fluid  -->
             <div class="page-content container-fluid">
-              asd
+                    <table id="damagesTable" class="table table-hover ">
+                            <thead>
+                              <tr>
+                                <th scope="col">Product ID</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price before marked as damaged</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                          @foreach($damages as $damage)
+                          <tr>
+                            <td>{{$damage->product_id}}</td>
+                            <td>{{$damage->product_name}}</td>
+                            <td>{{$damage->quantity}}</td>
+                            <td>{{$damage->price}}</td>
+
+
+                               @endforeach
+                        </tr>
+                          </tbody>
+                        </table>
          </div>
          <!-- ============================================================== -->
          <!-- End Container fluid  -->
@@ -252,4 +275,11 @@
       <!--This page plugins -->
       <script src="assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
       <script src="dist/js/pages/datatable/datatable-basic.init.js"></script>
+
+
+      <script>
+            $(document).ready(function() {
+                $('#damagesTable').DataTable();
+            } );
+        </script>
 </html>
