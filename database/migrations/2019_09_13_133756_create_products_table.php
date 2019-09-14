@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('quantity')->default(0);
             $table->double('price');
             $table->timestamps();
+            $table->softDeletes();
         });
 
          Schema::table('products', function($table)

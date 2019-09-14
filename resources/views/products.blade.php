@@ -300,15 +300,17 @@
                           <input   type="text" class="form-control" id="product_name"/>
                           <p style="font-weight: bold;">Description </p>
                           <input   type="text" class="form-control" id="description"/>
-                          <p style="font-weight: bold;">Supplier </p>
+
+                          <p style="font-weight: bold;">Price </p>
+                          <input   type="text" class="form-control" id="currentprice"/>
                           {{-- <input style="text-transform:uppercase"   type="text" class="form-control" id="supplier_id"/> --}}
+                          <p style="font-weight: bold;">Supplier </p>
                           <select class="form-control"  id="supplier_id"  >
                               @foreach ($suppliers as $supplier)
                           <option value="{{$supplier->id}}">{{$supplier->name}}</option>
                               @endforeach
                               </select>
-                              <p style="font-weight: bold;">Price </p>
-                              <input   type="text" class="form-control" id="price"/>
+
 
                         </div>
                         <div class="modal-footer">
@@ -468,8 +470,9 @@
                     e.preventDefault();
                     var name = $('#product_name').val();
                     var description = $('#description').val();
-                    var price = $('#price').val();
+                    var price = $('#currentprice').val();
                     var supplier_id = $('#supplier_id').val();
+
 
                     $.ajaxSetup({
                         headers: {

@@ -25,7 +25,8 @@ class CreateDamagesTable extends Migration
         {
             $table->foreign('product_id')
                     ->references('id')
-                    ->on('products');
+                    ->on('products')
+                    ->onDelete('cascade');
         });
     }
 

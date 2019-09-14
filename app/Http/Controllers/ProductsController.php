@@ -20,8 +20,11 @@ class ProductsController extends Controller
         $products = DB::select(
             "SELECT products.id, products.price, products.product_name, products.description, products.quantity, suppliers.name
              FROM products
-             JOIN suppliers ON products.supplier_id = suppliers.id"
+             JOIN suppliers ON products.supplier_id = suppliers.id
+             WHERE products.deleted_at is null"
              );
+
+
         $suppliers = Supplier::all();
 
        return view('products', compact('products','suppliers'));
@@ -50,7 +53,9 @@ class ProductsController extends Controller
 
         $data['product_name'] = ($data['product_name']);
         $data['description'] = ($data['description']);
+
         $data['supplier_id'] = ($data['supplier_id']);
+        $data['price'] = ($data['price']);
 
         Product::create($data);
 
