@@ -124,6 +124,7 @@
                                     <a href="{{ route('products') }}" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
                                         <span class="hide-menu"> Products </span>
+
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
@@ -138,6 +139,11 @@
                                         <span class="hide-menu"> Damages </span>
                                     </a>
                                 </li>
+
+                                    </a>
+                                </li>
+                           
+
                                 <li class="sidebar-item">
                                 <a href="{{ route('customer') }}" class="sidebar-link">
                                     <i class="mdi mdi-adjust"></i>
@@ -463,7 +469,6 @@
 
 
             <script type="text/javascript">
-
             $(document).ready(function(){
                 //add
                 $('#add_product').click(function(e){
@@ -472,14 +477,11 @@
                     var description = $('#description').val();
                     var price = $('#currentprice').val();
                     var supplier_id = $('#supplier_id').val();
-
-
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
-
                     $.ajax({
                         url: "{{    url('/product')     }}",
                         method: 'post',
@@ -491,26 +493,21 @@
                         },
                         success: function (res){
                             console.log(res);
-                            window.location.href = '{{route("products")}}'
+                            window.location.href='{{route("products")}}';
                         }
                     });
-
                 });
                 //add
-
                      // delete
                      $('.delete-data').click(function(e) {
                     e.preventDefault();
                     const myValue = $(this).attr('id');
-
-
                     $('#delete-button').click(function(e) {
                         $.ajaxSetup({
                           headers:{
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
-
                         $.ajax({
                           url: "{{ url('/product') }}" + '/'+ myValue,
                           type: 'DELETE',
@@ -521,24 +518,18 @@
                        });
                     });
                  });
-
                 // delete
-
                 //edit
                 $('.editButton').on('click',function(e){
-
                     const myValue = $(this).attr('id');
-
                       let pname = $(this).closest('tr').find('td:eq(1)').text();
                       let sname = $(this).closest('tr').find('td:eq(2)').text();
                       let des = $(this).closest('tr').find('td:eq(3)').text();
                       let pr = $(this).closest('tr').find('td:eq(4)').text();
-
                       $('#update_product').val(pname);
                       $('#update_description').val(des);
                       $('#update_supplier').val(sname);
                       $('#update_price').val(pr);
-
 
                       $('#edit_product').click(function(e){
                         e.preventDefault();
@@ -564,34 +555,23 @@
                             },
                             success: function(res){
                                 console.log(this.data);
-                                window.location.href = "{{route('products')}}"
+                                window.location.href='{{route("products")}}';
                             }
                         });
-
                       });
-
-
                 });
-
                      //addqty
             $('.addQty').on('click', function(e) {
                 const myValue = $(this).attr('id');
-
-
                 $('#add_quantity').val();
-
-
                  $('#stockIn').click(function(e) {
                     e.preventDefault();
-
                     let quantity = $('#add_quantity').val();
-
                     $.ajaxSetup({
                     headers:{
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
-
                     $.ajax({
                         url: "{{ url('/addStocks') }}" + '/'+ myValue,
                         method: 'put',
@@ -603,34 +583,24 @@
                              window.location.href='{{route("products")}}';
                         }
                     })
-
                  });
               });
               //
-
                        //addDmg
             $('.addDmg').on('click', function(e) {
                 const myValue = $(this).attr('id');
-
                   let dmg = $(this).closest('tr').find('td:eq(4)').text();
-
-
                 $('#price').val(dmg);
                 $('#remove_quantity').val();
-
-
                  $('#addtoDmg').click(function(e) {
                     e.preventDefault();
-
                        let quantity = $('#remove_quantity').val();
                        let price = $('#price').val();
-
                     $.ajaxSetup({
                     headers:{
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
-
                     $.ajax({
                         url: "{{ url('/addDamage') }}" + '/'+ myValue,
                         method: 'put',
@@ -640,18 +610,13 @@
                         },
                         success: function(res){
                             console.log(res);
-                             window.location.href='{{route("products")}}';
+                              window.location.href='{{route("products")}}';
                         }
                     })
-
                  });
               });
-
-
             });
-
             </script>
-
 
 
 

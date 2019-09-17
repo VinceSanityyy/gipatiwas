@@ -22,6 +22,7 @@ class SupplierController extends Controller
 
     public function getSuppliers(){
 
+
         $suppliers = Supplier::all();
 
         return view('supplier', compact('suppliers'));

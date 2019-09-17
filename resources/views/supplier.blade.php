@@ -130,6 +130,7 @@
                                 <a href="{{ route('products') }}" class="sidebar-link">
                                     <i class="mdi mdi-adjust"></i>
                                     <span class="hide-menu"> Products </span>
+
                                 </a>
                             </li>
                             <li class="sidebar-item">
@@ -144,6 +145,11 @@
                                     <span class="hide-menu"> Damages </span>
                                 </a>
                             </li>
+
+                                </a>
+                            </li>
+                        
+
                             <li class="sidebar-item">
                             <a href="{{ route('customer') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
@@ -450,35 +456,6 @@
                 // add
 
 
-
-                // delete 
-                // UPDATED: REMOVED DELETE FUNCTIONALITY
-
-                // $('.delete-data').click(function(e) {
-                //     e.preventDefault();
-                //     const myValue = $(this).attr('id');
-
-
-                //     $('#delete-button').click(function(e) {
-                //         $.ajaxSetup({
-                //           headers:{
-                //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                //         }
-                //     });
-
-                //         $.ajax({
-                //           url: "{{ url('/supplier') }}" + '/'+ myValue,
-                //           type: 'DELETE',
-                //           data: {},
-                //           success: function(res){
-                //            window.location.href='{{route("suppliers")}}';
-                //        }
-                //        });
-                //     });
-                //  });
-
-                // delete
-
                  //edit
                 $('.editButton').on('click', function(e) {
                 const myValue = $(this).attr('id');
@@ -512,6 +489,7 @@
                         }
                     });
 
+
                     $.ajax({
                         url: "{{ url('/supplier') }}" + '/'+ myValue,
                         method: 'put',
@@ -526,6 +504,18 @@
                              window.location.href='{{route("suppliers")}}';
                         }
                     })
+
+ 			 		$.ajax({
+ 			 			url: "{{ url('/supplier') }}" + '/'+ myValue,
+ 			 			method: 'put',
+ 			 			data: {
+ 			 				name: editInput
+ 			 			},
+ 			 			success: function(res){
+ 			 				 window.location.href='{{route("suppliers")}}';
+ 			 			}
+ 			 		})
+
 
                  });
               });
