@@ -8,13 +8,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 class SupplierController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
+    // /**
+    //  * Display a listing of the resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function index()
+    // {
+    //     $suppliers = Supplier::all();
+
+    //     return view('supplier', compact('suppliers'));
+    // }
+
+    public function getSuppliers(){
+
         $suppliers = Supplier::all();
 
         return view('supplier', compact('suppliers'));
@@ -40,8 +47,12 @@ class SupplierController extends Controller
     {
         $data = $request->all();
 
-        $data['name'] = strtoupper($data['name']);
-
+        $data['name'] = ($data['name']);
+        $data['address'] = ($data['address']);
+        $data['email'] = ($data['email']);
+        $data['contact'] = ($data['contact']);
+        $data['status'] = ($data['status']);
+        
         Supplier::create($data);
 
         return response()->json($data);
@@ -80,7 +91,13 @@ class SupplierController extends Controller
     {
         $supplier = Supplier::findOrFail($id);
         $data = $request->all();
-        $supplier['name'] = strtoupper($data['name']);
+
+        $supplier['name'] = ($data['name']);
+        $supplier['email'] = ($data['email']);
+        $supplier['contact'] = ($data['contact']);
+        $supplier['address'] = ($data['address']);
+        $supplier['status'] = ($data['status']);
+
         $supplier->save();
 
         return response()->json($supplier);

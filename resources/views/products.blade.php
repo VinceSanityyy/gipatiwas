@@ -120,24 +120,24 @@
                         </a>
 
                             <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item">
-                                <a href="/product" class="sidebar-link">
-                                    <i class="mdi mdi-adjust"></i>
-                                    <span class="hide-menu"> Products </span>
-                                </a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="/supplier" class="sidebar-link">
-                                    <i class="mdi mdi-adjust"></i>
-                                    <span class="hide-menu"> Suppliers </span>
-                                </a>
-                            </li>
-                            <li class="sidebar-item">
-                                    <a href="/damage" class="sidebar-link">
-                                    <i class="mdi mdi-adjust"></i>
-                                    <span class="hide-menu"> Damages </span>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('products') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Products </span>
                                     </a>
-                                 </li>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('suppliers') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Suppliers </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('damages') }}" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Damages </span>
+                                    </a>
+                                </li>
                                 <li class="sidebar-item">
                                 <a href="{{ route('customer') }}" class="sidebar-link">
                                     <i class="mdi mdi-adjust"></i>
@@ -491,7 +491,7 @@
                         },
                         success: function (res){
                             console.log(res);
-                            window.location.href = '{{route("product.index")}}'
+                            window.location.href = '{{route("products")}}'
                         }
                     });
 
@@ -516,7 +516,7 @@
                           type: 'DELETE',
                           data: {},
                           success: function(res){
-                           window.location.href='{{route("product.index")}}';
+                           window.location.href='{{route("products")}}';
                        }
                        });
                     });
@@ -564,7 +564,7 @@
                             },
                             success: function(res){
                                 console.log(this.data);
-                                window.location.href = "{{route('product.index')}}"
+                                window.location.href = "{{route('products')}}"
                             }
                         });
 
@@ -575,76 +575,76 @@
 
                      //addqty
             $('.addQty').on('click', function(e) {
- 			 	const myValue = $(this).attr('id');
+                const myValue = $(this).attr('id');
 
 
- 			 	$('#add_quantity').val();
+                $('#add_quantity').val();
 
 
- 			 	 $('#stockIn').click(function(e) {
- 			 	 	e.preventDefault();
+                 $('#stockIn').click(function(e) {
+                    e.preventDefault();
 
- 			 	 	let quantity = $('#add_quantity').val();
+                    let quantity = $('#add_quantity').val();
 
- 			 	 	$.ajaxSetup({
- 			 		headers:{
- 			 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
- 			 			}
- 			 		});
+                    $.ajaxSetup({
+                    headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
 
- 			 		$.ajax({
- 			 			url: "{{ url('/addStocks') }}" + '/'+ myValue,
- 			 			method: 'put',
- 			 			data: {
- 			 				quantity: quantity
- 			 			},
- 			 			success: function(res){
+                    $.ajax({
+                        url: "{{ url('/addStocks') }}" + '/'+ myValue,
+                        method: 'put',
+                        data: {
+                            quantity: quantity
+                        },
+                        success: function(res){
                             console.log(res);
- 			 				 window.location.href='{{route("product.index")}}';
- 			 			}
- 			 		})
+                             window.location.href='{{route("products")}}';
+                        }
+                    })
 
- 			 	 });
+                 });
               });
               //
 
                        //addDmg
             $('.addDmg').on('click', function(e) {
- 			 	const myValue = $(this).attr('id');
+                const myValue = $(this).attr('id');
 
                   let dmg = $(this).closest('tr').find('td:eq(4)').text();
 
 
                 $('#price').val(dmg);
- 			 	$('#remove_quantity').val();
+                $('#remove_quantity').val();
 
 
- 			 	 $('#addtoDmg').click(function(e) {
- 			 	 	e.preventDefault();
+                 $('#addtoDmg').click(function(e) {
+                    e.preventDefault();
 
                        let quantity = $('#remove_quantity').val();
                        let price = $('#price').val();
 
- 			 	 	$.ajaxSetup({
- 			 		headers:{
- 			 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
- 			 			}
- 			 		});
+                    $.ajaxSetup({
+                    headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
 
- 			 		$.ajax({
- 			 			url: "{{ url('/addDamage') }}" + '/'+ myValue,
- 			 			method: 'put',
- 			 			data: {
+                    $.ajax({
+                        url: "{{ url('/addDamage') }}" + '/'+ myValue,
+                        method: 'put',
+                        data: {
                               quantity: quantity,
                               price: price
- 			 			},
- 			 			success: function(res){
+                        },
+                        success: function(res){
                             console.log(res);
- 			 				 window.location.href='{{route("product.index")}}';
- 			 			}
- 			 		})
+                             window.location.href='{{route("products")}}';
+                        }
+                    })
 
- 			 	 });
+                 });
               });
 
 

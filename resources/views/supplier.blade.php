@@ -126,24 +126,24 @@
                     </a>
 
                         <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item">
-                            <a href="/product" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> Products </span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="/supplier" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> Suppliers </span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                                <a href="/damage" class="sidebar-link">
-                                <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> Damages </span>
+                            <li class="sidebar-item">
+                                <a href="{{ route('products') }}" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Products </span>
                                 </a>
-                             </li>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{{ route('suppliers') }}" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Suppliers </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{{ route('damages') }}" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Damages </span>
+                                </a>
+                            </li>
                             <li class="sidebar-item">
                             <a href="{{ route('customer') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
@@ -240,6 +240,10 @@
                     <tr>
                       <th scope="col"> ID</th>
                       <th scope="col">Name</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Contact Number</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Status</th>
                       <th scope="col">Actions</th>
 
 
@@ -250,12 +254,15 @@
                 <tr>
                   <td>{{$supplier->id}}</td>
                   <td>{{$supplier->name}}</td>
-
+                  <td>{{$supplier->address}}</td>
+                  <td>{{$supplier->contact}}</td>
+                  <td>{{$supplier->email}}</td>
+                  <td>{{$supplier->status}}</td>
                   <td>
 
 
                      <button id="{{$supplier->id}}"  class="btn btn-warning editButton" data-toggle="modal" data-target="#exampleModalCenter_edit"><i class="fa fa-edit"></i></button>
-                     <button id="{{$supplier->id}}" class="btn btn-danger delete-data"  data-toggle="modal" data-target="#exampleModalCenter_delete"><i class="fa fa-trash"></i></button>
+                  <!--    <button id="{{$supplier->id}}" class="btn btn-danger delete-data"  data-toggle="modal" data-target="#exampleModalCenter_delete"><i class="fa fa-trash"></i></button> -->
                   </td>
                      @endforeach
               </tr>
@@ -275,7 +282,14 @@
                       </div>
                       <div class="modal-body">
                       <p style="font-weight: bold;">Name </p>
-                        <input style="text-transform:uppercase"   type="text" class="form-control" id="supplier"/>
+                        <input    type="text" class="form-control" id="supplier"/>
+                          <p style="font-weight: bold;">Address </p>
+                        <input    type="text" class="form-control" id="address"/>
+                          <p style="font-weight: bold;">Contact Number </p>
+                        <input    type="text" class="form-control" id="contact"/>
+                          <p style="font-weight: bold;">Email </p>
+                        <input    type="email" class="form-control" id="email"/>
+                       
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -287,7 +301,7 @@
             <!-- modal -->
 
             <!-- delete -->
-            <div class="modal fade bd-example-modal-sm" id="exampleModalCenter_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <!--       <div class="modal fade bd-example-modal-sm" id="exampleModalCenter_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -305,7 +319,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- delete -->
 
             {{-- edit --}}
@@ -320,7 +334,21 @@
                     </div>
                     <div class="modal-body">
                     <p style="font-weight: bold;">Name </p>
-                      <input style="text-transform:uppercase"   type="text" class="form-control" id="update_supplier"/>
+                        <input    type="text" class="form-control" id="update_supplier"/>
+                    <p style="font-weight: bold;">Address </p>
+                        <input    type="text" class="form-control" id="update_address"/>
+                    <p style="font-weight: bold;">Contact Number </p>
+                       <input    type="text" class="form-control" id="update_contact"/>
+                    <p style="font-weight: bold;">Email </p>
+                        <input   type="email" class="form-control" id="update_email"/>
+                         <p style="font-weight: bold;">Status </p>  
+                    <select class="form-control" id="update_status">
+
+                      <option value="active">Active</option>
+                      <option value="inactive">Inactive</option>
+                    
+                    </select>
+
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -348,7 +376,7 @@
             <!-- All Jquery -->
             <!-- ============================================================== -->
 
-            {{-- datatables --}}
+        {{-- datatables --}}
            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
             <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
             <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
@@ -392,6 +420,10 @@
                     e.preventDefault();
                     var input = $('#supplier').val();
 
+                    var input_email = $('#email').val();
+                    var input_contact = $('#contact').val();
+                    var input_address = $('#address').val();
+
 
                     $.ajaxSetup({
                         headers:{
@@ -403,73 +435,99 @@
                         url: "{{    url('/supplier')    }}",
                         method: 'post',
                         data: {
-                            name: input
+                            name: input,
+                            contact: input_contact,
+                            address: input_address,
+                            email: input_email,
+                            status: 'active'
                         },
                         success: function (res){
                             console.log(res);
-                            window.location.href = '{{route("supplier.index")}}';
+                            window.location.href = '{{route("suppliers")}}';
                         }
                     });
                 });
                 // add
 
-                // delete
-                $('.delete-data').click(function(e) {
-                    e.preventDefault();
-                    const myValue = $(this).attr('id');
 
 
-                    $('#delete-button').click(function(e) {
-                        $.ajaxSetup({
-                          headers:{
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
+                // delete 
+                // UPDATED: REMOVED DELETE FUNCTIONALITY
 
-                        $.ajax({
-                          url: "{{ url('/supplier') }}" + '/'+ myValue,
-                          type: 'DELETE',
-                          data: {},
-                          success: function(res){
-                           window.location.href='{{route("supplier.index")}}';
-                       }
-                       });
-                    });
-                 });
+                // $('.delete-data').click(function(e) {
+                //     e.preventDefault();
+                //     const myValue = $(this).attr('id');
+
+
+                //     $('#delete-button').click(function(e) {
+                //         $.ajaxSetup({
+                //           headers:{
+                //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                //         }
+                //     });
+
+                //         $.ajax({
+                //           url: "{{ url('/supplier') }}" + '/'+ myValue,
+                //           type: 'DELETE',
+                //           data: {},
+                //           success: function(res){
+                //            window.location.href='{{route("suppliers")}}';
+                //        }
+                //        });
+                //     });
+                //  });
 
                 // delete
 
                  //edit
                 $('.editButton').on('click', function(e) {
- 			 	const myValue = $(this).attr('id');
- 			 	let name = $(this).closest('tr').find('td:eq(1)').text();
-
- 			 	$('#update_supplier').val(name.trim());
+                const myValue = $(this).attr('id');
 
 
- 			 	 $('#edit_supplier').click(function(e) {
- 			 	 	e.preventDefault();
+                let curr_name = $(this).closest('tr').find('td:eq(1)').text();
+                let curr_address = $(this).closest('tr').find('td:eq(2)').text();
+                let curr_contact = $(this).closest('tr').find('td:eq(3)').text();
+                let curr_email = $(this).closest('tr').find('td:eq(4)').text();
+                let curr_status = $(this).closest('tr').find('td:eq(5)').text();
 
- 			 	 	let editInput = $('#update_supplier').val();
+                $('#update_supplier').val(curr_name);
+                $('#update_address').val(curr_address);
+                $('#update_contact').val(curr_contact);
+                $('#update_email').val(curr_email);
+                $('#update_status').val(curr_status);
 
- 			 	 	$.ajaxSetup({
- 			 		headers:{
- 			 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
- 			 			}
- 			 		});
 
- 			 		$.ajax({
- 			 			url: "{{ url('/supplier') }}" + '/'+ myValue,
- 			 			method: 'put',
- 			 			data: {
- 			 				name: editInput
- 			 			},
- 			 			success: function(res){
- 			 				 window.location.href='{{route("supplier.index")}}';
- 			 			}
- 			 		})
+                 $('#edit_supplier').click(function(e) {
+                    e.preventDefault();
 
- 			 	 });
+                    let new_name = $('#update_supplier').val();
+                    let new_address = $('#update_address').val();
+                    let new_contact = $('#update_contact').val();
+                    let new_email = $('#update_email').val();
+                    let new_status = $('#update_status').val();
+
+                    $.ajaxSetup({
+                    headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        url: "{{ url('/supplier') }}" + '/'+ myValue,
+                        method: 'put',
+                        data: {
+                            name: new_name,
+                            address: new_address,
+                            contact: new_contact,
+                            email: new_email,
+                            status: new_status
+                        },
+                        success: function(res){
+                             window.location.href='{{route("suppliers")}}';
+                        }
+                    })
+
+                 });
               });
 
               //edit

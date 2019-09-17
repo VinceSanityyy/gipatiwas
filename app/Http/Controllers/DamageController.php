@@ -6,22 +6,33 @@ use Illuminate\Http\Request;
 use DB;
 class DamageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-       $damages = DB::select(
-        "SELECT damages.product_id, damages.quantity, damages.price, products.product_name
-        FROM damages
-        JOIN products on damages.product_id = products.id"
-       );
+    // /**
+    //  * Display a listing of the resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function index()
+    // {
+    //    $damages = DB::select(
+    //     "SELECT damages.product_id, damages.quantity, damages.price, products.product_name
+    //     FROM damages
+    //     JOIN products on damages.product_id = products.id"
+    //    );
 
-    //    dd($damages);
+    // //    dd($damages);
 
-    return view('damages', compact('damages'));
+    // return view('damages', compact('damages'));
+    // }
+
+    public function getDamages(){
+        $damages = DB::select(
+            "SELECT damages.product_id, damages.quantity, damages.price, products.product_name
+            FROM damages
+            JOIN products on damages.product_id = products.id"
+           );
+
+        //    dd($damages);
+        return view('damages', compact('damages'));
     }
 
     /**
