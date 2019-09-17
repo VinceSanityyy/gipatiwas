@@ -9,12 +9,29 @@ use App\Damage;
 use App\Supplier;
 class ProductsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    // /**
+    //  * Display a listing of the resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function index()
+    // {
+
+    //     $products = DB::select(
+    //         "SELECT products.id, products.price, products.product_name, products.description, products.quantity, suppliers.name
+    //          FROM products
+    //          JOIN suppliers ON products.supplier_id = suppliers.id
+    //          WHERE products.deleted_at is null"
+    //          );
+
+
+    //     $suppliers = Supplier::all();
+
+    //    return view('products', compact('products','suppliers'));
+
+    // }
+
+    public function getProducts()
     {
 
         $products = DB::select(

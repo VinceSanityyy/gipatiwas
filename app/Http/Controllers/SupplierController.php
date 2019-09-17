@@ -8,13 +8,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 class SupplierController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
+    // /**
+    //  * Display a listing of the resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function index()
+    // {
+    //     $suppliers = Supplier::all();
+
+    //     return view('supplier', compact('suppliers'));
+    // }
+
+    public function getSuppliers(){
         $suppliers = Supplier::all();
 
         return view('supplier', compact('suppliers'));

@@ -122,24 +122,24 @@
                     </a>
 
                         <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                        <a href="/product" class="sidebar-link">
-                                            <i class="mdi mdi-adjust"></i>
-                                            <span class="hide-menu"> Products </span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="/supplier" class="sidebar-link">
-                                            <i class="mdi mdi-adjust"></i>
-                                            <span class="hide-menu"> Suppliers </span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                            <a href="/damage" class="sidebar-link">
-                                            <i class="mdi mdi-adjust"></i>
-                                            <span class="hide-menu"> Damages </span>
-                                            </a>
-                                         </li>
+                            <li class="sidebar-item">
+                                <a href="{{ route('products') }}" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Products </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{{ route('suppliers') }}" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Suppliers </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{{ route('damages') }}" class="sidebar-link">
+                                    <i class="mdi mdi-adjust"></i>
+                                    <span class="hide-menu"> Damages </span>
+                                </a>
+                            </li>
                             <li class="sidebar-item">
                             <a href="{{ route('customer') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>

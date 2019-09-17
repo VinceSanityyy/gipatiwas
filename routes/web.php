@@ -66,15 +66,21 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 
-//use route resouce for crud
+//KRISTINE JEEG PORTAL CUSTOM ROUTES
 
 //Suppliers
 Route::resource('supplier', 'SupplierController');
 //products
 Route::resource('product', 'ProductsController');
 
+//damaged
 Route::resource('damage', 'DamageController');
 
+
+//custom routes
+Route::get('/products', 'ProductsController@getProducts')->name('products');
+Route::get('/suppliers', 'SupplierController@getSuppliers')->name('suppliers');
+Route::get('/damages', 'DamageController@getDamages')->name('damages');
 
 //addQty
 Route::put('/addStocks/{id}', 'ProductsController@stockIn');
