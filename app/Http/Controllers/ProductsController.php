@@ -7,6 +7,8 @@ use App\Product;
 use DB;
 use App\Damage;
 use App\Supplier;
+use Carbon\Carbon;
+use App\History;
 class ProductsController extends Controller
 {
 
@@ -44,11 +46,20 @@ class ProductsController extends Controller
              WHERE products.deleted_at is null"
              );
 
+        $lowstocks = DB::select(
+            "SELECT products.id, products.price, products.product_name, products.quantity, suppliers.name
+             FROM products
+             JOIN suppliers ON products.supplier_id = suppliers.id
+             WHERE products.quantity <= 10"
+        );
 
-        
+        // $recentstocks = DB::table('products')->whereDate('created_at', DB::raw('CURDATE()'))->get();
+        $recentstocks = Product::all()->where('created_at', '>=', Carbon::today()->toDateString());
+
+       
        $suppliers = Supplier::all()->where('status', 'active');
-
-       return view('products', compact('products','suppliers'));
+       // dd($recentstocks);
+       return view('products', compact('products','suppliers' ,'lowstocks','recentstocks'));
 
     }
 
@@ -79,6 +90,10 @@ class ProductsController extends Controller
         $data['price'] = ($data['price']);
 
         Product::create($data);
+
+
+
+
 
         return response()->json($data);
     }
@@ -150,6 +165,14 @@ class ProductsController extends Controller
 
         $product->save();
 
+
+        $hist['product_id'] = ($id);
+        $hist['quantity'] = ($data['quantity']);
+        $hist['type'] = 'stock in';
+
+
+         History::create($hist);
+
         return response()->json($data);
 
     }
@@ -164,9 +187,18 @@ class ProductsController extends Controller
         $data['price'] = ($data['price']);
         $data['quantity'] = ($data['quantity']);
 
-
         Damage::create($data);
+
+        
+        $hist['product_id'] = ($id);
+        $hist['quantity'] = ($data['quantity']);
+        $hist['type'] = 'stock out';
+
+
+         History::create($hist);
 
         return response()->json($data);
     }
+
+
 }

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
     <!-- needed css -->
     <link href="dist/css/style.min.css" rel="stylesheet">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
 
 
@@ -54,21 +54,21 @@
                 </ul>
                 <ul class="navbar-nav float-right">
                     <li class="nav-item dropdown">
-                        @if(isset(Auth::user()->email))
+                        <?php if(isset(Auth::user()->email)): ?>
                         <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="assets/images/users/user.png" alt="user" class="rounded-circle" width="36">
 
-                            <span class="ml-2 font-medium">{{ Auth::user()->name }}</span><span class="fas fa-angle-down ml-2"></span>
+                            <span class="ml-2 font-medium"><?php echo e(Auth::user()->name); ?></span><span class="fas fa-angle-down ml-2"></span>
                         </a>
-                        @endif
+                        <?php endif; ?>
                 <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                     <div class="d-flex no-block align-items-center p-3 mb-2 border-bottom">
                         <div class=""><img src="../../assets/images/users/user.png" alt="user" class="rounded" width="80"></div>
                                 <div class="ml-2">
-                                    @if(isset(Auth::user()->email))
-                                    <h4 class="mb-0">{{ Auth::user()->name }}</h4>
-                                    <p class=" mb-0 text-muted">{{ Auth::user()->email }}</p>
-                                    @endif
+                                    <?php if(isset(Auth::user()->email)): ?>
+                                    <h4 class="mb-0"><?php echo e(Auth::user()->name); ?></h4>
+                                    <p class=" mb-0 text-muted"><?php echo e(Auth::user()->email); ?></p>
+                                    <?php endif; ?>
                                     <a href="javascript:void(0)" class="btn btn-sm btn-danger text-white mt-2 btn-rounded">View Profile</a>
                                 </div>
                             </div>
@@ -86,26 +86,26 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark" href="<?php echo e(route('home')); ?>" aria-expanded="false">
                         <i class="mdi mdi-av-timer"></i>
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('transactions') }}" aria-expanded="false">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="<?php echo e(route('transactions')); ?>" aria-expanded="false">
                         <i class="mdi mdi-square-inc-cash"></i>
                         <span class="hide-menu">Sales</span>
                     </a>
 
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item">
-                            <a href="{{ route('transactions') }}" class="sidebar-link">
+                            <a href="<?php echo e(route('transactions')); ?>" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Transactions </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{ route('report') }}" class="sidebar-link">
+                            <a href="<?php echo e(route('report')); ?>" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Reports </span>
                             </a>
@@ -114,33 +114,33 @@
                 </li>
 
                 <li class="sidebar-item">
-                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('inventory') }}" aria-expanded="false">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="<?php echo e(route('inventory')); ?>" aria-expanded="false">
                             <i class="mdi mdi-account-box"></i>
                             <span class="hide-menu">Inventory</span>
                         </a>
 
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="{{ route('products') }}" class="sidebar-link">
+                                    <a href="<?php echo e(route('products')); ?>" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
                                         <span class="hide-menu"> Products </span>
 
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('suppliers') }}" class="sidebar-link">
+                                    <a href="<?php echo e(route('suppliers')); ?>" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
                                         <span class="hide-menu"> Suppliers </span>
                                     </a>
                                 </li>
                                    <li class="sidebar-item">
-                                <a href="{{ route('history') }}" class="sidebar-link">
+                                <a href="<?php echo e(route('history')); ?>" class="sidebar-link">
                                     <i class="mdi mdi-adjust"></i>
                                     <span class="hide-menu"> Stock History </span>
                                 </a>
                             </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('damages') }}" class="sidebar-link">
+                                    <a href="<?php echo e(route('damages')); ?>" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
                                         <span class="hide-menu"> Damages </span>
                                     </a>
@@ -151,7 +151,7 @@
                            
 
                                 <li class="sidebar-item">
-                                <a href="{{ route('customer') }}" class="sidebar-link">
+                                <a href="<?php echo e(route('customer')); ?>" class="sidebar-link">
                                     <i class="mdi mdi-adjust"></i>
                                     <span class="hide-menu"> Customers </span>
                                 </a>
@@ -161,20 +161,20 @@
 
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="{{ route('guest') }}" aria-expanded="false">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="<?php echo e(route('guest')); ?>" aria-expanded="false">
                         <i class="mdi mdi-account-box"></i>
                         <span class="hide-menu">Guest</span>
                     </a>
 
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item">
-                            <a href="{{ route('guest') }}" class="sidebar-link">
+                            <a href="<?php echo e(route('guest')); ?>" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Create Guest</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{ route('appointment') }}" class="sidebar-link">
+                            <a href="<?php echo e(route('appointment')); ?>" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Guest Appointments </span>
                             </a>
@@ -182,21 +182,21 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark" href="{{ route('programs') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark" href="<?php echo e(route('programs')); ?>" aria-expanded="false">
                         <i class="mdi mdi-radio"></i>
                         <span class="hide-menu">Program Segments</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark" href="{{ route('anchor') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark" href="<?php echo e(route('anchor')); ?>" aria-expanded="false">
                         <i class="mdi mdi-account-multiple"></i>
                         <span class="hide-menu">Anchors </span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="{{ route('calendar') }}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" <a href="<?php echo e(route('calendar')); ?>" aria-expanded="false">
                         <i class="mdi mdi-calendar-check"></i>
                         <span class="hide-menu">Calendar of Activities</span>
                     </a>
@@ -246,10 +246,10 @@
                     Low Stocks
                   </div>
                   <ul class="list-group list-group-flush">
-                    @foreach($lowstocks as $stock)
-                    <li class="list-group-item" style="text-align: center;">{{$stock->product_name}} - {{$stock->quantity}} stocks remaining </li>
+                    <?php $__currentLoopData = $lowstocks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $stock): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li class="list-group-item" style="text-align: center;"><?php echo e($stock->product_name); ?> - <?php echo e($stock->quantity); ?> stocks remaining </li>
                   </ul>
-                  @endforeach   
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>   
                 </div>
               </div>
               <div class="ml-auto p-2">
@@ -258,10 +258,10 @@
                   Recent Stocks
                   </div>
                   <ul class="list-group list-group-flush">
-                         @foreach($recentstocks as $recent)
-                    <li class="list-group-item">{{$recent->product_name}} - {{\Carbon\Carbon::parse($recent->created_at)->format('j F, Y')}}</li>
+                         <?php $__currentLoopData = $recentstocks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $recent): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li class="list-group-item"><?php echo e($recent->product_name); ?> - <?php echo e(\Carbon\Carbon::parse($recent->created_at)->format('j F, Y')); ?></li>
                   </ul>
-                    @endforeach   
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>   
                 </div>
               </div>
             
@@ -285,30 +285,30 @@
                   </tr>
               </thead>
               <tbody>
-                @foreach($products as $product)
+                <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <td>{{$product->id}}</td>
-                  <td>{{$product->product_name}}</td>
-                  <td>{{$product->name}}</td>
-                  <td>{{$product->description}}</td>
-                  <td>{{$product->price}}</td>
-                  <td>{{$product->quantity}}</td>
+                  <td><?php echo e($product->id); ?></td>
+                  <td><?php echo e($product->product_name); ?></td>
+                  <td><?php echo e($product->name); ?></td>
+                  <td><?php echo e($product->description); ?></td>
+                  <td><?php echo e($product->price); ?></td>
+                  <td><?php echo e($product->quantity); ?></td>
                   <td>
 
 
-                    <button id="{{$product->id}}"  class="btn btn-warning editButton" data-toggle="modal" data-target="#exampleModalCenter_edit"><i class="fa fa-edit"></i></button>
-                     <button id="{{$product->id}}" class="btn btn-danger delete-data"  data-toggle="modal" data-target="#exampleModalCenter_delete"><i class="fa fa-trash"></i></button>
-                     <button id="{{$product->id}}" class="btn btn-success addQty" data-toggle="modal" data-target="#exampleModalCenter_qty"><i class="fa fa-plus"></i></button>
-                     <button id="{{$product->id}}" class="btn btn-info addDmg" data-toggle="modal" data-target="#exampleModalCenter_dmg"><i class="fa fa-minus"></i></button>
+                    <button id="<?php echo e($product->id); ?>"  class="btn btn-warning editButton" data-toggle="modal" data-target="#exampleModalCenter_edit"><i class="fa fa-edit"></i></button>
+                     <button id="<?php echo e($product->id); ?>" class="btn btn-danger delete-data"  data-toggle="modal" data-target="#exampleModalCenter_delete"><i class="fa fa-trash"></i></button>
+                     <button id="<?php echo e($product->id); ?>" class="btn btn-success addQty" data-toggle="modal" data-target="#exampleModalCenter_qty"><i class="fa fa-plus"></i></button>
+                     <button id="<?php echo e($product->id); ?>" class="btn btn-info addDmg" data-toggle="modal" data-target="#exampleModalCenter_dmg"><i class="fa fa-minus"></i></button>
                   </td>
-                     @endforeach
+                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tr>
                 </tbody>
               </table>
 
             </div>
 
-                  {{-- add to damaged --}}
+                  
                   <div class="modal fade" id="exampleModalCenter_dmg" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                           <div class="modal-content">
@@ -330,7 +330,7 @@
                           </div>
                         </div>
                       </div>
-                    {{-- damaged --}}
+                    
                   </div>
              <!-- modal create -->
              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -350,12 +350,12 @@
 
                           <p style="font-weight: bold;">Price </p>
                           <input   type="text" class="form-control" id="currentprice"/>
-                          {{-- <input style="text-transform:uppercase"   type="text" class="form-control" id="supplier_id"/> --}}
+                          
                           <p style="font-weight: bold;">Supplier </p>
                           <select class="form-control"  id="supplier_id"  >
-                              @foreach ($suppliers as $supplier)
-                          <option value="{{$supplier->id}}">{{$supplier->name}}</option>
-                              @endforeach
+                              <?php $__currentLoopData = $suppliers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $supplier): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <option value="<?php echo e($supplier->id); ?>"><?php echo e($supplier->name); ?></option>
+                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
 
 
@@ -392,7 +392,7 @@
                   <!-- delete -->
 
             </div>
-                    {{-- edit --}}
+                    
             <div class="modal fade" id="exampleModalCenter_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
@@ -410,9 +410,9 @@
                           <p style="font-weight: bold;">New Supplier </p>
 
                           <select class="form-control"  id="update_supplier"  >
-                                @foreach ($suppliers as $supplier)
-                            <option value="{{$supplier->id}}">{{$supplier->name}}</option>
-                                @endforeach
+                                <?php $__currentLoopData = $suppliers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $supplier): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($supplier->id); ?>"><?php echo e($supplier->name); ?></option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                                 <p style="font-weight: bold;">New Price </p>
                                 <input   type="text" class="form-control" id="update_price"/>
@@ -426,12 +426,12 @@
                       </div>
                     </div>
                   </div>
-                  {{-- edit --}}
+                  
 
             </div>
 
 
-                             {{-- add qty --}}
+                             
             <div class="modal fade" id="exampleModalCenter_qty" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
@@ -451,7 +451,7 @@
                       </div>
                     </div>
                   </div>
-                {{-- add qty --}}
+                
 
 
 
@@ -476,11 +476,11 @@
             <!-- ============================================================== -->
 
 
-              {{-- datatables --}}
+              
            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
            <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
            <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-             {{-- datatables --}}
+             
 
             <!-- Bootstrap tether Core JavaScript -->
             <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
@@ -524,7 +524,7 @@
                         }
                     });
                     $.ajax({
-                        url: "{{    url('/product')     }}",
+                        url: "<?php echo e(url('/product')); ?>",
                         method: 'post',
                         data:{
                             product_name: name,
@@ -534,7 +534,7 @@
                         },
                         success: function (res){
                             console.log(res);
-                            window.location.href='{{route("products")}}';
+                            window.location.href='<?php echo e(route("products")); ?>';
                         }
                     });
                 });
@@ -550,11 +550,11 @@
                         }
                     });
                         $.ajax({
-                          url: "{{ url('/product') }}" + '/'+ myValue,
+                          url: "<?php echo e(url('/product')); ?>" + '/'+ myValue,
                           type: 'DELETE',
                           data: {},
                           success: function(res){
-                           window.location.href='{{route("products")}}';
+                           window.location.href='<?php echo e(route("products")); ?>';
                        }
                        });
                     });
@@ -586,7 +586,7 @@
                             }
                         });
                         $.ajax({
-                            url: "{{url('/product')}}" + '/'+ myValue,
+                            url: "<?php echo e(url('/product')); ?>" + '/'+ myValue,
                             method: 'put',
                             data: {
                                 product_name: product_name,
@@ -596,7 +596,7 @@
                             },
                             success: function(res){
                                 console.log(this.data);
-                                window.location.href='{{route("products")}}';
+                                window.location.href='<?php echo e(route("products")); ?>';
                             }
                         });
                       });
@@ -614,14 +614,14 @@
                         }
                     });
                     $.ajax({
-                        url: "{{ url('/addStocks') }}" + '/'+ myValue,
+                        url: "<?php echo e(url('/addStocks')); ?>" + '/'+ myValue,
                         method: 'put',
                         data: {
                             quantity: quantity
                         },
                         success: function(res){
                             console.log(res);
-                             window.location.href='{{route("products")}}';
+                             window.location.href='<?php echo e(route("products")); ?>';
                         }
                     })
                  });
@@ -643,7 +643,7 @@
                         }
                     });
                     $.ajax({
-                        url: "{{ url('/addDamage') }}" + '/'+ myValue,
+                        url: "<?php echo e(url('/addDamage')); ?>" + '/'+ myValue,
                         method: 'put',
                         data: {
                               quantity: quantity,
@@ -651,7 +651,7 @@
                         },
                         success: function(res){
                             console.log(res);
-                              window.location.href='{{route("products")}}';
+                              window.location.href='<?php echo e(route("products")); ?>';
                         }
                     })
                  });
@@ -674,3 +674,4 @@
 
 
             </html>
+<?php /**PATH C:\Users\Vince\Desktop\gipatiwas\resources\views/products.blade.php ENDPATH**/ ?>

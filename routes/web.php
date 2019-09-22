@@ -77,6 +77,10 @@ Route::resource('product', 'ProductsController');
 Route::resource('damage', 'DamageController');
 
 
+//history
+Route::get('history', 'HistoryController@getHistory')->name('history');
+
+
 //custom routes
 Route::get('/products', 'ProductsController@getProducts')->name('products');
 Route::get('/suppliers', 'SupplierController@getSuppliers')->name('suppliers');

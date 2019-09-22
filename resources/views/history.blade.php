@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-    <title>Supplier</title>
+    <title>Stock History</title>
     <!-- chartist CSS -->
     <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="dist/js/pages/chartist/chartist-init.css" rel="stylesheet">
@@ -139,7 +139,7 @@
                                     <span class="hide-menu"> Suppliers </span>
                                 </a>
                             </li>
-                               <li class="sidebar-item">
+                            <li class="sidebar-item">
                                 <a href="{{ route('history') }}" class="sidebar-link">
                                     <i class="mdi mdi-adjust"></i>
                                     <span class="hide-menu"> Stock History </span>
@@ -242,134 +242,36 @@
             <!-- ============================================================== -->
 <div class="page-content container-fluid">
     
-                 <button style="float: right;" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
-                     Add Supplier
-                </button>
+                 
 
                 <br><br><br>
-                <table id="suppliersTable" class="table table-hover ">
+                <table id="historyTable" class="table table-hover ">
                   <thead>
                     <tr>
-                      <th scope="col"> ID</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Address</th>
-                      <th scope="col">Contact Number</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Actions</th>
+                      <th scope="col"> Product Name</th>
+                      <th scope="col">Supplier</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Quantity</th>
+                       <th scope="col">Date</th>
 
 
                   </tr>
               </thead>
               <tbody>
-                @foreach($suppliers as $supplier)
+                @foreach($status as $stat)
                 <tr>
-                  <td>{{$supplier->id}}</td>
-                  <td>{{$supplier->name}}</td>
-                  <td>{{$supplier->address}}</td>
-                  <td>{{$supplier->contact}}</td>
-                  <td>{{$supplier->email}}</td>
-                  <td>{{$supplier->status}}</td>
-                  <td>
-
-
-                     <button id="{{$supplier->id}}"  class="btn btn-warning editButton" data-toggle="modal" data-target="#exampleModalCenter_edit"><i class="fa fa-edit"></i></button>
-                  <!--    <button id="{{$supplier->id}}" class="btn btn-danger delete-data"  data-toggle="modal" data-target="#exampleModalCenter_delete"><i class="fa fa-trash"></i></button> -->
-                  </td>
+                  <td>{{$stat->product_name}}</td>
+                  <td>{{$stat->name}}</td>
+                  <td>{{$stat->type}}</td>
+                   <td>{{$stat->quantity}}</td>
+                    <td>{{\Carbon\Carbon::parse($stat->created_at)->format('j F, Y')}}</td>
                      @endforeach
               </tr>
                 </tbody>
               </table>
         </div>
 
-        <!-- modal create -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Supplier</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                      <p style="font-weight: bold;">Name </p>
-                        <input    type="text" class="form-control" id="supplier"/>
-                          <p style="font-weight: bold;">Address </p>
-                        <input    type="text" class="form-control" id="address"/>
-                          <p style="font-weight: bold;">Contact Number </p>
-                        <input    type="text" class="form-control" id="contact"/>
-                          <p style="font-weight: bold;">Email </p>
-                        <input    type="email" class="form-control" id="email"/>
-                       
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="add_supplier">Add</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            <!-- modal -->
-
-            <!-- delete -->
-      <!--       <div class="modal fade bd-example-modal-sm" id="exampleModalCenter_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                <p style="font-weight: bold; text-align: center;"> Do you want to delete? </p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Back</button>
-                    <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- delete -->
-
-            {{-- edit --}}
-            <div class="modal fade" id="exampleModalCenter_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalCenterTitle">Edit Supplier</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                    <p style="font-weight: bold;">Name </p>
-                        <input    type="text" class="form-control" id="update_supplier"/>
-                    <p style="font-weight: bold;">Address </p>
-                        <input    type="text" class="form-control" id="update_address"/>
-                    <p style="font-weight: bold;">Contact Number </p>
-                       <input    type="text" class="form-control" id="update_contact"/>
-                    <p style="font-weight: bold;">Email </p>
-                        <input   type="email" class="form-control" id="update_email"/>
-                         <p style="font-weight: bold;">Status </p>  
-                    <select class="form-control" id="update_status">
-
-                      <option value="active">Active</option>
-                      <option value="inactive">Inactive</option>
-                    
-                    </select>
-
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-success" id="edit_supplier">Update</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {{-- edit --}}
+        
 
 
             <footer class="footer text-center">
@@ -424,120 +326,11 @@
 
 
 
-            <script type="text/javascript">
-
-            $(document).ready(function(){
-                // add
-                $('#add_supplier').click(function(e){
-                    e.preventDefault();
-                    var input = $('#supplier').val();
-
-                    var input_email = $('#email').val();
-                    var input_contact = $('#contact').val();
-                    var input_address = $('#address').val();
-
-
-                    $.ajaxSetup({
-                        headers:{
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
-
-                    $.ajax({
-                        url: "{{    url('/supplier')    }}",
-                        method: 'post',
-                        data: {
-                            name: input,
-                            contact: input_contact,
-                            address: input_address,
-                            email: input_email,
-                            status: 'active'
-                        },
-                        success: function (res){
-                            console.log(res);
-                            window.location.href = '{{route("suppliers")}}';
-                        }
-                    });
-                });
-                // add
-
-
-                 //edit
-                $('.editButton').on('click', function(e) {
-                const myValue = $(this).attr('id');
-
-
-                let curr_name = $(this).closest('tr').find('td:eq(1)').text();
-                let curr_address = $(this).closest('tr').find('td:eq(2)').text();
-                let curr_contact = $(this).closest('tr').find('td:eq(3)').text();
-                let curr_email = $(this).closest('tr').find('td:eq(4)').text();
-                let curr_status = $(this).closest('tr').find('td:eq(5)').text();
-
-                $('#update_supplier').val(curr_name);
-                $('#update_address').val(curr_address);
-                $('#update_contact').val(curr_contact);
-                $('#update_email').val(curr_email);
-                $('#update_status').val(curr_status);
-
-
-                 $('#edit_supplier').click(function(e) {
-                    e.preventDefault();
-
-                    let new_name = $('#update_supplier').val();
-                    let new_address = $('#update_address').val();
-                    let new_contact = $('#update_contact').val();
-                    let new_email = $('#update_email').val();
-                    let new_status = $('#update_status').val();
-
-                    $.ajaxSetup({
-                    headers:{
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
-
-
-                    $.ajax({
-                        url: "{{ url('/supplier') }}" + '/'+ myValue,
-                        method: 'put',
-                        data: {
-                            name: new_name,
-                            address: new_address,
-                            contact: new_contact,
-                            email: new_email,
-                            status: new_status
-                        },
-                        success: function(res){
-                             window.location.href='{{route("suppliers")}}';
-                        }
-                    })
-
- 			 		$.ajax({
- 			 			url: "{{ url('/supplier') }}" + '/'+ myValue,
- 			 			method: 'put',
- 			 			data: {
- 			 				name: editInput
- 			 			},
- 			 			success: function(res){
- 			 				 window.location.href='{{route("suppliers")}}';
- 			 			}
- 			 		})
-
-
-                 });
-              });
-
-              //edit
-
-
-            });
-
-
-
-            </script>
+           
 
             <script>
                 $(document).ready(function() {
-                    $('#suppliersTable').DataTable();
+                    $('#historyTable').DataTable();
                 } );
             </script>
 
